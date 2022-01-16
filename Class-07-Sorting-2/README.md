@@ -1,7 +1,6 @@
 # Class 07 - Sorting-2 (06 September, 2021)
 
 ## Long Contest
-
 * B-S2-(M6+M7): Synapse Beginner Long 6 [Sorting, Implementation]
 * Link: https://vjudge.net/contest/456246
 <!-- * Pass: `block-chain` -->

@@ -19,9 +19,9 @@ O(n^2) algorithms:
 * [x] https://www.programiz.com/dsa/counting-sort
 
 Sorting Visualizations:
-* https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
-* https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+* [x] https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
+* [x] https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
 
 Sorting Comparisons:
-* https://www.cprogramming.com/tutorial/computersciencetheory/sortcomp.html
-* https://afteracademy.com/blog/comparison-of-sorting-algorithms
+* [x] https://www.cprogramming.com/tutorial/computersciencetheory/sortcomp.html
+* [x] https://afteracademy.com/blog/comparison-of-sorting-algorithms
