@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from .routers import post, user, auth, vote
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 
 app = FastAPI()
 
@@ -21,4 +22,4 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"details": "This root"}
+    return RedirectResponse(url="/docs")
