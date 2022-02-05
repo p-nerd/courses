@@ -20,6 +20,10 @@ app.include_router(auth.router)
 app.include_router(vote.router)
 
 
+# @app.get("/")
+# def root():
+#     return RedirectResponse(url="/docs")
+
 @app.get("/")
 def root():
-    return RedirectResponse(url="/docs")
+    return {"msg": "Hello"}
