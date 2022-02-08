@@ -32,4 +32,4 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"msg": "Hello from API Root"}
+    return {"msg": "Using Github actions"}
