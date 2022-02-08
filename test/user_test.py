@@ -1,39 +1,27 @@
-from app import schemas
-from app.config import settings
-from .database import clinet, session
-import pytest
 from jose import jwt
+from app.config import settings
+from app import schemas
+import pytest
 
 
-@pytest.fixture
-def test_user(clinet):
-    user_data = {
-        "email": "hello123@gmail.com",
-        "password": "password123"
-    }
-    res = clinet.post("/users/", json=user_data)
-    assert res.status_code == 201
-    new_user = res.json()
-    new_user["password"] = user_data["password"]
-    return new_user
-
-
-def test_user_create(clinet):
+def test_user_create(client):
     email = "hello123@gmail.com"
     passwd = "password123"
-    res = clinet.post("/users/", json={"email": email, "password": passwd})
+    res = client.post("/users/", json={"email": email, "password": passwd})
     new_user = schemas.UserOut(**res.json())
     # print(res.json())
     assert new_user.email == email
     assert res.status_code == 201
 
 
-def test_login_user(clinet, test_user):
+def test_login_user(client, test_user):
     # print(test_user)
-    res = clinet.post(
+    res = client.post(
         "/login/",
-        data={"username": test_user["email"],
-              "password": test_user["password"]}
+        data={
+            "username": test_user["email"],
+            "password": test_user["password"]
+        }
     )
     login_res = schemas.Token(**res.json())
     payload = jwt.decode(login_res.access_token,
@@ -42,3 +30,25 @@ def test_login_user(clinet, test_user):
     assert id == test_user["id"]
     assert login_res.token_type == "bearer"
     assert res.status_code == 200
+
+
+@pytest.mark.parametrize(
+    "email, password, status_code",
+    [
+        ("wrongeemail@gmail.com", "password123", 403),
+        ("hello123@gmail.com", "wrongpassword", 403),
+        ("wrongemail@gmail.com", "wrongpassword", 403),
+        (None, "password123", 422),
+        ("hello123@gmail.com", None, 422)
+    ]
+)
+def test_incorrect_login(client, email, password, status_code):
+    res = client.post(
+        "/login/",
+        data={
+            "username": email,
+            "password": password
+        }
+    )
+    print(res.json(), res.status_code)
+    assert res.status_code == status_code

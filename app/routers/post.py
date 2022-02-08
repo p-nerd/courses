@@ -25,16 +25,20 @@ def get_posts(db: Session = Depends(get_db),
               current_user: models.User = Depends(oauth2.get_current_user),
               limit: int = 10, skip: int = 0, search: str = ""):
 
-    post = db.query(models.Post, func.count(models.Vote.post_id).label("votes")).join(models.Vote, models.Vote.post_id == models.Post.id,
-                                                                                      isouter=True).group_by(models.Post.id).filter(models.Post.title.contains(search)).limit(limit).offset(skip).all()
+    post = db.query(models.Post, func.count(models.Vote.post_id).label("votes")
+                    ).join(models.Vote, models.Vote.post_id == models.Post.id, isouter=True
+                           ).group_by(models.Post.id
+                                      ).filter(models.Post.title.contains(search)
+                                               ).limit(limit).offset(skip).all()
     return post
 
 
 @router.get("/{given_id}", response_model=schemas.PostOut)
 def get_one_post(given_id: int, db: Session = Depends(get_db),
                  current_user: int = Depends(oauth2.get_current_user)):
-    post = db.query(models.Post, func.count(models.Vote.post_id).label("votes")).join(models.Vote, models.Vote.post_id == models.Post.id,
-                                                                                      isouter=True).group_by(models.Post.id).filter(models.Post.id == given_id).first()
+    post = db.query(models.Post, func.count(models.Vote.post_id).label("votes")
+                    ).join(models.Vote, models.Vote.post_id == models.Post.id, isouter=True
+                           ).group_by(models.Post.id).filter(models.Post.id == given_id).first()
     if post is None:
         raise HTTPException(404, f"id: {given_id} was not found")
     return post
