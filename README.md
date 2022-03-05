@@ -1,5 +1,6 @@
 # social_media_api.py
-back-end_learning_project: Social Media API
+
+backend_learning_project: Social Media API
 
 Live: https://social-media-api-py-shihab4t.herokuapp.com
 
