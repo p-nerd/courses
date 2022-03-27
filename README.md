@@ -25,5 +25,11 @@ Backend Engineering with Node.js (Tecognize Training)
 ## Class 02
 
 - Topics
+  - Callback
   - Promises
+  - Async/Await
   - "fs" module
+  - "axios" external package
+- Resources
+  - JavaScript Data Types: https://javascript.info/data-types
+  - The Rick and Morty API: https://rickandmortyapi.com/documentation
