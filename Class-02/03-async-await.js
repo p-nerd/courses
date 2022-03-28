@@ -15,7 +15,7 @@ const promise1 = () => {
     })
 };
 
-const promise2 = (preData) => {
+const promise2 = () => {
     return new Promise((resolve, reject) => {
         fs.readFile("./file2.txt", "utf-8", (err, data) => {
             console.log("--Reading file2.txt--");
@@ -23,7 +23,7 @@ const promise2 = (preData) => {
                 reject(err);
             }
             else {
-                resolve([data.toLowerCase().split(" "), preData]);
+                resolve(data.toLowerCase().split(" "));
             }
         })
     })
@@ -48,9 +48,9 @@ const calc = (data, preData) => {
 };
 
 const execute = async () => {
-    const data = await promise1();
-    const dataArr = await promise2(data);
-    const result = calc(dataArr[0], dataArr[1]);
+    const preData = await promise1();
+    const data = await promise2();
+    const result = calc(data, preData);
     console.log(result);
 }
 
