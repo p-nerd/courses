@@ -1,0 +1,11 @@
+{
+  "name": "backend-engineering-with-node.js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/shihab4t/Backend-Engineering-with-Node.js.git",
+  "author": "Shihab Mahamud <shihab4t@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}

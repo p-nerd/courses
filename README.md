@@ -34,7 +34,8 @@ Backend Engineering with Node.js (Tecognize Training)
   - [x] Callback
   - [x] Promises
   - [x] Async/Await
-  - "axios" external package
+  - [x] npm Package Manager
+  - [x] "axios" external package
 - Task
   - JavaScript Data Type
 - Resources
