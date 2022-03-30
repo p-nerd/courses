@@ -41,3 +41,11 @@ Backend Engineering with Node.js (Tecognize Training)
 - Resources
   - JavaScript Data Types: https://javascript.info/data-types
   - The Rick and Morty API: https://rickandmortyapi.com/documentation
+
+## Class 03
+
+- Resources
+  - Module wrapper: https://nodejs.org/api/modules.html#the-module-wrapper
+  - Determining module system: https://nodejs.org/api/packages.html#determining-module-system
+  - https://nodejs.org/api/modules.html#enabling
+  - https://nodejs.org/api/modules.html
