@@ -44,6 +44,15 @@ Backend Engineering with Node.js (Tecognize Training)
 
 ## Class 03
 
+- Topics
+  - Node Module System
+    - CommonJS
+    - ECMAScript
+- Notes
+  - every js file -> module
+  - "global" Object
+  - "module" Object
+  - "module.exports" Object
 - Resources
   - Module wrapper: https://nodejs.org/api/modules.html#the-module-wrapper
   - Determining module system: https://nodejs.org/api/packages.html#determining-module-system
