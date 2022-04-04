@@ -100,3 +100,10 @@ Backend Engineering with Node.js (Tecognize Training)
   - Determining module system: https://nodejs.org/api/packages.html#determining-module-system
   - https://nodejs.org/api/modules.html#enabling
   - https://nodejs.org/api/modules.html
+
+## Class 04
+
+- Resources
+  - HTTP response status codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+  - HTTP request methods: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+  - https://websniffer.cc/
