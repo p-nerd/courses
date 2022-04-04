@@ -48,11 +48,22 @@ Backend Engineering with Node.js (Tecognize Training)
   - Node Module System
     - CommonJS
     - ECMAScript
+  - Type of Module
+    - Built-in module
+  - "http" module
+  - Node Package Manager
 - Notes
   - every js file -> module
   - "global" Object
   - "module" Object
   - "module.exports" Object
+  - npm Commands
+    ```sh
+    npm init -y
+    ```
+  - package.json "type": "commonjs" or "module"
+  - "commonjs" -> Synchronous
+  - "module" -> Asynchronous
 - Resources
   - Module wrapper: https://nodejs.org/api/modules.html#the-module-wrapper
   - Determining module system: https://nodejs.org/api/packages.html#determining-module-system

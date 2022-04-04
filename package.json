@@ -5,6 +5,7 @@
   "repository": "https://github.com/shihab4t/Backend-Engineering-with-Node.js.git",
   "author": "Shihab Mahamud <shihab4t@gmail.com>",
   "license": "MIT",
+  "type": "commonjs",
   "dependencies": {
     "axios": "^0.26.1"
   }
