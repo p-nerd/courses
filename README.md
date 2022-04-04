@@ -52,8 +52,11 @@ Backend Engineering with Node.js (Tecognize Training)
   - Module Wrapper Function
   - Type of Module
     - Built-in module
+    - External Module
   - "http" module
-  - Node Package Manager
+  - Node Package Manager -> npm
+  - npmjs.org
+  - Major.Minor.Patch -> Semantic Versioning
 - Notes
   - every js file -> module
   - "global" Object
@@ -65,13 +68,33 @@ Backend Engineering with Node.js (Tecognize Training)
       return module.exports;
     };
     ```
-  - npm Commands
-    ```sh
-    npm init -y
-    ```
   - package.json "type": "commonjs" or "module"
   - "commonjs" -> Synchronous
   - "module" -> Asynchronous
+  - npm Commands
+    ```sh
+    npm init -y
+    npm --version  # npm -v
+    npm install axios  # npm i axios
+    npm install  # npm i
+    npm list
+    npm root
+    npm uninstall axios  # npm un axios
+    npm install moment@2.28.0
+    npm install --save-dev nodemon  # npm i -D nodemon
+    npm outdated
+    npm update
+    npm adduser
+    npm login
+    npm publish
+    npm version patch
+    npm version major
+    ```
+  - "dependencies" key in package.json
+  - '1.1.3' -> Major.Minor.Patch
+  - "devDependencies" key in package.json
+  - '^' -> Caret Sign -> Latest minor version
+  - '~' -> Tilde Sign -> Latest patch version
 - Resources
   - Module wrapper: https://nodejs.org/api/modules.html#the-module-wrapper
   - Determining module system: https://nodejs.org/api/packages.html#determining-module-system

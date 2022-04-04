@@ -13,3 +13,8 @@
   "integrity" "sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w=="
   "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.9.tgz"
   "version" "1.14.9"
+
+"hello-npm4t@^1.0.0":
+  "integrity" "sha512-B7Ok58VRuT2KVIasxgLbYC8vNsO9UwMtfD5jugpzGVj8kNLrvFZsXGKYDC63r12mTkWGT4gyKEjY1S50kNpV7w=="
+  "resolved" "https://registry.npmjs.org/hello-npm4t/-/hello-npm4t-1.0.0.tgz"
+  "version" "1.0.0"
