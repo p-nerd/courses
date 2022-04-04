@@ -48,6 +48,8 @@ Backend Engineering with Node.js (Tecognize Training)
   - Node Module System
     - CommonJS
     - ECMAScript
+  - Object Destructuring
+  - Module Wrapper Function
   - Type of Module
     - Built-in module
   - "http" module
@@ -57,6 +59,12 @@ Backend Engineering with Node.js (Tecognize Training)
   - "global" Object
   - "module" Object
   - "module.exports" Object
+  - ```js
+    (exports, require, module, __filename, __dirname) => {
+      // Module code actually lives in here
+      return module.exports;
+    };
+    ```
   - npm Commands
     ```sh
     npm init -y
