@@ -2,6 +2,8 @@
 
 Backend Engineering with Node.js (Tecognize Training)
 
+- https://github.com/shihab4t/Backend-Engineering-with-Node.js
+
 ## Class 00
 
 - Task
@@ -110,9 +112,20 @@ Backend Engineering with Node.js (Tecognize Training)
     - Response Message
     - HTTP - Hyper TExt Transfer Protocol
   - Application Programming Interface (API)
-    - Representational State Transfer (REST)
+  - Representational State Transfer (REST)
+    - Resources (Nouns)
+      - Any Information provided by REST API
+      - Uniform Resource Indicator (URI)
+    - Methods (Verbs)
+      - Actions to be Performed on resources
+    - Perform CRUD operations
+    - Representation
+      - How data is REpresented or returned to the clint
+      - JSON
 - Notes
+
   - HTTP Request Message
+
     ```http
     POST /index.html HTTP/1.1                  ----------Start Line
     Host: www.tutorialspoint.com               ------|
@@ -122,13 +135,14 @@ Backend Engineering with Node.js (Tecognize Training)
     Accept-Language: en-us                           |
     Accept-Encoding: gzip, deflate                   |
     Connection: Keep-Alive                     ------|
-
+                                               ----------Empty Line
     {                                          ------|
        "name": "Shihab Mahamud",                     |
        "age": 19                                     |---body
        "birth": 26                                   |
     }                                          ------|
     ```
+
   - HTTP Response Message
     ```http
     HTTP/1.1 201 Accepted                        ----------Start Line
@@ -144,6 +158,16 @@ Backend Engineering with Node.js (Tecognize Training)
        "msg": "created successfully"                   |---body
     }                                            ------|
     ```
+  - URI Examples
+    - http://www.something.com/book/
+    - http://www.something.com/book/4
+    - http://www.something.com/author/
+  - CRUD operations
+    - HTTP POST => CREATE
+    - HTTP GET => READ
+    - HTTP PUT => UPDATE
+    - HTTP DELETE => DELETE
+
 - Resources
   - HTTP response status codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
   - HTTP request methods: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
