@@ -103,6 +103,47 @@ Backend Engineering with Node.js (Tecognize Training)
 
 ## Class 04
 
+- Topics
+  - Client-Server Communication
+    - URL - Uniform Resource Locator
+    - Request Message
+    - Response Message
+    - HTTP - Hyper TExt Transfer Protocol
+  - Application Programming Interface (API)
+    - Representational State Transfer (REST)
+- Notes
+  - HTTP Request Message
+    ```http
+    POST /index.html HTTP/1.1                  ----------Start Line
+    Host: www.tutorialspoint.com               ------|
+    Content-Type: application/json                   |
+    sec-ch-ua-platform: "Linux"                      |
+    Content-Length: length                           |---HTTP Headers
+    Accept-Language: en-us                           |
+    Accept-Encoding: gzip, deflate                   |
+    Connection: Keep-Alive                     ------|
+
+    {                                          ------|
+       "name": "Shihab Mahamud",                     |
+       "age": 19                                     |---body
+       "birth": 26                                   |
+    }                                          ------|
+    ```
+  - HTTP Response Message
+    ```http
+    HTTP/1.1 201 Accepted                        ----------Start Line
+    Date: Mon, 27 Jul 2009 12:28:53 GMT          ------|
+    Server: Apache/2.2.14 (Win32)                      |
+    sec-ch-ua-platform: "Linux"                        |
+    Last-Modified: Wed, 22 Jul 2009 19:15:56 GMT       |---HTTP Headers
+    Content-Length: 88                                 |
+    Content-Type: application/json                     |
+    Connection: Closed                           ------|
+                                                 ----------Empty Line
+    {                                            ------|
+       "msg": "created successfully"                   |---body
+    }                                            ------|
+    ```
 - Resources
   - HTTP response status codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
   - HTTP request methods: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
