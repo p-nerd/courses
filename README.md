@@ -126,7 +126,7 @@ Backend Engineering with Node.js (Tecognize Training)
 
   - HTTP Request Message
 
-    ```http
+    ```
     POST /index.html HTTP/1.1                  ----------Start Line
     Host: www.tutorialspoint.com               ------|
     Content-Type: application/json                   |
@@ -144,7 +144,7 @@ Backend Engineering with Node.js (Tecognize Training)
     ```
 
   - HTTP Response Message
-    ```http
+    ```
     HTTP/1.1 201 Accepted                        ----------Start Line
     Date: Mon, 27 Jul 2009 12:28:53 GMT          ------|
     Server: Apache/2.2.14 (Win32)                      |
