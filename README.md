@@ -122,6 +122,8 @@ Backend Engineering with Node.js (Tecognize Training)
     - Representation
       - How data is REpresented or returned to the clint
       - JSON
+  - Node builtin "http" module
+  - Express Framework
 - Notes
 
   - HTTP Request Message
