@@ -5,19 +5,19 @@ Backend Engineering with Node.js (Tecognize Training)
 ## Class 00
 
 - Task
-  - [x] JavaScript Fundamentals
-  - [x] Http Protocol
-  - [x] API
+  - JavaScript Fundamentals
+  - Http Protocol
+  - API
 - Resources
   - JavaScript Fundamentals: https://javascript.info
 
 ## Class 01
 
 - Topics
-  - [x] JavaScript Fundamentals
+  - JavaScript Fundamentals
 - Task
-  - [x] Callback
-  - [x] Promises
+  - Callback
+  - Promises
 - Resources
   - [x] Javascript Promises and async/await Tutorial (Hussein Nasser): https://youtu.be/yTh6q-k2bEA
   - [x] JavaScript Callback: https://javascript.info/callbacks
@@ -31,11 +31,11 @@ Backend Engineering with Node.js (Tecognize Training)
 ## Class 02
 
 - Topics
-  - [x] Callback
-  - [x] Promises
-  - [x] Async/Await
-  - [x] npm Package Manager
-  - [x] "axios" external package
+  - Callback
+  - Promises
+  - Async/Await
+  - npm Package Manager
+  - "axios" external package
 - Task
   - JavaScript Data Type
 - Resources
