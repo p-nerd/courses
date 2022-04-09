@@ -7,6 +7,7 @@ const MONGODB_CONNECTION_STRING = process.env.MONGODB_CONNECTION_STRING;
 const COOKIE_SECRET = process.env.COOKIE_SECRET;
 const APP_TITLE = process.env.APP_TITLE;
 
+
 module.exports = {
     NODE_ENV,
     PORT,

@@ -1,6 +1,6 @@
 "use strict";
 const { getLogin } = require("../controllers/login");
-const decorateHTML = require("../middlewares/decorateHTML");
+const decorateHTML = require("../middlewares/common/decorateHTML");
 const loginRouter = require("express").Router();
 
 
