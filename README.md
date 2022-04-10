@@ -5,7 +5,7 @@ Real-time Chat Application
 ## Links
 
 - https://youtube.com/playlist?list=PLHiZ4m8vCp9PHnOIT7gd30PCBoYCpGoQM
-- https://www.youtube.com/watch?v=xihtoTIy-ms&list=PLHiZ4m8vCp9PHnOIT7gd30PCBoYCpGoQM&index=31
+- https://github.com/learnwithsumit/chat-application/tree/lesson-6
 
 ## Requirement Analysis
 

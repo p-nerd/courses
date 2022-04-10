@@ -1,5 +1,5 @@
 "use strict";
-const { getUsers, addUser } = require("../controllers/users");
+const { getUsers, addUser, deleteUser } = require("../controllers/users");
 const decorateHTML = require("../middlewares/common/decorateHTML");
 const avatarUpload = require("../middlewares/users/avatarUpload");
 const { addUserValidators, addUserValidationHandler } = require("../middlewares/users/userValidator");
@@ -16,6 +16,11 @@ usersRouter.route("/")
         addUserValidators,
         addUserValidationHandler,
         addUser
+    );
+
+usersRouter.route("/:id")
+    .delete(
+        deleteUser
     );
 
 

@@ -1,12 +1,13 @@
 "use strict";
 const User = require("../models/People");
 const bcrypt = require("bcrypt");
+const fs = require("fs");
+const path = require("path");
 
 
 const getUsers = async (req, res, next) => {
     try {
         const users = await User.find();
-        console.log(users);
         return res.render("users", { users: users });
     } catch (err) {
         next(err);
@@ -48,10 +49,38 @@ async function addUser(req, res, next) {
     }
 }
 
+const deleteUser = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const user = await User.findByIdAndDelete({
+            _id: id
+        });
 
+        if (user.avatar) {
+            fs.unlink(
+                path.join(__dirname, `/../public/uploads/avatars/${user.avatar}`),
+                (err) => {
+                    if (err) console.log(err);
+                }
+            );
+        }
+        res.status(200).json({
+            msg: "User was deleted successfully"
+        })
+    } catch (err) {
+        res.status(500).json({
+            errors: {
+                common: {
+                    msg: "Could not delete the user",
+                },
+            },
+        });
+    }
+}
 
 
 module.exports = {
     getUsers,
-    addUser
+    addUser,
+    deleteUser
 }
