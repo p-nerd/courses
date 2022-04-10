@@ -1,5 +1,5 @@
 "use strict";
-const { getUsers, addUser, deleteUser } = require("../controllers/users");
+const { getUsers, addUser, deleteUser } = require("../controllers/users.controller");
 const decorateHTML = require("../middlewares/common/decorateHTML");
 const avatarUpload = require("../middlewares/users/avatarUpload");
 const { addUserValidators, addUserValidationHandler } = require("../middlewares/users/userValidator");
