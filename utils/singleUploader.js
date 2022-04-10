@@ -1,3 +1,4 @@
+"use strict";
 const multer = require("multer");
 const createError = require("http-errors");
 const path = require("path");

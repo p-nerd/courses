@@ -1,3 +1,4 @@
+"use strict";
 const createError = require('http-errors');
 const { NODE_ENV } = require('./../../utils/config');
 

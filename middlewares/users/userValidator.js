@@ -1,3 +1,4 @@
+"use strict";
 const { check, validationResult } = require("express-validator");
 const createError = require("http-errors");
 const User = require("../../models/People");

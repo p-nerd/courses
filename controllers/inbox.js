@@ -1,3 +1,4 @@
+"use strict";
 const getInbox = (req, res, next) => {
     res.render("inbox")
 }

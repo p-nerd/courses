@@ -1,3 +1,4 @@
+"use strict";
 const getLogin = (req, res, next) => {
     res.render("index")
 }

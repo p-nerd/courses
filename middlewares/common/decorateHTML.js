@@ -1,3 +1,4 @@
+"use strict";
 const { APP_TITLE } = require("../../utils/config");
 
 const decorateHTML = (title) => (req, res, next) => {
