@@ -8,6 +8,9 @@ const MONGODB_CONNECTION_STRING = process.env.MONGODB_CONNECTION_STRING;
 const COOKIE_SECRET = process.env.COOKIE_SECRET;
 const APP_TITLE = process.env.APP_TITLE;
 const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS)
+const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY
+const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN
+const JWT_COOKIE_NAME = process.env.JWT_COOKIE_NAME
 
 
 module.exports = {
@@ -16,5 +19,8 @@ module.exports = {
     MONGODB_CONNECTION_STRING,
     COOKIE_SECRET,
     APP_TITLE,
-    SALT_ROUNDS
+    SALT_ROUNDS,
+    JWT_SECRET_KEY,
+    JWT_EXPIRES_IN,
+    JWT_COOKIE_NAME
 }

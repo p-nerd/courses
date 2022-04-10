@@ -1,6 +1,6 @@
 "use strict";
 const createError = require('http-errors');
-const { NODE_ENV } = require('./../../utils/config');
+const { NODE_ENV } = require('../../utils/config');
 
 const err404 = (req, res, next) => {
     next(createError(404, "Your requested content not found"))

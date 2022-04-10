@@ -1,10 +1,22 @@
 "use strict";
-const { getLogin } = require("../controllers/login.controller");
+const { getLogin, login } = require("../controllers/login.controller");
 const decorateHTML = require("../middlewares/common/decorateHTML");
+const { doLoginValidators, doLoginValidationHandler } = require("../middlewares/login/loginValidator");
 const loginRouter = require("express").Router();
 
 
-loginRouter.get("/", decorateHTML("Login"), getLogin)
+loginRouter.route("/")
+    .all(
+        decorateHTML("Login")
+    )
+    .get(
+        getLogin
+    )
+    .post(
+        doLoginValidators,
+        doLoginValidationHandler,
+        login
+    )
 
 
 module.exports = loginRouter
