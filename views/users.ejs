@@ -18,49 +18,33 @@
           </tr>
         </thead>
         <tbody id="users-table">
-          <tr id="">
-            <td class="name">
-              <img src="./images/user1.png" />
-              <span>User 1</span>
-            </td>
-            <td>email@email.com</td>
-            <td class="manage">
-              <img src="./images/trash.png" alt="Delete" />
-            </td>
-          </tr>
+          <% users.forEach(function (user) { %>
+            <tr id="<%= user._id %>">
+              <td class="name">
+                <% if (user.avatar) { %>
+                  <img src="./uploads/avatars/<%= user.avatar %>" />
+                  <% } else { %>
+                    <img src="./images/nophoto.png" alt="">
+                    <% } %>
+                      <span>
+                        <%= user.name %>
+                      </span>
+              </td>
+              <td>
+                <%= user.email %>
+              </td>
+              <td class="manage">
+                <img src="./images/trash.png" alt="Delete" />
+              </td>
+            </tr>
+            <% }); %>
         </tbody>
       </table>
     </div>
   </div>
 
-  <div class="modal-wrapper" id="add-user-modal">
-    <div class="modal">
-      <a href="#" onclick="closeModal()" class="modal-close">+</a>
-      <div class="modal-title">
-        <h2>Create New User</h2>
-      </div>
-      <div class="modal-body">
-        <form id="add-user-form">
-          <input type="text" placeholder="enter name" name="name" />
-          <p class="error show">This is error</p>
-          <input type="text" placeholder="enter email" name="email" />
-          <input type="text" placeholder="enter mobile" name="mobile" />
-          <input type="password" placeholder="enter password" name="password" />
-          <input type="file" name="avatar" />
-          <input type="submit" value="Submit" />
-        </form>
-      </div>
-    </div>
-  </div>
-  <script>
-    const modal = document.querySelector("#add-user-modal");
-    function closeModal() {
-      modal.style.display = "none";
-    }
-    function openModal() {
-      modal.style.display = "block";
-    }
-  </script>
-  </body>
+  <%- include("./common/add-user-modal.ejs") %>
 
-  </html>
+    </body>
+
+    </html>

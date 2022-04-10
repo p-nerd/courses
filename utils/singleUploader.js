@@ -1,6 +1,6 @@
 const multer = require("multer");
-const createError = require("http-error");
-
+const createError = require("http-errors");
+const path = require("path");
 
 const singleUploader = (
     subfolder_path,
@@ -16,7 +16,7 @@ const singleUploader = (
         },
         filename: (req, file, cb) => {
             const file_ext = path.extname(file.originalname);
-            const filename = file.originalname
+            let filename = file.originalname
                 .replace(file_ext, "")
                 .toLowerCase()
                 .split(" ")
