@@ -1,5 +1,5 @@
 "use strict";
-const User = require("../models/People");
+const User = require("../models/people.model");
 const bcrypt = require("bcrypt");
 const fs = require("fs");
 const path = require("path");

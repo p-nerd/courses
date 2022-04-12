@@ -9,7 +9,7 @@ const COOKIE_SECRET = process.env.COOKIE_SECRET;
 const APP_TITLE = process.env.APP_TITLE;
 const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS)
 const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY
-const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN
+const JWT_EXPIRES_IN = parseInt(process.env.JWT_EXPIRES_IN)
 const JWT_COOKIE_NAME = process.env.JWT_COOKIE_NAME
 
 

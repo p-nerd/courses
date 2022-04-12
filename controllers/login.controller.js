@@ -1,8 +1,8 @@
 "use strict";
-const User = require("../models/People");
+const User = require("../models/people.model");
 const bcrypt = require("bcrypt");
-const { generateToken } = require("../utils/jwt");
-const { JWT_COOKIE_NAME, JWT_EXPIRES_IN } = require("../utils/config");
+const { generateToken } = require("../utils/jwt.util");
+const { JWT_COOKIE_NAME, JWT_EXPIRES_IN } = require("../utils/config.util");
 const createError = require("http-errors");
 
 
@@ -27,20 +27,24 @@ const login = async (req, res, next) => {
             )
             if (isValidPassword) {
                 const userObject = {
+                    username: req.body.username,
                     name: user.name,
                     mobile: user.mobile,
                     email: user.email,
                     role: "user"
                 }
-                const token = generateToken(userObject)
+
+                const token = await generateToken(userObject)
+
                 res.cookie(JWT_COOKIE_NAME, token, {
                     maxAge: JWT_EXPIRES_IN,
                     httpOnly: true,
                     signed: true,
                 })
+
                 res.locals.loggedInUser = userObject;
 
-                res.render("inbox");
+                return res.render("inbox");
             } else {
                 throw createError("Login failed! Please try again!")
             }
@@ -48,7 +52,7 @@ const login = async (req, res, next) => {
             throw createError("Login failed! Please try again!")
         }
     } catch (err) {
-        res.render("index", {
+        return res.render("index", {
             data: {
                 username: req.body.username
             },
@@ -61,7 +65,23 @@ const login = async (req, res, next) => {
     }
 }
 
+const logout = (req, res, next) => {
+    res.clearCookie(JWT_COOKIE_NAME)
+    return res.send("logged out")
+}
+
+const redirectLoggedIn = (req, res, next) => {
+    const cookies = Object.keys(req.signedCookies).length > 0 ? req.signedCookies : null;
+    if (!cookies) {
+        return next();
+    } else {
+        return res.redirect("/inbox")
+    }
+}
+
 module.exports = {
     getLogin,
-    login
+    login,
+    logout,
+    redirectLoggedIn
 }

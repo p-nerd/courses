@@ -1,5 +1,5 @@
 "use strict";
-const singleUploader = require("../../utils/singleUploader");
+const singleUploader = require("../../utils/singleUploader.util");
 
 const avatarUpload = (req, res, next) => {
     const upload = singleUploader(

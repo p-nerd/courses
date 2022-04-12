@@ -1,6 +1,6 @@
 "use strict";
 const jsonwebtoken = require("jsonwebtoken");
-const { JWT_SECRET_KEY, JWT_EXPIRES_IN } = require("./config");
+const { JWT_SECRET_KEY, JWT_EXPIRES_IN } = require("./config.util");
 
 
 const generateToken = async payload => await jsonwebtoken.sign(

@@ -3,10 +3,10 @@ const mongoose = require('mongoose')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 
-const { err404, err000 } = require("./middlewares/common/err");
-const { PORT, MONGODB_CONNECTION_STRING, COOKIE_SECRET } = require('./utils/config');
+const { err404, err000 } = require("./middlewares/common/err.middleware");
+const { PORT, MONGODB_CONNECTION_STRING, COOKIE_SECRET } = require('./utils/config.util');
 const loginRouter = require('./routers/login.routes');
-const logger = require('./middlewares/common/logger');
+const logger = require('./middlewares/common/logger.middleware');
 const usersRouter = require('./routers/users.routes');
 const inboxRouter = require('./routers/inbox.routes');
 
