@@ -55,3 +55,4 @@ Real-time Chat Application
 - heroku login
 - heroku create app_name
 - heroku run bash -a app_name
+- git push heroku
