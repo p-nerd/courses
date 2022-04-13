@@ -49,3 +49,9 @@ Real-time Chat Application
   - sendMessage - send message to recipient
   - addConversation - add new conversation
   - deleteConversation - delete a conversation
+
+## Heroku Notes
+
+- heroku login
+- heroku create app_name
+- heroku run bash -a app_name
