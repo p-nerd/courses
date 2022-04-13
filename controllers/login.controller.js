@@ -31,7 +31,7 @@ const login = async (req, res, next) => {
                     name: user.name,
                     mobile: user.mobile,
                     email: user.email,
-                    role: "user",
+                    role: user.role || "user",
                     avatar: user.avatar
                 }
 
