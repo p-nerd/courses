@@ -15,7 +15,7 @@ const err000 = (err, req, res, next) => {
     res.status(err.status || 500);
 
     if (res.locals.html) {
-        res.render("err", { title: "Error page" });
+        res.render("error", { title: "Error page" });
     }
     else {
         res.json(res.locals.error);

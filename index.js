@@ -1,48 +1,62 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const path = require('path')
-const cookieParser = require('cookie-parser')
+// external imports
+const express = require("express");
+const http = require("http");
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const moment = require("moment");
 
 const { err404, err000 } = require("./middlewares/common/err.middleware");
-const { PORT, MONGODB_CONNECTION_STRING, COOKIE_SECRET } = require('./utils/config.util');
-const loginRouter = require('./routers/login.routes');
-const logger = require('./middlewares/common/logger.middleware');
-const usersRouter = require('./routers/users.routes');
-const inboxRouter = require('./routers/inbox.routes');
+const loginRouter = require("./routers/login.routes");
+const usersRouter = require("./routers/users.routes");
+const inboxRouter = require("./routers/inbox.routes");
+const { COOKIE_SECRET, MONGODB_CONNECTION_STRING, PORT } = require("./utils/config.util");
 
+const app = express();
+const server = http.createServer(app);
+dotenv.config();
 
-const app = express()
+// socket creation
+const io = require("socket.io")(server);
+global.io = io;
 
+// set comment as app locals
+app.locals.moment = moment;
 
+// database connection
 mongoose
     .connect(MONGODB_CONNECTION_STRING, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
-    .then(() => console.log('Connection with db successful'))
-    .catch(err => console.log('Connection with db failure\n' + err))
+    .then(() => console.log("database connection successful!"))
+    .catch((err) => console.log(err));
 
-
+// request parsers
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')));
+
+// set view engine
+app.set("view engine", "ejs");
+
+// set static folder
+app.use(express.static(path.join(__dirname, "public")));
+
+// parse cookies
 app.use(cookieParser(COOKIE_SECRET));
-app.use(logger);
 
-
-// routes
+// routing setup
 app.use("/", loginRouter);
 app.use("/users", usersRouter);
 app.use("/inbox", inboxRouter);
 
+// 404 not found handler
+app.use(err404);
 
-// err middlewares
-app.use(err404)
-app.use(err000)
+// common error handler
+app.use(err000);
 
-
-app.listen(process.env.PORT, () => {
-    console.log(`Listening on http://localhost:${PORT}`)
-})
+server.listen(PORT, () => {
+    console.log(`app listening to port ${PORT}`);
+});

@@ -31,7 +31,8 @@ const login = async (req, res, next) => {
                     name: user.name,
                     mobile: user.mobile,
                     email: user.email,
-                    role: "user"
+                    role: "user",
+                    avatar: user.avatar
                 }
 
                 const token = await generateToken(userObject)
@@ -44,7 +45,7 @@ const login = async (req, res, next) => {
 
                 res.locals.loggedInUser = userObject;
 
-                return res.render("inbox");
+                res.redirect("inbox");
             } else {
                 throw createError("Login failed! Please try again!")
             }
