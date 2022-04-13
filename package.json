@@ -6,7 +6,7 @@
     "scripts": {
         "dev-win": "nodemon ./index.js",
         "dev": "NODE_ENV=development nodemon ./index.js",
-        "prod": "NODE_ENV=production node ./index.js"
+        "start": "NODE_ENV=production node ./index.js"
     },
     "dependencies": {
         "bcrypt": "^5.0.1",

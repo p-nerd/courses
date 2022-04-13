@@ -11,7 +11,7 @@ const { err404, err000 } = require("./middlewares/common/err.middleware");
 const loginRouter = require("./routers/login.routes");
 const usersRouter = require("./routers/users.routes");
 const inboxRouter = require("./routers/inbox.routes");
-const { COOKIE_SECRET, MONGODB_CONNECTION_STRING, PORT } = require("./utils/config.util");
+const { COOKIE_SECRET, MONGODB_CONNECTION_STRING, PORT, APP_URL } = require("./utils/config.util");
 
 const app = express();
 const server = http.createServer(app);
@@ -58,5 +58,5 @@ app.use(err404);
 app.use(err000);
 
 server.listen(PORT, () => {
-    console.log(`app listening to port ${PORT}`);
+    console.log(`app listening on ${APP_URL}`);
 });

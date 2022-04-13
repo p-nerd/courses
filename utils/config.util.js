@@ -11,6 +11,7 @@ const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS)
 const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY
 const JWT_EXPIRES_IN = parseInt(process.env.JWT_EXPIRES_IN)
 const JWT_COOKIE_NAME = process.env.JWT_COOKIE_NAME
+const APP_URL = process.env.APP_URL
 
 
 module.exports = {
@@ -22,5 +23,6 @@ module.exports = {
     SALT_ROUNDS,
     JWT_SECRET_KEY,
     JWT_EXPIRES_IN,
-    JWT_COOKIE_NAME
+    JWT_COOKIE_NAME,
+    APP_URL
 }
