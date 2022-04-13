@@ -56,3 +56,4 @@ Real-time Chat Application
 - heroku create app_name
 - heroku run bash -a app_name
 - git push heroku
+- heroku config:set APP_TITLE='Real-time Chat Application'
