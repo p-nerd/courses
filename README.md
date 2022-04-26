@@ -17,3 +17,6 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 - How to use Codeforces blog: https://codeforces.com/blog/entry/99660
 - What is the key to CP? blog: https://codeforces.com/blog/entry/47516
 - Competitive Programmer’s Handbook book: https://cses.fi/book/book.pdf
+- Contest 01: https://codeforces.com/group/MWSDmqGsZm/contest/219158
+- Contest 02: https://codeforces.com/group/MWSDmqGsZm/contest/219432
+- Contest 03: https://vjudge.net/contest/468964
