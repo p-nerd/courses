@@ -11,15 +11,9 @@ int main()
     int n;
     cin >> n;
 
-    int mx = INT_MIN, tmp;
-
-    for (int i = 0; i < n; i++)
-    {
-        cin >> tmp;
-        mx = max(mx, tmp);
+    for (int i = 1; i <= 12; i++) {
+        cout << n << " * " << i << " = " << i * n << endn;
     }
-
-    cout << mx << endn;
 
     return 0;
 }
