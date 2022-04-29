@@ -24,3 +24,4 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - [x] Contest 02: https://codeforces.com/group/MWSDmqGsZm/contest/219432
   - [x] Contest 03: https://vjudge.net/contest/468964
   - Logarithm rules: https://www.chilimath.com/lessons/advanced-algebra/logarithm-rules/
+- Solved Count: 70/70
