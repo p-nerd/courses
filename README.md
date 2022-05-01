@@ -27,3 +27,15 @@ Joined on: Apr 24, 2022
   - [x] Contest 03: https://vjudge.net/contest/468964
   - Logarithm rules: https://www.chilimath.com/lessons/advanced-algebra/logarithm-rules/
 - Solved Count: 70/70
+
+## 02. Warm-up
+
+- Notes
+  - `int` capacity: `-2 * 10^9` to `2 * 10^9`
+  - `long long int` capacity: `-9 * 10^18` to `9 * 10^18`
+- Links
+  - Header files in C/C++ and its uses: https://www.geeksforgeeks.org/header-files-in-c-cpp-and-its-uses/
+  - What does 'using namespace std' mean in C++?: https://www.quora.com/What-does-using-namespace-std-mean-in-C++
+  - Floor, Ceil, Round and Setprecision: https://www.geeksforgeeks.org/precision-of-floating-point-numbers-in-c-floor-ceil-trunc-round-and-setprecision/
+  - Double and Precision Issues: https://codeforces.com/blog/entry/
+  - ++n vs n++: https://www.quora.com/What-is-the-difference-between-n-and-n-
