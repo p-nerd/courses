@@ -5,6 +5,8 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 - Links
   - https://academy.shahjalalshohag.com/course/a-complete-guideline-to-competitive-programming-phase-1
 
+Joined on: Apr 24, 2022
+
 ## 00 How to Take this Course
 
 - Major online contests
