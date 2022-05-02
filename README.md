@@ -33,9 +33,14 @@ Joined on: Apr 24, 2022
 - Notes
   - `int` capacity: `-2 * 10^9` to `2 * 10^9`
   - `long long int` capacity: `-9 * 10^18` to `9 * 10^18`
+  - `10^8` operation -> `1second`
+  - `10^10` operation -> `10^10/10^8` or `100seconds`
 - Links
   - Header files in C/C++ and its uses: https://www.geeksforgeeks.org/header-files-in-c-cpp-and-its-uses/
   - What does 'using namespace std' mean in C++?: https://www.quora.com/What-does-using-namespace-std-mean-in-C++
   - Floor, Ceil, Round and Setprecision: https://www.geeksforgeeks.org/precision-of-floating-point-numbers-in-c-floor-ceil-trunc-round-and-setprecision/
   - Double and Precision Issues: https://codeforces.com/blog/entry/
   - ++n vs n++: https://www.quora.com/What-is-the-difference-between-n-and-n-
+  - Time Complexity 1: https://www.mygreatlearning.com/blog/why-is-time-complexity-essential/
+  - Time Complexity 2: https://www.geeksforgeeks.org/understanding-time-complexity-simple-examples/
+  - Time Complexity 3: https://codeforces.com/blog/entry/21344?f0a28=1
