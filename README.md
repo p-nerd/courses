@@ -35,6 +35,8 @@ Joined on: Apr 24, 2022
   - `long long int` capacity: `-9 * 10^18` to `9 * 10^18`
   - `10^8` operation -> `1second`
   - `10^10` operation -> `10^10/10^8` or `100seconds`
+  - `n << k` -> `n * 2^k`
+  - `n >> k` -> `n / 2^k`
 - Links
   - Header files in C/C++ and its uses: https://www.geeksforgeeks.org/header-files-in-c-cpp-and-its-uses/
   - What does 'using namespace std' mean in C++?: https://www.quora.com/What-does-using-namespace-std-mean-in-C++
