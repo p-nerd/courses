@@ -49,7 +49,6 @@ Joined on: Apr 24, 2022
   - Time Complexity 2: https://www.geeksforgeeks.org/understanding-time-complexity-simple-examples/
   - Time Complexity 3: https://codeforces.com/blog/entry/21344?f0a28=1
   - [x] Bitwise operations (bit masking): https://codeforces.com/blog/entry/73490
-- Problems
-  - Bit masking
-    - https://codeforces.com/problemset/problem/1097/B
-    - https://codeforces.com/problemset/problem/550/B
+- Problems: Bit masking
+  - [x] https://codeforces.com/problemset/problem/1097/B
+  - [x] https://codeforces.com/problemset/problem/550/B
