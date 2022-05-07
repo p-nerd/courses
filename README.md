@@ -30,6 +30,8 @@ Joined on: Apr 24, 2022
 
 ## 02. Warm-up
 
+- Topics
+  - [x] Bit Masking
 - Notes
   - `int` capacity: `-2 * 10^9` to `2 * 10^9`
   - `long long int` capacity: `-9 * 10^18` to `9 * 10^18`
