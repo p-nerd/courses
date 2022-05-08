@@ -32,6 +32,7 @@ Joined on: Apr 24, 2022
 
 - Topics
   - [x] Bit Masking
+  - [x] 2's Complement
 - Notes
   - `int` capacity: `-2 * 10^9` to `2 * 10^9`
   - `long long int` capacity: `-9 * 10^18` to `9 * 10^18`
@@ -39,6 +40,7 @@ Joined on: Apr 24, 2022
   - `10^10` operation -> `10^10/10^8` or `100seconds`
   - `n << k` -> `n * 2^k`
   - `n >> k` -> `n / 2^k`
+  - 2'complement of `~N` = `-((~(~N))+1)` = `-(N+1)`
 - Links
   - Header files in C/C++ and its uses: https://www.geeksforgeeks.org/header-files-in-c-cpp-and-its-uses/
   - What does 'using namespace std' mean in C++?: https://www.quora.com/What-does-using-namespace-std-mean-in-C++
@@ -49,6 +51,10 @@ Joined on: Apr 24, 2022
   - Time Complexity 2: https://www.geeksforgeeks.org/understanding-time-complexity-simple-examples/
   - Time Complexity 3: https://codeforces.com/blog/entry/21344?f0a28=1
   - [x] Bitwise operations (bit masking): https://codeforces.com/blog/entry/73490
+  - [x] Bitwise Operators in C/C++ : https://www.geeksforgeeks.org/bitwise-operators-in-c-cpp/
+  - [x] Bitwise Operators in C Programming: https://www.programiz.com/c-programming/bitwise-operators
+  - [x] https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301
+  - [x] https://www.hackerearth.com/practice/basic-programming/bit-manipulation/basics-of-bit-manipulation/tutorial/
 - Problems: Bit masking
   - [x] https://codeforces.com/problemset/problem/1097/B
   - [x] https://codeforces.com/problemset/problem/550/B
