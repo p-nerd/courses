@@ -33,6 +33,7 @@ Joined on: Apr 24, 2022
 - Topics
   - [x] Bit Masking
   - [x] 2's Complement
+  - [x] Subarrays, Subsequences and Substrings 
 - Notes
   - `int` capacity: `-2 * 10^9` to `2 * 10^9`
   - `long long int` capacity: `-9 * 10^18` to `9 * 10^18`
@@ -41,6 +42,7 @@ Joined on: Apr 24, 2022
   - `n << k` -> `n * 2^k`
   - `n >> k` -> `n / 2^k`
   - 2'complement of `~N` = `-((~(~N))+1)` = `-(N+1)`
+  - positive integers: `>= 1` and non-negative integers: `>=0`
 - Links
   - Header files in C/C++ and its uses: https://www.geeksforgeeks.org/header-files-in-c-cpp-and-its-uses/
   - What does 'using namespace std' mean in C++?: https://www.quora.com/What-does-using-namespace-std-mean-in-C++
@@ -55,6 +57,12 @@ Joined on: Apr 24, 2022
   - [x] Bitwise Operators in C Programming: https://www.programiz.com/c-programming/bitwise-operators
   - [x] https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301
   - [x] https://www.hackerearth.com/practice/basic-programming/bit-manipulation/basics-of-bit-manipulation/tutorial/
+  - Arrays, Subarrays and Subsequences 1: https://www.geeksforgeeks.org/arrays-in-c-cpp/
+  - Arrays, Subarrays and Subsequences 2: https://www.techiedelight.com/difference-between-subarray-subsequence-subset/
+  - Arrays, Subarrays and Subsequences 3: https://www.geeksforgeeks.org/subarraysubstring-vs-subsequence-and-programs-to-generate-them/
+  - Strings, Substrings and Subsequences 1: https://www.javatpoint.com/cpp-strings
+  - Strings, Substrings and Subsequences 2: https://www.geeksforgeeks.org/stdstring-class-in-c/
+  - Strings, Substrings and Subsequences 3: https://www.geeksforgeeks.org/subarraysubstring-vs-subsequence-and-programs-to-generate-them/
 - Problems: Bit masking
   - [x] https://codeforces.com/problemset/problem/1097/B
   - [x] https://codeforces.com/problemset/problem/550/B
