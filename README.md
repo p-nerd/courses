@@ -66,7 +66,6 @@ Joined on: Apr 24, 2022
 -   Problems: Bit masking
     -   [x] https://codeforces.com/problemset/problem/1097/B
     -   [x] https://codeforces.com/problemset/problem/550/B
--   Contests
-    -   contest 01: Warm-up
-        -   https://vjudge.net/contest/469318
-        -   18/18
+-   Contest 01: Warm-up
+    -   https://vjudge.net/contest/469318
+    -   18/18
