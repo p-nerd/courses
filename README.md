@@ -43,7 +43,7 @@ Joined on: Apr 24, 2022
     -   `n >> k` -> `n / 2^k`
     -   2'complement of `~N` = `-((~(~N))+1)` = `-(N+1)`
     -   positive integers: `>= 1` and non-negative integers: `>=0`
--   Links
+-   Reading Materials
     -   Header files in C/C++ and its uses: https://www.geeksforgeeks.org/header-files-in-c-cpp-and-its-uses/
     -   What does 'using namespace std' mean in C++?: https://www.quora.com/What-does-using-namespace-std-mean-in-C++
     -   Floor, Ceil, Round and Setprecision: https://www.geeksforgeeks.org/precision-of-floating-point-numbers-in-c-floor-ceil-trunc-round-and-setprecision/
