@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
 const teacherSchema = Schema({
     first_name: { type: String, required: true },
@@ -9,13 +9,13 @@ const teacherSchema = Schema({
         type: Array,
         of: String,
         validate: {
-            validator: value => value.length > 0,
+            validator: (value) => value.length > 0,
             message: "There must be at least 1 Subject!",
-        }
-    }
+        },
+    },
 });
 
-const Teacher = model('Teacher', teacherSchema);
+const Teacher = model("Teacher", teacherSchema);
 
 module.exports = Teacher;
 

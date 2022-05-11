@@ -4,16 +4,13 @@ const {
     createTeacher,
     getIndividualTeacher,
     updateTeacher,
-    deleteTeacher
+    deleteTeacher,
 } = require("../controllers/teacher.controller");
 
+teacherRouter.route("/").get(getTeachers).post(createTeacher);
 
-teacherRouter.route("/")
-    .get(getTeachers)
-    .post(createTeacher);
-
-
-teacherRouter.route("/:id")
+teacherRouter
+    .route("/:id")
     .get(getIndividualTeacher)
     .patch(updateTeacher)
     .delete(deleteTeacher);

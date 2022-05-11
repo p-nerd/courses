@@ -1,25 +1,25 @@
-const studentRouter = require('express').Router();
+const studentRouter = require("express").Router();
 const {
     getStudents,
     getStudentDetails,
     createStudent,
     updateStudent,
-    deleteStudent
-} = require('../controllers/student.controller');
+    deleteStudent,
+} = require("../controllers/student.controller");
+const { authenticate } = require("../middlewares/auth.middleware");
 
 studentRouter.use((req, res, next) => {
     console.log("I am from student router!");
     next();
 });
 
-studentRouter.route('/')
-    .get(getStudents)
-    .post(createStudent)
+studentRouter.route("/").get(authenticate, getStudents).post(createStudent);
 
-studentRouter.route('/:id')
+studentRouter
+    .route("/:id")
     .get(getStudentDetails)
     .patch(updateStudent)
     .put(updateStudent)
-    .delete(deleteStudent)
+    .delete(deleteStudent);
 
 module.exports = studentRouter;
