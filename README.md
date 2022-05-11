@@ -97,6 +97,8 @@ Backend Engineering with Node.js (Tecognize Training)
   - "devDependencies" key in package.json
   - '^' -> Caret Sign -> Latest minor version
   - '~' -> Tilde Sign -> Latest patch version
+  - '^1.1.3' -> '1.x'
+  - '~1.1.3' -> '1.1.x'
 - Resources
   - Module wrapper: https://nodejs.org/api/modules.html#the-module-wrapper
   - Determining module system: https://nodejs.org/api/packages.html#determining-module-system
