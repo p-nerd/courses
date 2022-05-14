@@ -69,5 +69,8 @@ Joined on: Apr 24, 2022
 -   Contest 01: Warm-up
     -   https://vjudge.net/contest/469318
     -   18/18
--   Contest 02: Assiut University Training - Newcomers
+-   Contest 02: Arrays
     -   https://codeforces.com/group/MWSDmqGsZm/contest/219774
+    -   24/26
+-   Contest 03: Strings
+    -   https://codeforces.com/group/MWSDmqGsZm/contest/219856
