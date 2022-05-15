@@ -74,3 +74,5 @@ Joined on: Apr 24, 2022
     -   24/26
 -   Contest 03: Strings
     -   https://codeforces.com/group/MWSDmqGsZm/contest/219856
+    -   12/26
+-   Total Solve: 54/70
