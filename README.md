@@ -71,8 +71,8 @@ Joined on: Apr 24, 2022
     -   18/18
 -   Contest 02: Arrays
     -   https://codeforces.com/group/MWSDmqGsZm/contest/219774
-    -   24/26
+    -   26/26
 -   Contest 03: Strings
     -   https://codeforces.com/group/MWSDmqGsZm/contest/219856
-    -   16/26
--   Total Solve: 58/70
+    -   21/26
+-   Total Solve: 65/70
