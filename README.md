@@ -76,3 +76,8 @@ Joined on: Apr 24, 2022
     -   https://codeforces.com/group/MWSDmqGsZm/contest/219856
     -   21/26
 -   [x] Total Solve: 65/70
+
+## 03. More Warm-up
+
+-   Notes
+    - `log6(x) = log_e(x) / log_e(6)`
