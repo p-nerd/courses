@@ -63,16 +63,16 @@ Joined on: Apr 24, 2022
     -   Strings, Substrings and Subsequences 1: https://www.javatpoint.com/cpp-strings
     -   Strings, Substrings and Subsequences 2: https://www.geeksforgeeks.org/stdstring-class-in-c/
     -   Strings, Substrings and Subsequences 3: https://www.geeksforgeeks.org/subarraysubstring-vs-subsequence-and-programs-to-generate-them/
--   Problems: Bit masking
+-   [x] Problems: Bit masking
     -   [x] https://codeforces.com/problemset/problem/1097/B
     -   [x] https://codeforces.com/problemset/problem/550/B
--   Contest 01: Warm-up
+-   [x] Contest 01: Warm-up
     -   https://vjudge.net/contest/469318
     -   18/18
--   Contest 02: Arrays
+-   [x] Contest 02: Arrays
     -   https://codeforces.com/group/MWSDmqGsZm/contest/219774
     -   26/26
 -   Contest 03: Strings
     -   https://codeforces.com/group/MWSDmqGsZm/contest/219856
     -   21/26
--   Total Solve: 65/70
+-   [x] Total Solve: 65/70
