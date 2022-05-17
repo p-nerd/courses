@@ -28,5 +28,28 @@ int main()
 
     cerr << "This is error\n";
 
+    int a2[10];
+    memset(a2, -1, sizeof a); // -1, 0, 1 or any character
+    for (int i = 0; i < 10; i++)
+    {
+        cout << a2[i] << " ";
+    }
+    cout << "\n";
+
+    int b2[10];
+    fill(b2, b2 + 10, 23);
+    for (int i = 0; i < 10; i++)
+    {
+        cout << b2[i] << " ";
+    }
+    cout << "\n";
+
+    // isalpha()
+    // isdigit()
+    // islower()
+    // isupper()
+    // tolower()
+    // toupper()
+
     return 0;
 }
