@@ -1,8 +1,8 @@
-# social_media_api.py
+# social-media-api.dump
 
-backend_learning_project: Social Media API
+This repo is following freeCodeCamp.org's Python API Development Course
 
-Live: https://social-media-api-py-shihab4t.herokuapp.com
+Docs: [https://social-media-api-py-shihab4t.herokuapp.com](https://social-media-api-py-shihab4t.herokuapp.com/docs)
 
 From this video: https://youtu.be/0sOvCWFmrtA
 
