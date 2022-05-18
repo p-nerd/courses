@@ -6,14 +6,16 @@ const {
     updateStudent,
     deleteStudent,
 } = require("../controllers/student.controller");
-const { authenticate } = require("../middlewares/auth.middleware");
+const authenticate = require("./../middlewares/authenticate");
 
 studentRouter.use((req, res, next) => {
     console.log("I am from student router!");
     next();
 });
 
-studentRouter.route("/").get(authenticate, getStudents).post(createStudent);
+studentRouter.route("/")
+    .get([authenticate], getStudents)
+    .post(createStudent);
 
 studentRouter
     .route("/:id")

@@ -6,10 +6,8 @@ const studentRouter = require("./routes/student.routes");
 const teacherRouter = require("./routes/teacher.routes");
 const userRouter = require("./routes/user.routes");
 const { MONGODB_URI, NODE_ENV } = require("./utils/config.util");
-const {
-    notFoundHandler,
-    errorHandler,
-} = require("./middlewares/error.middleware");
+const notFoundHandler = require("./middlewares/notFoundHandler");
+const errorHandler = require("./middlewares/errorHandler");
 
 const app = express();
 

@@ -1,9 +1,9 @@
 const User = require("../models/user.model");
 const crypto = require("../utils/crypto.util");
 const jwt = require("../utils/jwt.util");
-const { errResponse } = require("../utils/error.util");
+const { InternalServerError } = require("../utils/error.util");
 
-const createUser = async (req, res) => {
+const createUser = async (req, res, next) => {
     try {
         const body = req.body;
         body.password = await crypto.hash(body.password);
@@ -20,11 +20,11 @@ const createUser = async (req, res) => {
 
         res.status(201).json({ token });
     } catch (err) {
-        return errResponse(res, err);
+        return next(new InternalServerError(err.message));
     }
 };
 
-const loginUser = async (req, res) => {
+const loginUser = async (req, res, next) => {
     try {
         const body = req.body;
 
@@ -43,7 +43,7 @@ const loginUser = async (req, res) => {
 
         res.status(200).json({ msg: "user logged in successfully", token });
     } catch (err) {
-        return errResponse(res, err);
+        return next(new InternalServerError(err.message));
     }
 };
 

@@ -1,11 +1,3 @@
-const errResponse = (res, err) => {
-    const status = err.status || 500;
-    const message = err.message || err.message;
-    return res.status(status).json({
-        message,
-    });
-};
-
 class GeneralError extends Error {
     constructor(message) {
         super();
@@ -39,10 +31,18 @@ class UnauthorizedError extends GeneralError {
     }
 }
 
+class InternalServerError extends GeneralError {
+    constructor(message) {
+        super(message);
+        this.name = "Internal Server Error";
+        this.status = 500;
+    }
+}
+
 module.exports = {
     GeneralError,
     BadRequestError,
     NotFoundError,
     UnauthorizedError,
-    errResponse,
+    InternalServerError
 };

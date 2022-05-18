@@ -7,7 +7,9 @@ const {
     deleteTeacher,
 } = require("../controllers/teacher.controller");
 
-teacherRouter.route("/").get(getTeachers).post(createTeacher);
+teacherRouter.route("/")
+    .get(getTeachers)
+    .post(createTeacher);
 
 teacherRouter
     .route("/:id")
