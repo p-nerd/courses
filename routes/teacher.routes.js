@@ -6,15 +6,17 @@ const {
     updateTeacher,
     deleteTeacher,
 } = require("../controllers/teacher.controller");
+const admin = require("../middlewares/admin");
+const authenticate = require("../middlewares/authenticate");
 
 teacherRouter.route("/")
     .get(getTeachers)
-    .post(createTeacher);
+    .post([authenticate], createTeacher);
 
 teacherRouter
     .route("/:id")
     .get(getIndividualTeacher)
-    .patch(updateTeacher)
-    .delete(deleteTeacher);
+    .patch([authenticate], updateTeacher)
+    .delete([authenticate, admin], deleteTeacher);
 
 module.exports = teacherRouter;

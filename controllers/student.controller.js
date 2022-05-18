@@ -10,7 +10,7 @@ const getStudents = async (req, res) => {
     }
 };
 
-const createStudent = async (req, res) => {
+const createStudent = async (req, res, next) => {
     try {
         const student = new Student(req.body);
         const result = await student.save();

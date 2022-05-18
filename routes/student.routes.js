@@ -6,6 +6,7 @@ const {
     updateStudent,
     deleteStudent,
 } = require("../controllers/student.controller");
+const admin = require("../middlewares/admin");
 const authenticate = require("./../middlewares/authenticate");
 
 studentRouter.use((req, res, next) => {
@@ -14,14 +15,14 @@ studentRouter.use((req, res, next) => {
 });
 
 studentRouter.route("/")
-    .get([authenticate], getStudents)
-    .post(createStudent);
+    .get(getStudents)
+    .post([authenticate], createStudent);
 
 studentRouter
     .route("/:id")
     .get(getStudentDetails)
-    .patch(updateStudent)
-    .put(updateStudent)
-    .delete(deleteStudent);
+    .patch([authenticate], updateStudent)
+    .put([authenticate], updateStudent)
+    .delete([authenticate, admin], deleteStudent);
 
 module.exports = studentRouter;
