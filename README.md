@@ -18,15 +18,21 @@ Joined on: Apr 24, 2022
 
 -   Notes
     -   log(a^b) = b log(a)
--   Links
+-   Reading Materials
     -   How to use Codeforces blog: https://codeforces.com/blog/entry/99660
     -   What is the key to CP? blog: https://codeforces.com/blog/entry/47516
     -   Competitive Programmer’s Handbook book: https://cses.fi/book/book.pdf
-    -   [x] Contest 01: https://codeforces.com/group/MWSDmqGsZm/contest/219158
-    -   [x] Contest 02: https://codeforces.com/group/MWSDmqGsZm/contest/219432
-    -   [x] Contest 03: https://vjudge.net/contest/468964
     -   Logarithm rules: https://www.chilimath.com/lessons/advanced-algebra/logarithm-rules/
--   Solved Count: 70/70
+-   [x] Contest 01: Data type - Conditions
+    - https://codeforces.com/group/MWSDmqGsZm/contest/219158
+    - 26/26
+-   [x] Contest 02: Loops
+    - https://codeforces.com/group/MWSDmqGsZm/contest/219432
+    - 26/26
+-   [x] Contest 03: Introduction to CP
+    - https://vjudge.net/contest/468964
+    - 18/18
+-   [x] Total Solve: 70/70
 
 ## 02. Warm-up
 
@@ -107,3 +113,11 @@ Joined on: Apr 24, 2022
     - Prefix Sum 01: https://usaco.guide/silver/prefix-sums?lang=cpp
     - Prefix Sum 02: https://codeforces.com/blog/entry/59915
     - [x] The XOR Trick: https://florian.github.io/xor-trick
+    - Function: https://www.programiz.com/cpp-programming/function
+    - Recursion 01: https://www.geeksforgeeks.org/recursion/
+    - Recursion 02: http://zobayer.blogspot.com/2009/12/cse-102-attacking-recursion.html
+    - Recursion 03: http://zobayer.blogspot.com/2009/12/cse-102-practice-recursions.html
+    - How Codeforces Contests Work: https://codeforces.com/blog/entry/456
+    - Codeforces: Problem Difficulties: https://codeforces.com/blog/entry/62865
+-   [x] Contest 01: Functions
+    -  https://codeforces.com/group/MWSDmqGsZm/contest/223205
