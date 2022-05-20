@@ -29,8 +29,6 @@ func main() {
 
 	io.Write("%d %d\n", mn, mx)
 
-
-
 	// var t int
 	// io.Read(&t)
 	// for i := 1; i <= t; i++ {

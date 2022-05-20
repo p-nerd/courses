@@ -120,4 +120,5 @@ Joined on: Apr 24, 2022
     - How Codeforces Contests Work: https://codeforces.com/blog/entry/456
     - Codeforces: Problem Difficulties: https://codeforces.com/blog/entry/62865
 -   [x] Contest 01: Functions
-    -  https://codeforces.com/group/MWSDmqGsZm/contest/223205
+    -    https://codeforces.com/group/MWSDmqGsZm/contest/223205
+    -    13/15
