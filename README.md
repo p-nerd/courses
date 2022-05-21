@@ -121,4 +121,6 @@ Joined on: Apr 24, 2022
     - Codeforces: Problem Difficulties: https://codeforces.com/blog/entry/62865
 -   [x] Contest 01: Functions
     -    https://codeforces.com/group/MWSDmqGsZm/contest/223205
-    -    13/15
+    -    14/15
+-   Contest 02: Recursion
+    -    https://codeforces.com/group/MWSDmqGsZm/contest/223339
