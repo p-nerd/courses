@@ -119,9 +119,9 @@ Joined on: Apr 24, 2022
   - Recursion 03: http://zobayer.blogspot.com/2009/12/cse-102-practice-recursions.html
   - How Codeforces Contests Work: https://codeforces.com/blog/entry/456
   - Codeforces: Problem Difficulties: https://codeforces.com/blog/entry/62865
-- Contest 01: Functions
+- [x] Contest 01: Functions
   - https://codeforces.com/group/MWSDmqGsZm/contest/223205
-  - 14/15
+  - 15/15
 - Contest 02: Recursion
   - https://codeforces.com/group/MWSDmqGsZm/contest/223339
   - 23/26
