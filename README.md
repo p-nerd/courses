@@ -125,6 +125,13 @@ Joined on: Apr 24, 2022
 - Contest 02: Recursion
   - https://codeforces.com/group/MWSDmqGsZm/contest/223339
   - 23/26
-- Contest 03:
+- Contest 03: More Warm-up
+  - https://vjudge.net/contest/470109
   - 10/16
 - Total Solve: 47/57
+
+## 4. Saviors
+
+- Notes
+- Reading Materials
+  - Type Inference in C++ (auto and decltype): https://www.geeksforgeeks.org/type-inference-in-c-auto-and-decltype/
