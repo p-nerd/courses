@@ -10,7 +10,7 @@ class GeneralError extends Error {
 class BadRequestError extends GeneralError {
     constructor(message) {
         super(message);
-        this.name = "BadRequest";
+        this.name = "Bad Request";
         this.status = 400;
     }
 }

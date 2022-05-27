@@ -1,5 +1,9 @@
 const Student = require("../models/student.model");
-const { InternalServerError } = require("../utils/error.util");
+const { InternalServerError, BadRequestError } = require("../utils/error.util");
+const _ = require("lodash");
+const validate = require("./../middlewares/validate");
+const updateStudentSchema = require("../schemas/update.student.schema");
+const createStudentSchema = require("../schemas/create.student.schema");
 
 const getStudents = async (req, res) => {
     try {
@@ -55,10 +59,32 @@ const deleteStudent = async (req, res) => {
     }
 };
 
+const studentCreateValidate = (req, res, next) => {
+    const payload = _.pick(req.body, ["name", "age", "hobbies"]);
+    try {
+        req.body = validate(createStudentSchema, payload);
+        return next();
+    } catch (err) {
+        return next(new BadRequestError(err.message));
+    }
+}
+
+const studentUpdateValidate = (req, res, next) => {
+    const payload = _.pick(req.body, ["name", "age", "hobbies"]);
+    try {
+        req.body = validate(updateStudentSchema, payload);
+        return next();
+    } catch (err) {
+        return next(new BadRequestError(err.message));
+    }
+}
+
 module.exports = {
     getStudents,
     getStudentDetails,
     createStudent,
     updateStudent,
     deleteStudent,
+    studentCreateValidate,
+    studentUpdateValidate
 };
