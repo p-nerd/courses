@@ -4,6 +4,7 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 
 - Links
   - https://academy.shahjalalshohag.com/course/a-complete-guideline-to-competitive-programming-phase-1
+  - https://academy.shahjalalshohag.com
 
 Joined on: Apr 24, 2022
 
@@ -132,8 +133,10 @@ Joined on: Apr 24, 2022
 
 ## 4. Saviors
 
+- Link: https://youtu.be/fnZcWmX3sKg
 - Topics
-  - auto, pair, tuple
+  - auto, pair, tuple, pointer
+  - vector, iterator
 - Notes
   - `typeid` operator in c++
 - Reading Materials
