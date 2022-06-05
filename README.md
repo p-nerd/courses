@@ -132,6 +132,12 @@ Joined on: Apr 24, 2022
 
 ## 4. Saviors
 
+- Topics
+  - auto, pair, tuple
 - Notes
+  - `typeid` operator in c++
 - Reading Materials
   - Type Inference in C++ (auto and decltype): https://www.geeksforgeeks.org/type-inference-in-c-auto-and-decltype/
+  - std::pair::pair: https://www.cplusplus.com/reference/utility/pair/pair
+  - std::tuple: https://www.cplusplus.com/reference/tuple/tuple/
+  - Structures in C++: https://www.geeksforgeeks.org/structures-in-cpp/
