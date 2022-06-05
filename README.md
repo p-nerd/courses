@@ -124,11 +124,11 @@ Joined on: Apr 24, 2022
   - 15/15
 - Contest 02: Recursion
   - https://codeforces.com/group/MWSDmqGsZm/contest/223339
-  - 23/26
+  - 24/26
 - Contest 03: More Warm-up
   - https://vjudge.net/contest/470109
-  - 10/16
-- Total Solve: 47/57
+  - 12/16
+- [x] Total Solve: 51/57
 
 ## 4. Saviors
 
