@@ -164,4 +164,7 @@ Joined on: Apr 24, 2022
   - std::unordered_map: https://www.cplusplus.com/reference/unordered_map/unordered_map/
   - Blowing up unordered_map, and how to stop getting hacked on it: https://codeforces.com/blog/entry/62393?f0a28=1
 - Problems:
-  - CodeForces: 1614A. Divan and a Store: https://codeforces.com/contest/1614/problem/A
+  - [x] CodeForces: 1614A. Divan and a Store: https://codeforces.com/contest/1614/problem/A
+- Contest 01: Introduction to CP
+  - https://vjudge.net/contest/470780
+  - 05/26
