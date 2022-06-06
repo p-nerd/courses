@@ -131,12 +131,16 @@ Joined on: Apr 24, 2022
   - 12/16
 - [x] Total Solve: 51/57
 
-## 4. Saviors
+## 04. Saviors
 
 - Link: https://youtu.be/fnZcWmX3sKg
 - Topics
-  - auto, pair, tuple, pointer
-  - vector, iterator
+  - auto, pair, tuple,
+  - pointer, vector, iterator, list
+  - stack, queue, deque, priority_queue
+  - set, unordered_set, multiset
+  - map, unordered_map
+  - stringstream
 - Notes
   - `typeid` operator in c++
 - Reading Materials
@@ -144,3 +148,18 @@ Joined on: Apr 24, 2022
   - std::pair::pair: https://www.cplusplus.com/reference/utility/pair/pair
   - std::tuple: https://www.cplusplus.com/reference/tuple/tuple/
   - Structures in C++: https://www.geeksforgeeks.org/structures-in-cpp/
+  - Pointers in C/C++ with Examples: https://www.geeksforgeeks.org/pointers-c-examples/
+  - std::string: https://www.cplusplus.com/reference/string/string/
+  - Multidimensional Arrays in C / C++: https://www.geeksforgeeks.org/multidimensional-arrays-c-cpp/
+  - std::vector: https://www.cplusplus.com/reference/vector/vector/
+  - std::list: https://www.cplusplus.com/reference/list/list/
+  - std::stack: https://www.cplusplus.com/reference/stack/stack/
+  - std::queue: https://www.cplusplus.com/reference/queue/queue/
+  - std::deque: https://www.cplusplus.com/reference/deque/deque/
+  - std::priority_queue: https://www.cplusplus.com/reference/queue/priority_queue/
+  - std::set: https://www.cplusplus.com/reference/set/set/
+  - std::unordered_set: https://www.cplusplus.com/reference/unordered_set/unordered_set/
+  - std::multiset: https://www.cplusplus.com/reference/set/multiset/
+  - std::map: https://www.cplusplus.com/reference/map/map/
+  - std::unordered_map: https://www.cplusplus.com/reference/unordered_map/unordered_map/
+  - Blowing up unordered_map, and how to stop getting hacked on it: https://codeforces.com/blog/entry/62393?f0a28=1
