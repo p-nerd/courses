@@ -167,4 +167,4 @@ Joined on: Apr 24, 2022
   - [x] CodeForces: 1614A. Divan and a Store: https://codeforces.com/contest/1614/problem/A
 - Contest 01: Introduction to CP
   - https://vjudge.net/contest/470780
-  - 05/26
+  - 07/26
