@@ -141,6 +141,7 @@ Joined on: Apr 24, 2022
   - set, unordered_set, multiset
   - map, unordered_map
   - stringstream
+  - Sliding Window
 - Notes
   - `typeid` operator in c++
 - Reading Materials
@@ -167,4 +168,4 @@ Joined on: Apr 24, 2022
   - [x] CodeForces: 1614A. Divan and a Store: https://codeforces.com/contest/1614/problem/A
 - Contest 01: Introduction to CP
   - https://vjudge.net/contest/470780
-  - 07/26
+  - 11/26
