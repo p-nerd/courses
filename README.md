@@ -170,7 +170,7 @@ Joined on: Apr 24, 2022
   - https://vjudge.net/contest/470780
   - 22/26
 
-## 5. Sort Your Life Out
+## 05. Sort Your Life Out
 
 - Link: https://youtu.be/6uR5Ea_yakY
 - Binary Search
