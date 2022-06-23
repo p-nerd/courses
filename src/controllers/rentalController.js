@@ -5,13 +5,25 @@ import { Rental } from "../models/rentalModel.js";
 export const createRental = async (req, res, next) => {
     try {
         const customer = await Customer.findById(req.body.customerId);
-        if (!customer) return res.status(404).json({ "message": "Customer not found" })
+        if (!customer) return res
+            .status(404)
+            .json({ "message": "Customer not found" })
 
         const movie = await Movie.findById(req.body.movieId)
-        if (!movie) return res.status(404).json({ "message": "Movie not found" });
+        if (!movie) return res
+            .status(404)
+            .json({ "message": "Movie not found" });
+
+        if (movie.numberInStack <= 0) return res
+            .status(400)
+            .json({ "message": "Movie not in stack" })
 
         const rental = new Rental({ customer, movie });
         const savedRental = await rental.save();
+
+        movie.numberInStack--;
+        await movie.save();
+
         return res.status(201).json(savedRental);
     } catch (err) {
         console.log(err);
@@ -21,8 +33,13 @@ export const createRental = async (req, res, next) => {
 
 export const getRentals = async (req, res, next) => {
     try {
-        const rentals = await Rental.find().sort({ dateOut: -1 });
-        return res.status(200).json(rentals);
+        const rentals = await Rental
+            .find()
+            .sort({ dateOut: -1 });
+
+        return res
+            .status(200)
+            .json(rentals);
     } catch (err) {
         return next(err);
     }
