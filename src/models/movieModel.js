@@ -4,10 +4,29 @@ import { genreSchema } from "./genresModel.js";
 const { model, Schema } = mongoose;
 
 export const Movie = model("Movie", new Schema({
-    title: { type: String, required: true, trim: true, minlength: 1, maxlength: 255 },
-    genre: { type: genreSchema, required: true },
-    numberInStack: { type: Number, default: 0, min: 0, max: 255 },
-    dailyRentalRate: { type: Number, default: 0, min: 0, max: 255 }
+    title: {
+        type: String,
+        required: true,
+        trim: true,
+        minlength: 1,
+        maxlength: 255
+    },
+    genre: {
+        type: genreSchema,
+        required: true
+    },
+    numberInStack: {
+        type: Number,
+        default: 0,
+        min: 0,
+        max: 255
+    },
+    dailyRentalRate: {
+        type: Number,
+        default: 0,
+        min: 0,
+        max: 255
+    }
 }));
 
 export const createMovieSchema = Joi.object({
