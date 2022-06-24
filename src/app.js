@@ -1,4 +1,5 @@
 import express from "express";
+import mongo from "./mongo.js";
 import { errorHandler, notRoute } from "./middlewares/errors.js";
 import customerRouter from "./routers/customerRouter.js";
 import genresRouter from "./routers/genreRouter.js";
@@ -7,6 +8,8 @@ import rentalRouter from "./routers/rentalRouter.js";
 
 const app = express();
 app.use(express.json());
+
+mongo();
 
 app.use("/api/genres", genresRouter);
 app.use("/api/customers", customerRouter);

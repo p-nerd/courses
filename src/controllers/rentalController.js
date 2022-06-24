@@ -1,6 +1,7 @@
 import { Customer } from "../models/customerModel.js";
 import { Movie } from "../models/movieModel.js";
 import { Rental } from "../models/rentalModel.js";
+import Fawn from "fawn";
 
 export const createRental = async (req, res, next) => {
     try {
@@ -19,12 +20,18 @@ export const createRental = async (req, res, next) => {
             .json({ "message": "Movie not in stack" })
 
         const rental = new Rental({ customer, movie });
-        const savedRental = await rental.save();
+        // const savedRental = await rental.save();
 
-        movie.numberInStack--;
-        await movie.save();
+        // movie.numberInStack--;
+        // await movie.save();
 
-        return res.status(201).json(savedRental);
+        const task = new Fawn.Task();
+        task
+            .save('rentals', rental)
+            .update("movies", { _id: movie._id }, { $inc: { numberInStack: -1 } })
+            .run();
+
+        return res.status(201).json(rental);
     } catch (err) {
         console.log(err);
         return next(err);
