@@ -172,8 +172,13 @@ Joined on: Apr 24, 2022
 
 ## 05. Sort Your Life Out
 
+
 - Link: https://youtu.be/6uR5Ea_yakY
 - Binary Search
+  - Topics
+    - Lower Bound and Upper Bound
+    - Rotated Array with Binary search
+    - Max in a Hill
   - Problems
     - [x] CodeForce A. Binary Search: https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/A
     - [x] CodeForce edu Binary search step 1 practice: https://codeforces.com/edu/course/2/lesson/6/1/practice
