@@ -186,8 +186,6 @@ Joined on: Apr 24, 2022
     - CodeForce edu Binary search step 3 practice: https://codeforces.com/edu/course/2/lesson/6/3/practice
     - [x] CodeForce C. K-th Not Divisible by n: https://codeforces.com/problemset/problem/1352/C
     - YouKn0wWho Academy: Sort Your Life Out: https://vjudge.net/contest/471184
-    - B-S2-(M10+M11): Synapse Beginner Long 9 [Searching]: https://vjudge.net/contest/460870
-    - LightOJ: Binary Search/Bisection: https://lightoj.com/problems/category/binary-search
   - Tutorials
     - CodeForce edu Binary search theory: https://codeforces.com/edu/course/2/lesson/6
     - std::upper_bound and std::lower_bound for Vector in C++ STL: https://www.geeksforgeeks.org/upper_bound-and-lower_bound-for-vector-in-cpp-stl/
