@@ -172,13 +172,8 @@ Joined on: Apr 24, 2022
 
 ## 05. Sort Your Life Out
 
-
 - Link: https://youtu.be/6uR5Ea_yakY
 - Binary Search
-  - Topics
-    - Lower Bound and Upper Bound
-    - Rotated Array with Binary search
-    - Max in a Hill
   - Problems
     - [x] CodeForce A. Binary Search: https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/A
     - [x] CodeForce edu Binary search step 1 practice: https://codeforces.com/edu/course/2/lesson/6/1/practice
@@ -186,9 +181,3 @@ Joined on: Apr 24, 2022
     - CodeForce edu Binary search step 3 practice: https://codeforces.com/edu/course/2/lesson/6/3/practice
     - [x] CodeForce C. K-th Not Divisible by n: https://codeforces.com/problemset/problem/1352/C
     - YouKn0wWho Academy: Sort Your Life Out: https://vjudge.net/contest/471184
-  - Tutorials
-    - CodeForce edu Binary search theory: https://codeforces.com/edu/course/2/lesson/6
-    - std::upper_bound and std::lower_bound for Vector in C++ STL: https://www.geeksforgeeks.org/upper_bound-and-lower_bound-for-vector-in-cpp-stl/
-    - Greedy and Searching: BAPS - BACS Online Programming Camp, 2020: https://youtu.be/IKDtlUMW7F4?list=PLWtSipmftM8qbtfj2WkoQ7Z9ZrhCl6rPz&t=6665
-    - Synapse Beginner Class-10-Searching: https://youtu.be/1m2Ab_cB68o
-    - Synapse Beginner Class 11 - Binary Search Problem Disscussion (06 October, 2021): https://youtu.be/4JVO_U34UxM
