@@ -3,8 +3,8 @@ import { Customer } from "../models/customerModel.js";
 export const createCustomer = async (req, res, next) => {
     try {
         const customer = new Customer(req.body);
-        const savedCustomer = await customer.save(customer);
-        return res.status(201).json(savedCustomer);
+        await customer.save();
+        return res.status(201).json(customer);
     } catch (err) {
         return next(err);
     }

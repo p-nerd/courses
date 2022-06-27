@@ -10,9 +10,9 @@ export const createMovie = async (req, res, next) => {
         payload.genre = { name: genre.name };
 
         const movie = new Movie(payload);
-        const savedMovie = await movie.save();
+        await movie.save();
 
-        return res.status(201).json(savedMovie);
+        return res.status(201).json(movie);
     } catch (err) {
         return next(err);
     }

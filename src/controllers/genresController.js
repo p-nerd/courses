@@ -2,8 +2,8 @@ import { Genre } from "../models/genresModel.js";
 
 export const createGenre = async (req, res, next) => {
     try {
-        let genre = new Genre(req.body);
-        genre = await genre.save();
+        const genre = new Genre(req.body);
+        await genre.save();
         return res.status(201).send(genre);
     } catch (err) {
         return next(err);

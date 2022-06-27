@@ -1,6 +1,9 @@
 import Joi from "joi";
 import mongoose from "mongoose";
+import joiObjectid from "joi-objectid";
+
 const { model, Schema } = mongoose;
+Joi.objectId = joiObjectid(Joi);
 
 const movieInRentalSchema = new Schema({
     title: {
@@ -62,6 +65,6 @@ export const Rental = model("Rental", new Schema({
 }));
 
 export const createRentalSchema = Joi.object({
-    customerId: Joi.string().required(),
-    movieId: Joi.string().required()
+    customerId: Joi.objectId().required(),
+    movieId: Joi.objectId().required(),
 });

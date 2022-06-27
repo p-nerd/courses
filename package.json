@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "main": "index.js",
     "type": "module",
-    "repository": "https://github.com/shihab4t/vidly.dump.git",
-    "author": "Shihab Mahamud <shihab4t@gmail.com>",
+    "repository": "https://github.com/sh048b/vidly.dump.git",
+    "author": "Shihab Mahamud <sh048b@gmail.com>",
     "license": "GPL-2.0+",
     "scripts": {
         "start": "node ./src/index.js",
@@ -14,6 +14,7 @@
         "express": "^4.18.1",
         "fawn": "^2.1.5",
         "joi": "^17.6.0",
+        "joi-objectid": "^4.0.2",
         "mongoose": "^6.3.8"
     },
     "devDependencies": {
