@@ -5,6 +5,7 @@ import customerRouter from "./routers/customerRouter.js";
 import genresRouter from "./routers/genreRouter.js";
 import movieRouter from "./routers/movieRouter.js";
 import rentalRouter from "./routers/rentalRouter.js";
+import userRouter from "./routers/userRouter.js";
 
 const app = express();
 app.use(express.json());
@@ -15,6 +16,7 @@ app.use("/api/genres", genresRouter);
 app.use("/api/customers", customerRouter);
 app.use("/api/movies", movieRouter)
 app.use("/api/rentals", rentalRouter)
+app.use("/api/users", userRouter)
 
 app.use(notRoute);
 app.use(errorHandler);
