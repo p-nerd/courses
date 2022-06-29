@@ -5,6 +5,10 @@ import { generateToken } from "../utils/jwt.js";
 export const createUser = async (req, res, next) => {
     try {
         const payload = req.body;
+
+        const savedUser = await User.findOne({ email: payload.email });
+        if (savedUser) return res.status(400).send({ message: "User already exist" });
+
         payload.password = await hashPassword(payload.password);
 
         const user = new User(payload);
@@ -18,7 +22,7 @@ export const createUser = async (req, res, next) => {
 export const loginUser = async (req, res, next) => {
     try {
         const payload = req.body;
-        const user = User.findOne({ email: payload.email });
+        const user = await User.findOne({ email: payload.email });
         if (!user) return res.status(404).send("User not found by the email");
 
         const isValidPassword = await comparePassword(payload.password, user.password);
