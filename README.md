@@ -174,10 +174,13 @@ Joined on: Apr 24, 2022
 
 - Link: https://youtu.be/6uR5Ea_yakY
 - Binary Search
-  - Problems
-    - [x] CodeForce A. Binary Search: https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/A
-    - [x] CodeForce edu Binary search step 1 practice: https://codeforces.com/edu/course/2/lesson/6/1/practice
-    - CodeForce edu Binary search step 2 practice (4/4): https://codeforces.com/edu/course/2/lesson/6/2/practice
-    - CodeForce edu Binary search step 3 practice (0/2): https://codeforces.com/edu/course/2/lesson/6/3/practice
-    - [x] CodeForce C. K-th Not Divisible by n: https://codeforces.com/problemset/problem/1352/C
+  - [x] CodeForce A. Binary Search: https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/A
+  - [x] CodeForce edu Binary search step 1 practice: https://codeforces.com/edu/course/2/lesson/6/1/practice
+  - [x] CodeForce edu Binary search step 2 practice (4/4): https://codeforces.com/edu/course/2/lesson/6/2/practice
+  - CodeForce edu Binary search step 3 practice (0/2): https://codeforces.com/edu/course/2/lesson/6/3/practice
+  - [x] CodeForce C. K-th Not Divisible by n: https://codeforces.com/problemset/problem/1352/C
+- Sorting
+  - Selection Sort
+  - Bubble Sort
+  - https://visualgo.net/en/sorting
 - Contest 01: Sort Your Life Out: https://vjudge.net/contest/471184
