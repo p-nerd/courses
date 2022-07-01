@@ -3,10 +3,24 @@
 Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 
 - Links
+
   - https://academy.shahjalalshohag.com/course/a-complete-guideline-to-competitive-programming-phase-1
   - https://academy.shahjalalshohag.com
+  - https://blog.shahjalalshohag.com/appreciation/
 
-Joined on: Apr 24, 2022
+- Joined on: Apr 24, 2022
+
+- Academy Gold Pass Criteria (Phase 1)
+  - Solved at least 250 problems in total (out of 295 problems).
+  - Solved at least 60 problems from class 1 (out of 70 problems).
+  - Solved at least 60 problems from class 2 (out of 70 problems).
+  - Solved at least 50 problems from class 3 (out of 57 problems).
+  - Solved at least 20 problems from class 4 (out of 26 problems).
+  - Solved at least 30 problems from class 5 (out of 37 problems).
+  - Solved at least 15 problems from class 7 (out of 17 problems).
+  - Solved at least 15 problems from class 8 (out of 18 problems).
+  - Solved at least 80% of the problems from each of the 2 short contests.
+  - Participated in at least 10 online programming contests in total on Codeforces, CodeChef, and Atcoder.
 
 ## 00 How to Take this Course
 
@@ -169,18 +183,23 @@ Joined on: Apr 24, 2022
 - Contest 01: Introduction to CP
   - https://vjudge.net/contest/470780
   - 22/26
+- [x] Total Solve: 22/26
 
 ## 05. Sort Your Life Out
 
 - Link: https://youtu.be/6uR5Ea_yakY
 - Binary Search
   - [x] CodeForce A. Binary Search: https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/A
-  - [x] CodeForce edu Binary search step 1 practice: https://codeforces.com/edu/course/2/lesson/6/1/practice
+  - [x] CodeForce edu Binary search step 1 practice (4/4): https://codeforces.com/edu/course/2/lesson/6/1/practice
   - [x] CodeForce edu Binary search step 2 practice (4/4): https://codeforces.com/edu/course/2/lesson/6/2/practice
   - CodeForce edu Binary search step 3 practice (0/2): https://codeforces.com/edu/course/2/lesson/6/3/practice
   - [x] CodeForce C. K-th Not Divisible by n: https://codeforces.com/problemset/problem/1352/C
 - Sorting
   - Selection Sort
   - Bubble Sort
+  - Merge Sort
+  - Lexicographical Sorting
+  - std::sort()
   - https://visualgo.net/en/sorting
 - Contest 01: Sort Your Life Out: https://vjudge.net/contest/471184
+- Total Solve: 8/37
