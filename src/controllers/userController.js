@@ -1,18 +1,22 @@
-import { User } from "../models/userModel.js";
+import { User, userResponse } from "../models/userModel.js";
 import { comparePassword, hashPassword } from "../utils/crypto.js";
 import { generateToken } from "../utils/jwt.js";
+import _ from "lodash";
 
 export const createUser = async (req, res, next) => {
     try {
         const payload = req.body;
 
-        const savedUser = await User.findOne({ email: payload.email });
-        if (savedUser) return res.status(400).send({ message: "User already exist" });
+        let user = await User.findOne({ email: payload.email });
+        if (user) return res.status(400).send({ message: "User already exist" });
 
         payload.password = await hashPassword(payload.password);
 
-        const user = new User(payload);
+        user = new User(_.pick(payload, "name", "email", "password"));
         await user.save();
+
+        user = _.pick(user, ["_id", "name", "email"])
+
         return res.status(201).send(user);
     } catch (err) {
         return next(err);
