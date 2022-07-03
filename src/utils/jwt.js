@@ -1,7 +1,5 @@
 import jsonwebtoken from "jsonwebtoken";
-
-const JWT_EXPIRES_IN_MINUTE = 120;
-const JWT_SECRET_KEY = "jwt key";
+import { JWT_EXPIRES_IN_MINUTE, JWT_SECRET_KEY } from "./env.js";
 
 export const generateToken = (payload) =>
     new Promise((resolve, reject) => {

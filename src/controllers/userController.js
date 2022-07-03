@@ -17,6 +17,14 @@ export const createUser = async (req, res, next) => {
 
         user = _.pick(user, ["_id", "name", "email"])
 
+        const jwtPayload = {
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+        }
+
+        const token = await generateToken(jwtPayload);
+        res.set("x-auth-token", token)
         return res.status(201).send(user);
     } catch (err) {
         return next(err);
@@ -33,10 +41,12 @@ export const loginUser = async (req, res, next) => {
         if (!isValidPassword) return res.status(401).send("Password not matching");
 
         const jwtPayload = {
+            _id: user._id,
             name: user.name,
             email: user.email,
         }
         const token = await generateToken(jwtPayload);
+
         return res.status(201).send({ access_token: token });
     } catch (err) {
         return next(err);
