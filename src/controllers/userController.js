@@ -1,5 +1,5 @@
-import { User, userResponse } from "../models/userModel.js";
-import { comparePassword, hashPassword } from "../utils/crypto.js";
+import { User } from "../models/userModel.js";
+import { comparePassword, hashPassword } from "../utils/hash.js";
 import { generateToken } from "../utils/jwt.js";
 import _ from "lodash";
 
