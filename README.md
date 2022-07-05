@@ -203,5 +203,5 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - https://visualgo.net/en/sorting
 - Contest 01: Sort Your Life Out
   - https://vjudge.net/contest/471184
-  - 06/21
-- Total Solve: 8/37
+  - 13/21
+- Total Solve: 21/37
