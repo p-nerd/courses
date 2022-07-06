@@ -6,7 +6,7 @@ export const generateToken = (payload) =>
         jsonwebtoken.sign(
             payload,
             JWT_SECRET_KEY,
-            { expiresIn: JWT_EXPIRES_IN_MINUTE },
+            { expiresIn: JWT_EXPIRES_IN_MINUTE * 60 },
             (err, token) => {
                 if (err) return reject(err);
                 return resolve(token);

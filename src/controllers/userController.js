@@ -1,6 +1,5 @@
 import { User } from "../models/userModel.js";
 import { comparePassword, hashPassword } from "../utils/hash.js";
-import { generateToken } from "../utils/jwt.js";
 import _ from "lodash";
 
 export const createUser = async (req, res, next) => {
@@ -15,15 +14,7 @@ export const createUser = async (req, res, next) => {
         user = new User(_.pick(payload, "name", "email", "password"));
         await user.save();
 
-        user = _.pick(user, ["_id", "name", "email"])
-
-        const jwtPayload = {
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-        }
-
-        const token = await generateToken(jwtPayload);
+        const token = await user.generateToken2();
         res.set("x-auth-token", token)
         return res.status(201).send(user);
     } catch (err) {
@@ -40,13 +31,7 @@ export const loginUser = async (req, res, next) => {
         const isValidPassword = await comparePassword(payload.password, user.password);
         if (!isValidPassword) return res.status(401).send("Password not matching");
 
-        const jwtPayload = {
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-        }
-        const token = await generateToken(jwtPayload);
-
+        const token = await user.generateToken2();
         return res.status(201).send({ access_token: token });
     } catch (err) {
         return next(err);
