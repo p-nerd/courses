@@ -1,5 +1,7 @@
 # Phase1-A-Deeeep-Introduction-to-Competitive-Programming
 
+## -1 Links
+
 Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 
 - Links
@@ -180,7 +182,7 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - Blowing up unordered_map, and how to stop getting hacked on it: https://codeforces.com/blog/entry/62393?f0a28=1
 - Problems:
   - [x] CodeForces: 1614A. Divan and a Store: https://codeforces.com/contest/1614/problem/A
-- Contest 01: Introduction to CP
+- Contest 01: Saviors
   - https://vjudge.net/contest/470780
   - 22/26
 - [x] Total Solve: 22/26
@@ -205,3 +207,8 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - https://vjudge.net/contest/471184
   - 13/21
 - Total Solve: 21/37
+
+## 06. CP is FUN
+
+- Video Links:
+  - https://youtu.be/43GW5gyZ3ks
