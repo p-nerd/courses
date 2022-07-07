@@ -1,24 +1,25 @@
-import asyncMiddleware from "./../middlewares/asyncMiddleware.js";
 import { Customer } from "./../models/customerModel.js";
 
-export const createCustomer = asyncMiddleware(async (req, res, next) => {
+// this controller using the express-async-errors module feature
+
+export const createCustomer = async (req, res, next) => {
     const customer = new Customer(req.body);
     await customer.save();
     return res.status(201).json(customer);
-});
+};
 
-export const getCustomers = asyncMiddleware(async (req, res, next) => {
+export const getCustomers = async (req, res, next) => {
     const customers = await Customer.find({});
     return res.status(200).json(customers);
-});
+};
 
-export const getCustomer = asyncMiddleware(async (req, res, next) => {
+export const getCustomer = async (req, res, next) => {
     const customer = await Customer.findById(req.params.id);
     if (!customer) return res.status(404).json({ message: "Customer not found" });
     return res.status(200).json(customer);
-});
+};
 
-export const updateCustomer = asyncMiddleware(async (req, res, next) => {
+export const updateCustomer = async (req, res, next) => {
     const id = req.params.id;
 
     const customer = await Customer.findById(id);
@@ -26,13 +27,13 @@ export const updateCustomer = asyncMiddleware(async (req, res, next) => {
 
     const updatedCustomer = await Customer.findByIdAndUpdate(req.params.id, req.body, { new: true });
     return res.status(200).json(updatedCustomer);
-});
+};
 
-export const deleteCustomer = asyncMiddleware(async (req, res, next) => {
+export const deleteCustomer = async (req, res, next) => {
     const customer = await Customer.findById(req.params.id);
     if (!customer) return res.status(404).json({ message: "Customer not found" });
 
     await Customer.findByIdAndDelete(req.params.id);
     return res.status(200).json({ message: "Customer deleted" });
-});
+};
 
