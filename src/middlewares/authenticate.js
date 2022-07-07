@@ -1,6 +1,6 @@
 import { compareToken } from "../utils/jwt.js";
 
-const authenticate = async (req, res, next) => {
+export default async (req, res, next) => {
     const token = req.headers["x-auth-token"];
     if (!token) return res.status(401)
         .send({ message: "Access denied. No token found" });
@@ -11,6 +11,4 @@ const authenticate = async (req, res, next) => {
     } catch (err) {
         return res.status(400).send({ message: "Invalid token." });
     }
-};
-
-export default authenticate;
+};;
