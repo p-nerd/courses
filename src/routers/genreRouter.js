@@ -1,5 +1,6 @@
 import express from "express";
 import { getGenres, getGenre, createGenre, updateGenre, deleteGenre } from "../controllers/genresController.js";
+import admin from "../middlewares/admin.js";
 import authenticate from "../middlewares/authenticate.js";
 import validate from "../middlewares/validate.js";
 import { createGenreSchema } from "../models/genresModel.js";
@@ -14,6 +15,6 @@ genreRouter
     .route("/:id")
     .get(getGenre)
     .put(authenticate, updateGenre)
-    .delete(authenticate, deleteGenre);
+    .delete(authenticate, admin, deleteGenre);
 
 export default genreRouter;

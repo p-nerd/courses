@@ -6,11 +6,17 @@ import { generateToken } from "../utils/jwt.js"
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true, minlength: 3, maxlength: 255 },
     email: { type: String, unique: true, required: true, minlength: 3, maxlength: 255 },
-    password: { type: String, required: true, minlength: 6, maxlength: 1024 }
+    password: { type: String, required: true, minlength: 6, maxlength: 1024 },
+    isAdmin: { type: Boolean, default: false }
 })
 
 userSchema.methods.generateToken2 = async function () {
-    const jwtPayload = { _id: this._id, name: this.name, email: this.email, };
+    const jwtPayload = {
+        _id: this._id,
+        name: this.name,
+        email: this.email,
+        isAdmin: this.isAdmin
+    };
     const token = await generateToken(jwtPayload);
     return token;
 };
