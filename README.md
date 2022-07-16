@@ -67,11 +67,11 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - 2'complement of `~N` = `-((~(~N))+1)` = `-(N+1)`
   - positive integers: `>= 1` and non-negative integers: `>=0`
 - Reading Materials
-  - Header files in C/C++ and its uses: https://www.geeksforgeeks.org/header-files-in-c-cpp-and-its-uses/
-  - What does 'using namespace std' mean in C++?: https://www.quora.com/What-does-using-namespace-std-mean-in-C++
-  - Floor, Ceil, Round and Setprecision: https://www.geeksforgeeks.org/precision-of-floating-point-numbers-in-c-floor-ceil-trunc-round-and-setprecision/
-  - Double and Precision Issues: https://codeforces.com/blog/entry/
-  - ++n vs n++: https://www.quora.com/What-is-the-difference-between-n-and-n-
+  - Header files in C/C++ and its uses
+  - What does 'using namespace std' mean in C++?
+  - Floor, Ceil, Round and Setprecision
+  - Double and Precision Issues
+  - ++n vs n++
   - Time Complexity 1: https://www.mygreatlearning.com/blog/why-is-time-complexity-essential/
   - Time Complexity 2: https://www.geeksforgeeks.org/understanding-time-complexity-simple-examples/
   - Time Complexity 3: https://codeforces.com/blog/entry/21344?f0a28=1
@@ -80,12 +80,8 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - [x] Bitwise Operators in C Programming: https://www.programiz.com/c-programming/bitwise-operators
   - [x] https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301
   - [x] https://www.hackerearth.com/practice/basic-programming/bit-manipulation/basics-of-bit-manipulation/tutorial/
-  - Arrays, Subarrays and Subsequences 1: https://www.geeksforgeeks.org/arrays-in-c-cpp/
-  - Arrays, Subarrays and Subsequences 2: https://www.techiedelight.com/difference-between-subarray-subsequence-subset/
-  - Arrays, Subarrays and Subsequences 3: https://www.geeksforgeeks.org/subarraysubstring-vs-subsequence-and-programs-to-generate-them/
-  - Strings, Substrings and Subsequences 1: https://www.javatpoint.com/cpp-strings
-  - Strings, Substrings and Subsequences 2: https://www.geeksforgeeks.org/stdstring-class-in-c/
-  - Strings, Substrings and Subsequences 3: https://www.geeksforgeeks.org/subarraysubstring-vs-subsequence-and-programs-to-generate-them/
+  - Arrays, Subarrays and Subsequences
+  - Strings, Substrings and Subsequences
 - [x] Problems: Bit masking
   - [x] https://codeforces.com/problemset/problem/1097/B
   - [x] https://codeforces.com/problemset/problem/550/B
@@ -156,30 +152,10 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - stack, queue, deque, priority_queue
   - set, unordered_set, multiset
   - map, unordered_map
-  - stringstream
+  - string, stringstream
   - Sliding Window
 - Notes
   - `typeid` operator in c++
-- Reading Materials
-  - Type Inference in C++ (auto and decltype): https://www.geeksforgeeks.org/type-inference-in-c-auto-and-decltype/
-  - std::pair::pair: https://www.cplusplus.com/reference/utility/pair/pair
-  - std::tuple: https://www.cplusplus.com/reference/tuple/tuple/
-  - Structures in C++: https://www.geeksforgeeks.org/structures-in-cpp/
-  - Pointers in C/C++ with Examples: https://www.geeksforgeeks.org/pointers-c-examples/
-  - std::string: https://www.cplusplus.com/reference/string/string/
-  - Multidimensional Arrays in C / C++: https://www.geeksforgeeks.org/multidimensional-arrays-c-cpp/
-  - std::vector: https://www.cplusplus.com/reference/vector/vector/
-  - std::list: https://www.cplusplus.com/reference/list/list/
-  - std::stack: https://www.cplusplus.com/reference/stack/stack/
-  - std::queue: https://www.cplusplus.com/reference/queue/queue/
-  - std::deque: https://www.cplusplus.com/reference/deque/deque/
-  - std::priority_queue: https://www.cplusplus.com/reference/queue/priority_queue/
-  - std::set: https://www.cplusplus.com/reference/set/set/
-  - std::unordered_set: https://www.cplusplus.com/reference/unordered_set/unordered_set/
-  - std::multiset: https://www.cplusplus.com/reference/set/multiset/
-  - std::map: https://www.cplusplus.com/reference/map/map/
-  - std::unordered_map: https://www.cplusplus.com/reference/unordered_map/unordered_map/
-  - Blowing up unordered_map, and how to stop getting hacked on it: https://codeforces.com/blog/entry/62393?f0a28=1
 - Problems:
   - [x] CodeForces: 1614A. Divan and a Store: https://codeforces.com/contest/1614/problem/A
 - Contest 01: Saviors
@@ -217,3 +193,5 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 
 - Video Links:
   - https://youtu.be/iOVVhVb1lOg
+- Reading Materials
+  - 
