@@ -212,3 +212,8 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 
 - Video Links:
   - https://youtu.be/43GW5gyZ3ks
+
+## 07. Hitting The Bits
+
+- Video Links:
+  - https://youtu.be/iOVVhVb1lOg
