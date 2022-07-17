@@ -1,6 +1,6 @@
 # Phase1-A-Deeeep-Introduction-to-Competitive-Programming
 
-## -1 Links
+## -01 Links
 
 Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 
@@ -54,7 +54,6 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 ## 02. Warm-up
 
 - Topics
-  - [x] Bit Masking
   - [x] 2's Complement
   - [x] Subarrays, Subsequences and Substrings
 - Notes
@@ -191,7 +190,19 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 
 ## 07. Hitting The Bits
 
+- Notes
+  - Xor magic
+  ```cpp
+  n ^ (n + 1) == 1 // if n is even
+  ```
+- Topics:
+  - [x] base conversion
+  - [x] bitwise operators
+  - [x] k-th bit on/off and set/unset
+  - [x] bit masking
+  - [x] xor trick
+  - [x] builtin functions
+  - [x] check is n power of 2
 - Video Links:
   - https://youtu.be/iOVVhVb1lOg
 - Reading Materials
-  - 
