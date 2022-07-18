@@ -99,38 +99,6 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 
 - Notes
   - `log6(x) = log_e(x) / log_e(6)`
-  - xor Trick
-    ```c++
-    x ^ 0 == x
-    x ^ y == 0 // x == y
-    x ^ y == y ^ x
-    a ^ b == c ^ d;
-    a ^ b ^ b == c ^ d ^ b;
-    a = c ^ d ^ b;
-    ```
-    ```c++
-       a ^ b ^ c ^ a ^ b     # Commutativity
-     = a ^ a ^ b ^ b ^ c     # Using x ^ x = 0
-     = 0 ^ 0 ^ c             # Using x ^ 0 = x (and commutativity)
-     = c
-    ```
-    ```c++
-    // swap two number
-    x = x ^ y; // =>                      (x ^ y, y)
-    y = x ^ y; // => (x ^ y, x ^ y ^ y) = (x ^ y, x)
-    x = x ^ y; // => (x ^ y ^ x, x)     = (y, x)
-    ```
-- Reading Materials
-  - Swap two numbers without using a temporary variable: https://www.geeksforgeeks.org/swap-two-numbers-without-using-temporary-variable/
-  - Prefix Sum 01: https://usaco.guide/silver/prefix-sums?lang=cpp
-  - Prefix Sum 02: https://codeforces.com/blog/entry/59915
-  - [x] The XOR Trick: https://florian.github.io/xor-trick
-  - Function: https://www.programiz.com/cpp-programming/function
-  - Recursion 01: https://www.geeksforgeeks.org/recursion/
-  - Recursion 02: http://zobayer.blogspot.com/2009/12/cse-102-attacking-recursion.html
-  - Recursion 03: http://zobayer.blogspot.com/2009/12/cse-102-practice-recursions.html
-  - How Codeforces Contests Work: https://codeforces.com/blog/entry/456
-  - Codeforces: Problem Difficulties: https://codeforces.com/blog/entry/62865
 - [x] Contest 01: Functions
   - https://codeforces.com/group/MWSDmqGsZm/contest/223205
   - 15/15
@@ -190,19 +158,26 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 
 ## 07. Hitting The Bits
 
+- Video Links: https://youtu.be/iOVVhVb1lOg
 - Notes
-  - Xor magic
-  ```cpp
-  n ^ (n + 1) == 1 // if n is even
-  ```
-- Topics:
+  - builtin functions
+    - `__builtin_popcount(x)`
+    - `__builtin_clz(x)`
+    - `__builtin_ctz(x)`
+  - xor Trick
+    - `n ^ (n + 1) == 1 // if n is even`
+    - `x ^ 0 == x`
+    - `x ^ y == 0 // x == y`
+    - `x ^ x ^ x = x // len even`
+    - `x ^ x ^ x ^ x = 0 // len odd`
+- Topics
   - [x] base conversion
   - [x] bitwise operators
   - [x] k-th bit on/off and set/unset
   - [x] bit masking
-  - [x] xor trick
   - [x] builtin functions
-  - [x] check is n power of 2
-- Video Links:
-  - https://youtu.be/iOVVhVb1lOg
+  - [x] xor trick
 - Reading Materials
+  - [x] The XOR Trick: https://florian.github.io/xor-trick
+- Xor Trick Problems: Codeforces: 1516B. AGAGA XOOORRR: https://codeforces.com/problemset/problem/1516/B
+- (&) and problems: 1601A. Array Elimination: https://codeforces.com/problemset/problem/1601/A
