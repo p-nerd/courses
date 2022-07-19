@@ -170,6 +170,8 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
     - `x ^ y == 0 // x == y`
     - `x ^ x ^ x = x // len even`
     - `x ^ x ^ x ^ x = 0 // len odd`
+  - bit low: Think about each bit separately. That's it. It will make your life real comfy.
+  - The complexity of bitwise operations in bitset of size is O(size/32) or O(size/64)
 - Topics
   - [x] base conversion
   - [x] bitwise operators
@@ -177,7 +179,10 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - [x] bit masking
   - [x] builtin functions
   - [x] xor trick
+  - [x] bitset
 - Reading Materials
   - [x] The XOR Trick: https://florian.github.io/xor-trick
+  - bitset
 - Xor Trick Problems: Codeforces: 1516B. AGAGA XOOORRR: https://codeforces.com/problemset/problem/1516/B
 - (&) and problems: 1601A. Array Elimination: https://codeforces.com/problemset/problem/1601/A
+- bitset problems: https://www.codechef.com/AABH2020/problems/ODTPIC/
