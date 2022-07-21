@@ -190,3 +190,7 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - Sum of all subset AND/OR/XOR in an integer array aa of size 10^5.
   - Count the number of pairs having XOR 00 in an integer array aa of size 10^5.
   - Count the number of subarrays having XOR 00 in an integer array aa of size 10^5.
+- Contest 01: Hitting the Bits
+  - https://vjudge.net/contest/472687
+  - 00/17
+- Total Solve: 00/17
