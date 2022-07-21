@@ -6,22 +6,19 @@ export const APP_PORT = parseInt(process.env.APP_PORT);
 export const NODE_ENV = process.env.NODE_ENV;
 export const MONGODB_URI = process.env.MONGODB_URI;
 
-export const applicationEnvs = {
+export const appEnvs = {
     development: "development",
     production: "production"
 };
 
 export const verifyEnv = () => {
     if (!JWT_SECRET_KEY) {
-        console.log("Must have JWT_SECRET_KEY in env");
-        process.exit(1);
+        throw new Error("Must have JWT_SECRET_KEY in env");
     }
     if (!JWT_EXPIRES_IN_MINUTE) {
-        console.log("Must have JWT_EXPIRES_IN_MINUTE in env");
-        process.exit(1);
+        throw new Error("Must have JWT_EXPIRES_IN_MINUTE in env");
     }
     if (!APP_PORT) {
-        console.log("Must have APP_PORT in env");
-        process.exit(1);
+        throw new Error("Must have APP_PORT in env");
     }
 };

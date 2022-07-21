@@ -1,6 +1,6 @@
 import { createLogger, transports, format } from "winston";
 import "winston-mongodb";
-import { applicationEnvs, MONGODB_URI, NODE_ENV } from "./env.js";
+import { appEnvs, MONGODB_URI, NODE_ENV } from "./env.js";
 const { File, MongoDB, Console } = transports;
 
 const logger = createLogger({
@@ -11,14 +11,13 @@ const logger = createLogger({
         new MongoDB({ db: MONGODB_URI, level: "error" })
     ],
     exceptionHandlers: [
-        new File({ filename: "exceptions.log" })
+        new File({ filename: "exceptions.log" }),
+        new Console({ format: format.simple() })
     ]
 });
 
-if (NODE_ENV !== applicationEnvs.production) {
-    logger.add(new Console({
-        format: format.simple(),
-    }));
+if (NODE_ENV !== appEnvs.production) {
+    logger.add(new Console({ format: format.simple() }));
 }
 
 export const handleUncaughtException = (err) => {
