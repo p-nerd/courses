@@ -2,8 +2,13 @@ import { Customer } from "../models/customerModel.js";
 import { Movie } from "../models/movieModel.js";
 import { Rental } from "../models/rentalModel.js";
 import Fawn from "fawn";
+import { Router } from "express";
+import authenticate from "../middlewares/authenticate.js";
+import validate from "../middlewares/validate.js";
+import { createRentalSchema } from "../models/rentalModel.js";
+import { createRental, getRentals } from "./../controllers/rentalController.js"
 
-export const createRental = async (req, res, next) => {
+const createRental = async (req, res, next) => {
     try {
         const customer = await Customer.findById(req.body.customerId);
         if (!customer) return res
@@ -38,7 +43,7 @@ export const createRental = async (req, res, next) => {
     }
 };
 
-export const getRentals = async (req, res, next) => {
+const getRentals = async (req, res, next) => {
     try {
         const rentals = await Rental
             .find()
@@ -51,3 +56,12 @@ export const getRentals = async (req, res, next) => {
         return next(err);
     }
 };
+
+const rentalRouter = Router();
+
+rentalRouter
+    .route("/")
+    .post(authenticate, validate(createRentalSchema), createRental)
+    .get(getRentals);
+
+export default rentalRouter;

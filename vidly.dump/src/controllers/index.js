@@ -1,8 +1,8 @@
-import customerRouter from "./customerRouter.js";
-import genresRouter from "./genreRouter.js";
-import movieRouter from "./movieRouter.js";
-import rentalRouter from "./rentalRouter.js";
-import userRouter from "./userRouter.js";
+import customerRouter from "./customerController.js";
+import genresRouter from "./genresController.js";
+import movieRouter from "./movieController.js";
+import rentalRouter from "./rentalController.js";
+import userRouter from "./userController.js";
 import errorHandler from "./../middlewares/errorHandler.js";
 import notRoute from './../middlewares/notRoute.js';
 

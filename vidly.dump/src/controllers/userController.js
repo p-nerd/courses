@@ -2,8 +2,14 @@ import { User } from "../models/userModel.js";
 import { comparePassword, hashPassword } from "../utils/hash.js";
 import _ from "lodash";
 import asyncMiddleware from "../middlewares/asyncMiddleware.js";
+import { Router } from "express";
+import { createUser, getMe, loginUser } from "../controllers/userController.js";
+import authenticate from "../middlewares/authenticate.js";
+import validate from "../middlewares/validate.js";
+import { createUserSchema, loginUserSchema } from "../models/userModel.js";
 
-export const createUser = asyncMiddleware(async (req, res, next) => {
+
+const createUser = asyncMiddleware(async (req, res, next) => {
     const payload = req.body;
 
     let user = await User.findOne({ email: payload.email });
@@ -19,7 +25,7 @@ export const createUser = asyncMiddleware(async (req, res, next) => {
     return res.status(201).send(user);
 });
 
-export const loginUser = asyncMiddleware(async (req, res, next) => {
+const loginUser = asyncMiddleware(async (req, res, next) => {
     const payload = req.body;
     const user = await User.findOne({ email: payload.email });
     if (!user) return res.status(404).send("User not found by the email");
@@ -31,9 +37,18 @@ export const loginUser = asyncMiddleware(async (req, res, next) => {
     return res.status(201).send({ access_token: token });
 });
 
-export const getMe = asyncMiddleware(async (req, res, next) => {
+const getMe = asyncMiddleware(async (req, res, next) => {
     const userId = req.user._id;
     const user = await User.findById(userId);
     if (!user) return res.status(404).send("User not found");
     return res.status(200).send(user);
 });
+
+const userRouter = Router();
+
+
+userRouter.post("/register", validate(createUserSchema), createUser);
+userRouter.post("/login", validate(loginUserSchema), loginUser);
+userRouter.get("/me", authenticate, getMe)
+
+export default userRouter;

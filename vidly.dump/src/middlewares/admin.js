@@ -1,5 +1,7 @@
-export default (req, res, next) => {
+const admin = (req, res, next) => {
     if (req.user.isAdmin !== true)
         return res.status(403).send({ "message": "Access denied." });
     return next();
 };;
+
+export default admin;

@@ -1,8 +1,12 @@
 import asyncMiddleware from "../middlewares/asyncMiddleware.js";
 import { Genre } from "../models/genresModel.js";
 import { Movie } from "../models/movieModel.js";
+import { Router } from "express";
+import authenticate from "../middlewares/authenticate.js";
+import validate from "../middlewares/validate.js";
+import { createMovieSchema } from "../models/movieModel.js";
 
-export const createMovie = asyncMiddleware(async (req, res, next) => {
+const createMovie = asyncMiddleware(async (req, res, next) => {
     const payload = req.body;
 
     const genre = await Genre.findById(payload.genreId);
@@ -15,7 +19,17 @@ export const createMovie = asyncMiddleware(async (req, res, next) => {
     return res.status(201).json(movie);
 });
 
-export const getMovies = asyncMiddleware(async (req, res, next) => {
+const getMovies = asyncMiddleware(async (req, res, next) => {
     const movies = await Movie.find();
     return res.status(200).json(movies);
 });
+
+
+const movieRouter = Router();
+
+movieRouter
+    .route("/")
+    .post(authenticate, validate(createMovieSchema), createMovie)
+    .get(getMovies);
+
+export default movieRouter;
