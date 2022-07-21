@@ -10,6 +10,7 @@ export const createCustomer = async (req, res, next) => {
 
 export const getCustomers = async (req, res, next) => {
     const customers = await Customer.find({});
+    // throw new Error("This is error ");
     return res.status(200).json(customers);
 };
 
