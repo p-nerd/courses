@@ -3,9 +3,11 @@
     "version": "1.0.0",
     "main": "index.js",
     "type": "module",
-    "repository": "https://github.com/sh048b/vidly.dump.git",
     "author": "Shihab Mahamud <sh048b@gmail.com>",
     "license": "GPL-2.0+",
+    "engines": {
+        "node": "^16.15.1"
+    },
     "scripts": {
         "start": "node ./src/index.js",
         "start:dev": "nodemon ./src/index.js"
