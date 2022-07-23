@@ -1,11 +1,11 @@
 {
   "license": "GPL-2.0+",
-  "type": "module",
   "devDependencies": {
     "@types/jest": "^28.1.6",
     "jest": "^28.1.3"
   },
   "scripts": {
-    "test": "node --experimental-vm-modules --no-warnings ./node_modules/.bin/jest"
+    "test": "jest",
+    "test:dev": "node --experimental-vm-modules --no-warnings ./node_modules/.bin/jest --watchAll"
   }
 }
