@@ -1,10 +1,10 @@
-import asyncMiddleware from "../middlewares/asyncMiddleware.js";
-import { Genre } from "../models/genresModel.js";
-import { Router } from "express";
-import admin from "../middlewares/admin.js";
-import authenticate from "../middlewares/authenticate.js";
-import validate from "../middlewares/validate.js";
-import { createGenreSchema } from "../models/genresModel.js";
+const asyncMiddleware = require("../middlewares/asyncMiddleware");
+const { Genre } = require("../models/genresModel");
+const { Router } = require("express");
+const admin = require("../middlewares/admin");
+const authenticate = require("../middlewares/authenticate");
+const validate = require("../middlewares/validate");
+const { createGenreSchema } = require("../models/genresModel");
 
 const createGenre = asyncMiddleware(async (req, res, next) => {
     const genre = new Genre(req.body);
@@ -63,4 +63,4 @@ genreRouter
     .put(authenticate, updateGenre)
     .delete(authenticate, admin, deleteGenre);
 
-export default genreRouter;
+module.exports = genreRouter;

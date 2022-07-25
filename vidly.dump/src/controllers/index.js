@@ -1,12 +1,12 @@
-import customerRouter from "./customerController.js";
-import genresRouter from "./genresController.js";
-import movieRouter from "./movieController.js";
-import rentalRouter from "./rentalController.js";
-import userRouter from "./userController.js";
-import errorHandler from "./../middlewares/errorHandler.js";
-import notRoute from './../middlewares/notRoute.js';
+const customerRouter = require("./customerController");
+const genresRouter = require("./genresController");
+const movieRouter = require("./movieController");
+const rentalRouter = require("./rentalController");
+const userRouter = require("./userController");
+const errorHandler = require("./../middlewares/errorHandler");
+const notRoute = require('./../middlewares/notRoute.js');
 
-export default app => {
+module.exports = app => {
     app.use("/genres", genresRouter);
     app.use("/customers", customerRouter);
     app.use("/movies", movieRouter)

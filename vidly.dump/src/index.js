@@ -1,6 +1,6 @@
-import app from "./app.js"
-import mongo from "./utils/mongo.js";
-import { APP_PORT } from "./utils/env.js";
+const app = require("./app");
+const mongo = require("./utils/mongo");
+const { APP_PORT } = require("./utils/env");
 
 app.listen(APP_PORT, () => {
     console.log(`Listening on port http://localhost:${APP_PORT}`);

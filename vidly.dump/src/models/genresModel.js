@@ -1,13 +1,12 @@
-import mongoose from "mongoose";
-import Joi from "joi";
+const mongoose = require("mongoose");
+const Joi = require("joi");
 const { model, Schema } = mongoose;
 
-
-export const createGenreSchema = Joi.object({
+const createGenreSchema = Joi.object({
     name: Joi.string().min(3).max(30).required(),
 });
 
-export const genreSchema = new Schema({
+const genreSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -16,4 +15,6 @@ export const genreSchema = new Schema({
     },
 });
 
-export const Genre = model("Genre", genreSchema);
+const Genre = model("Genre", genreSchema);
+
+module.exports = { createGenreSchema, genreSchema, Genre };

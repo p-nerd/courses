@@ -1,10 +1,10 @@
-import asyncMiddleware from "../middlewares/asyncMiddleware.js";
-import { Genre } from "../models/genresModel.js";
-import { Movie } from "../models/movieModel.js";
-import { Router } from "express";
-import authenticate from "../middlewares/authenticate.js";
-import validate from "../middlewares/validate.js";
-import { createMovieSchema } from "../models/movieModel.js";
+const asyncMiddleware = require("../middlewares/asyncMiddleware");
+const { Genre } = require("../models/genresModel");
+const { Movie } = require("../models/movieModel");
+const { Router } = require("express");
+const authenticate = require("../middlewares/authenticate");
+const validate = require("../middlewares/validate");
+const { createMovieSchema } = require("../models/movieModel");
 
 const createMovie = asyncMiddleware(async (req, res, next) => {
     const payload = req.body;
@@ -32,4 +32,4 @@ movieRouter
     .post(authenticate, validate(createMovieSchema), createMovie)
     .get(getMovies);
 
-export default movieRouter;
+module.exports = movieRouter;

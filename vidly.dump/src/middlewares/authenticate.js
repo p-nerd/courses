@@ -1,4 +1,4 @@
-import { compareToken } from "../utils/jwt.js";
+const { compareToken } = require("../utils/jwt");
 
 const authenticate = async (req, res, next) => {
     const token = req.headers["x-auth-token"];
@@ -13,4 +13,4 @@ const authenticate = async (req, res, next) => {
     }
 };
 
-export default authenticate;
+module.exports = authenticate;

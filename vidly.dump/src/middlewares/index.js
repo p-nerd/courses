@@ -1,9 +1,9 @@
-import { verifyEnv } from './../utils/env.js';
-import { handleUnhandledRejection } from './../utils/logger.js';
-import express from "express";
+const { verifyEnv } = require('./../utils/env.js');
+const { handleUnhandledRejection } = require('./../utils/logger.js');
+const express = require("express");
 
 
-export default app => {
+module.exports = app => {
     // process.on("uncaughtException", handleUncaughtException);
     // process.on("unhandledRejection", handleUnhandledRejection);
 

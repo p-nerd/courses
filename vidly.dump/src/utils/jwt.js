@@ -1,7 +1,7 @@
-import jsonwebtoken from "jsonwebtoken";
-import { JWT_EXPIRES_IN_MINUTE, JWT_SECRET_KEY } from "./env.js";
+const jsonwebtoken = require("jsonwebtoken");
+const { JWT_EXPIRES_IN_MINUTE, JWT_SECRET_KEY } = require("./env");
 
-export const generateToken = (payload) =>
+const generateToken = (payload) =>
     new Promise((resolve, reject) => {
         jsonwebtoken.sign(
             payload,
@@ -14,10 +14,12 @@ export const generateToken = (payload) =>
         );
     });
 
-export const compareToken = (token) =>
+const compareToken = (token) =>
     new Promise((resolve, reject) => {
         jsonwebtoken.verify(token, JWT_SECRET_KEY, (err, decoded) => {
             if (err) return reject(err);
             return resolve(decoded);
         });
     });
+
+module.exports = { generateToken, compareToken }

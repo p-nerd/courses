@@ -1,6 +1,6 @@
-import { createLogger, transports, format } from "winston";
-import "winston-mongodb";
-import { appEnvs, MONGODB_URI, NODE_ENV } from "./env.js";
+const { createLogger, transports, format } = require("winston");
+require("winston-mongodb");
+const { appEnvs, MONGODB_URI, NODE_ENV } = require("./env");
 const { File, MongoDB, Console } = transports;
 
 const logger = createLogger({
@@ -35,4 +35,4 @@ export const handleUnhandledRejection = (err) => {
     // });
 };
 
-export default logger;
+module.exports = logger;

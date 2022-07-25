@@ -1,8 +1,8 @@
-import { Customer, customerCreateSchema, customerUpdateSchema } from "./../models/customerModel.js";
-import { Router } from "express";
-import admin from "../middlewares/admin.js";
-import authenticate from "../middlewares/authenticate.js";
-import validate from "../middlewares/validate.js";
+const { Customer, customerCreateSchema, customerUpdateSchema } = require("./../models/customerModel");
+const { Router } = require("express");
+const admin = require("../middlewares/admin");
+const authenticate = require("../middlewares/authenticate");
+const validate = require("../middlewares/validate");
 
 // this controller using the express-async-errors module feature
 
@@ -55,4 +55,4 @@ customerRouter
     .put(authenticate, validate(customerUpdateSchema), updateCustomer)
     .delete(authenticate, admin, deleteCustomer);
 
-export default customerRouter;
+module.exports = customerRouter;

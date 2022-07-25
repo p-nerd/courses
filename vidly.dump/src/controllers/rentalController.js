@@ -1,12 +1,12 @@
-import { Customer } from "../models/customerModel.js";
-import { Movie } from "../models/movieModel.js";
-import { Rental } from "../models/rentalModel.js";
-import Fawn from "fawn";
-import { Router } from "express";
-import authenticate from "../middlewares/authenticate.js";
-import validate from "../middlewares/validate.js";
-import { createRentalSchema } from "../models/rentalModel.js";
-import { createRental, getRentals } from "./../controllers/rentalController.js"
+const { Customer } = require("../models/customerModel");
+const { Movie } = require("../models/movieModel");
+const { Rental } = require("../models/rentalModel");
+const Fawn = require("fawn");
+const { Router } = require("express");
+const authenticate = require("../middlewares/authenticate");
+const validate = require("../middlewares/validate");
+const { createRentalSchema } = require("../models/rentalModel");
+const { createRental, getRentals } = require("./../controllers/rentalController")
 
 const createRental = async (req, res, next) => {
     try {
@@ -64,4 +64,4 @@ rentalRouter
     .post(authenticate, validate(createRentalSchema), createRental)
     .get(getRentals);
 
-export default rentalRouter;
+module.exports = rentalRouter;

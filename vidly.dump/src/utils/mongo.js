@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
-import Fawn from "fawn";
-import { MONGODB_URI } from "./env.js";
-import logger from "./logger.js";
+const mongoose = require("mongoose");
+const Fawn = require("fawn");
+const { MONGODB_URI } = require("./env");
+const logger = require("./logger");
 
 const mongo = () => {
     try {
@@ -18,4 +18,4 @@ const mongo = () => {
     }
 };
 
-export default mongo;
+module.exports = mongo;

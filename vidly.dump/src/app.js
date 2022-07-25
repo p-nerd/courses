@@ -1,11 +1,11 @@
-import 'express-async-errors';
-import express from "express";
-import middlewares from './middlewares/index.js';
-import controllers from './controllers/index.js';
+require('express-async-errors');
+const express = require("express");
+const middlewares = require('./middlewares/index.js');
+const controllers = require('./controllers/index.js');
 
 const app = express();
 
 middlewares(app);
 controllers(app);
 
-export default app;
+module.exports = app;

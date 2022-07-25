@@ -1,6 +1,6 @@
-import Joi from "joi";
-import mongoose from "mongoose";
-import joiObjectid from "joi-objectid";
+const Joi = require("joi");
+const mongoose = require("mongoose");
+const joiObjectid = require("joi-objectid");
 
 const { model, Schema } = mongoose;
 Joi.objectId = joiObjectid(Joi);
@@ -40,7 +40,7 @@ const customerInRentalSchema = new Schema({
     }
 })
 
-export const Rental = model("Rental", new Schema({
+const Rental = model("Rental", new Schema({
     customer: {
         type: customerInRentalSchema,
         required: true
@@ -64,7 +64,9 @@ export const Rental = model("Rental", new Schema({
     }
 }));
 
-export const createRentalSchema = Joi.object({
+const createRentalSchema = Joi.object({
     customerId: Joi.objectId().required(),
     movieId: Joi.objectId().required(),
 });
+
+module.exports = { Rental, createRentalSchema };

@@ -1,7 +1,7 @@
-import Joi from "joi";
-import mongoose from "mongoose";
-import passwordComplexity from "joi-password-complexity";
-import { generateToken } from "../utils/jwt.js"
+const Joi = require("joi");
+const mongoose = require("mongoose");
+const passwordComplexity = require("joi-password-complexity");
+const { generateToken } = require("../utils/jwt")
 
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true, minlength: 3, maxlength: 255 },
@@ -21,7 +21,8 @@ userSchema.methods.generateToken2 = async function () {
     return token;
 };
 
-export const User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
+
 
 const complexityOptions = {
     min: 6,
@@ -33,19 +34,21 @@ const complexityOptions = {
     requirementCount: 2,
 };
 
-export const createUserSchema = Joi.object({
+const createUserSchema = Joi.object({
     name: Joi.string().min(3).max(255).required(),
     email: Joi.string().min(3).max(255).required(),
     password: passwordComplexity(complexityOptions)
 });
 
-export const loginUserSchema = Joi.object({
+const loginUserSchema = Joi.object({
     email: Joi.string().min(3).max(255).required(),
     password: passwordComplexity(complexityOptions)
 });
 
-export const userResponse = user => ({
+const userResponse = user => ({
     _id: user._id,
     name: user.name,
     email: user.email
 });
+
+module.exports = { User, createUserSchema, loginUserSchema, userResponse };

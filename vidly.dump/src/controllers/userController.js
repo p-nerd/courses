@@ -1,12 +1,12 @@
-import { User } from "../models/userModel.js";
-import { comparePassword, hashPassword } from "../utils/hash.js";
-import _ from "lodash";
-import asyncMiddleware from "../middlewares/asyncMiddleware.js";
-import { Router } from "express";
-import { createUser, getMe, loginUser } from "../controllers/userController.js";
-import authenticate from "../middlewares/authenticate.js";
-import validate from "../middlewares/validate.js";
-import { createUserSchema, loginUserSchema } from "../models/userModel.js";
+const { User } = require("../models/userModel");
+const { comparePassword, hashPassword } = require("../utils/hash");
+const _ = require("lodash");
+const asyncMiddleware = require("../middlewares/asyncMiddleware");
+const { Router } = require("express");
+const { createUser, getMe, loginUser } = require("../controllers/userController");
+const authenticate = require("../middlewares/authenticate");
+const validate = require("../middlewares/validate");
+const { createUserSchema, loginUserSchema } = require("../models/userModel");
 
 
 const createUser = asyncMiddleware(async (req, res, next) => {
@@ -51,4 +51,4 @@ userRouter.post("/register", validate(createUserSchema), createUser);
 userRouter.post("/login", validate(loginUserSchema), loginUser);
 userRouter.get("/me", authenticate, getMe)
 
-export default userRouter;
+module.exports = userRouter;

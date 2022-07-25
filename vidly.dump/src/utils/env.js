@@ -1,17 +1,17 @@
-import "dotenv/config"
+require("dotenv").config();
 
-export const JWT_EXPIRES_IN_MINUTE = parseInt(process.env.JWT_EXPIRES_IN_MINUTE);
-export const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
-export const APP_PORT = parseInt(process.env.APP_PORT);
-export const NODE_ENV = process.env.NODE_ENV;
-export const MONGODB_URI = process.env.MONGODB_URI;
+const JWT_EXPIRES_IN_MINUTE = parseInt(process.env.JWT_EXPIRES_IN_MINUTE);
+const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
+const APP_PORT = parseInt(process.env.APP_PORT);
+const NODE_ENV = process.env.NODE_ENV;
+const MONGODB_URI = process.env.MONGODB_URI;
 
-export const appEnvs = {
+const appEnvs = {
     development: "development",
     production: "production"
 };
 
-export const verifyEnv = () => {
+const verifyEnv = () => {
     if (!JWT_SECRET_KEY) {
         throw new Error("Must have JWT_SECRET_KEY in env");
     }
@@ -22,3 +22,13 @@ export const verifyEnv = () => {
         throw new Error("Must have APP_PORT in env");
     }
 };
+
+module.exports = {
+    JWT_EXPIRES_IN_MINUTE,
+    JWT_SECRET_KEY,
+    APP_PORT,
+    NODE_ENV,
+    MONGODB_URI,
+    appEnvs,
+    verifyEnv
+}
