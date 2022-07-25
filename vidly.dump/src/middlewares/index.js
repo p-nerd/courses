@@ -1,6 +1,6 @@
-const { verifyEnv } = require('./../utils/env.js');
-const { handleUnhandledRejection } = require('./../utils/logger.js');
 const express = require("express");
+const { verifyEnv } = require("./../utils/env");
+// const { handleUnhandledRejection, handleUncaughtException } = require("./../utils/logger");
 
 
 module.exports = app => {

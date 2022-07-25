@@ -1,12 +1,11 @@
-const { User } = require("../models/userModel");
-const { comparePassword, hashPassword } = require("../utils/hash");
+const { Router } = require("express");
 const _ = require("lodash");
 const asyncMiddleware = require("../middlewares/asyncMiddleware");
-const { Router } = require("express");
 const authenticate = require("../middlewares/authenticate");
 const validate = require("../middlewares/validate");
+const { comparePassword, hashPassword } = require("../utils/hash");
+const { User } = require("../models/userModel");
 const { createUserSchema, loginUserSchema } = require("../models/userModel");
-
 
 const createUser = asyncMiddleware(async (req, res, next) => {
     const payload = req.body;
@@ -44,7 +43,6 @@ const getMe = asyncMiddleware(async (req, res, next) => {
 });
 
 const userRouter = Router();
-
 
 userRouter.post("/register", validate(createUserSchema), createUser);
 userRouter.post("/login", validate(loginUserSchema), loginUser);

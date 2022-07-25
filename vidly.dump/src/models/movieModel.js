@@ -1,7 +1,7 @@
 const Joi = require("joi");
 const mongoose = require("mongoose");
-const { genreSchema } = require("./genresModel");
 const joiObjectid = require("joi-objectid");
+const { genreSchema } = require("./genresModel");
 
 const { model, Schema } = mongoose;
 Joi.objectId = joiObjectid(Joi);

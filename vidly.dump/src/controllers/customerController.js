@@ -1,8 +1,8 @@
-const { Customer, customerCreateSchema, customerUpdateSchema } = require("./../models/customerModel");
 const { Router } = require("express");
 const admin = require("../middlewares/admin");
 const authenticate = require("../middlewares/authenticate");
 const validate = require("../middlewares/validate");
+const { Customer, customerCreateSchema, customerUpdateSchema } = require("./../models/customerModel");
 
 // this controller using the express-async-errors module feature
 

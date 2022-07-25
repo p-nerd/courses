@@ -4,7 +4,7 @@ const movieRouter = require("./movieController");
 const rentalRouter = require("./rentalController");
 const userRouter = require("./userController");
 const errorHandler = require("./../middlewares/errorHandler");
-const notRoute = require('./../middlewares/notRoute.js');
+const notRoute = require("./../middlewares/notRoute");
 
 module.exports = app => {
     app.use("/genres", genresRouter);

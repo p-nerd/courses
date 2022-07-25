@@ -1,9 +1,9 @@
-const asyncMiddleware = require("../middlewares/asyncMiddleware");
-const { Genre } = require("../models/genresModel");
 const { Router } = require("express");
+const asyncMiddleware = require("../middlewares/asyncMiddleware");
 const admin = require("../middlewares/admin");
 const authenticate = require("../middlewares/authenticate");
 const validate = require("../middlewares/validate");
+const { Genre } = require("../models/genresModel");
 const { createGenreSchema } = require("../models/genresModel");
 
 const createGenre = asyncMiddleware(async (req, res, next) => {

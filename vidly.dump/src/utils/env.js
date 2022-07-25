@@ -12,15 +12,12 @@ const appEnvs = {
 };
 
 const verifyEnv = () => {
-    if (!JWT_SECRET_KEY) {
+    if (!JWT_SECRET_KEY)
         throw new Error("Must have JWT_SECRET_KEY in env");
-    }
-    if (!JWT_EXPIRES_IN_MINUTE) {
+    if (!JWT_EXPIRES_IN_MINUTE)
         throw new Error("Must have JWT_EXPIRES_IN_MINUTE in env");
-    }
-    if (!APP_PORT) {
+    if (!APP_PORT)
         throw new Error("Must have APP_PORT in env");
-    }
 };
 
 module.exports = {

@@ -1,8 +1,8 @@
+const { Router } = require("express");
+const Fawn = require("fawn");
 const { Customer } = require("../models/customerModel");
 const { Movie } = require("../models/movieModel");
 const { Rental } = require("../models/rentalModel");
-const Fawn = require("fawn");
-const { Router } = require("express");
 const authenticate = require("../middlewares/authenticate");
 const validate = require("../middlewares/validate");
 const { createRentalSchema } = require("../models/rentalModel");
@@ -31,7 +31,7 @@ const createRental = async (req, res, next) => {
 
         const task = new Fawn.Task();
         task
-            .save('rentals', rental)
+            .save(rentals, rental)
             .update("movies", { _id: movie._id }, { $inc: { numberInStack: -1 } })
             .run();
 

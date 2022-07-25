@@ -1,7 +1,7 @@
-require('express-async-errors');
+require("express-async-errors");
 const express = require("express");
-const middlewares = require('./middlewares/index.js');
-const controllers = require('./controllers/index.js');
+const middlewares = require("./middlewares/index");
+const controllers = require("./controllers/index");
 
 const app = express();
 

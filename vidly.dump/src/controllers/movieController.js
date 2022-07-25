@@ -1,9 +1,9 @@
-const asyncMiddleware = require("../middlewares/asyncMiddleware");
-const { Genre } = require("../models/genresModel");
-const { Movie } = require("../models/movieModel");
 const { Router } = require("express");
+const asyncMiddleware = require("../middlewares/asyncMiddleware");
 const authenticate = require("../middlewares/authenticate");
 const validate = require("../middlewares/validate");
+const { Movie } = require("../models/movieModel");
+const { Genre } = require("../models/genresModel");
 const { createMovieSchema } = require("../models/movieModel");
 
 const createMovie = asyncMiddleware(async (req, res, next) => {

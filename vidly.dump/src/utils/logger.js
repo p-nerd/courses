@@ -1,15 +1,18 @@
 const winston = require("winston");
-require('winston-mongodb');
-const { appEnvs, MONGODB_URI, NODE_ENV } = require("./env");
+// require(winston-mongodb);
+const { appEnvs, NODE_ENV } = require("./env");
+
 const { createLogger, transports, format } = winston;
-const { File, MongoDB, Console } = transports;
+const { File, Console } = transports;
+const { MongoDB } = transports;
+const { MONGODB_URI } = require("./env");
 
 const logger = createLogger({
     level: "info",
     format: format.json(),
     transports: [
         new File({ filename: "error.log", level: "error" }),
-        new MongoDB({ db: MONGODB_URI, level: "error" })
+        // new MongoDB({ db: MONGODB_URI, level: "error" })
     ],
     exceptionHandlers: [
         new File({ filename: "exceptions.log" }),
