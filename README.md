@@ -192,5 +192,5 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - Count the number of subarrays having XOR 00 in an integer array aa of size 10^5.
 - Contest 01: Hitting the Bits
   - https://vjudge.net/contest/472687
-  - 09/17
-- Total Solve: 09/17
+  - 11/17
+- Total Solve: 11/17
