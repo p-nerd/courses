@@ -6,7 +6,6 @@ const { Router } = require("express");
 const authenticate = require("../middlewares/authenticate");
 const validate = require("../middlewares/validate");
 const { createRentalSchema } = require("../models/rentalModel");
-const { createRental, getRentals } = require("./../controllers/rentalController")
 
 const createRental = async (req, res, next) => {
     try {

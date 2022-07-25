@@ -3,7 +3,6 @@ const { comparePassword, hashPassword } = require("../utils/hash");
 const _ = require("lodash");
 const asyncMiddleware = require("../middlewares/asyncMiddleware");
 const { Router } = require("express");
-const { createUser, getMe, loginUser } = require("../controllers/userController");
 const authenticate = require("../middlewares/authenticate");
 const validate = require("../middlewares/validate");
 const { createUserSchema, loginUserSchema } = require("../models/userModel");

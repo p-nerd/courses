@@ -1,6 +1,7 @@
-const { createLogger, transports, format } = require("winston");
-require("winston-mongodb");
+const winston = require("winston");
+require('winston-mongodb');
 const { appEnvs, MONGODB_URI, NODE_ENV } = require("./env");
+const { createLogger, transports, format } = winston;
 const { File, MongoDB, Console } = transports;
 
 const logger = createLogger({
@@ -20,14 +21,14 @@ if (NODE_ENV !== appEnvs.production) {
     logger.add(new Console({ format: format.simple() }));
 }
 
-export const handleUncaughtException = (err) => {
+const handleUncaughtException = (err) => {
     logger.error("Uncaught exception detected!", err);
     logger.on("finish", () => {
         process.exit(1);
     });
 };
 
-export const handleUnhandledRejection = (err) => {
+const handleUnhandledRejection = (err) => {
     throw err;
     // logger.error("Unhandled rejection detected!", err);
     // logger.on("finish", () => {
@@ -35,4 +36,4 @@ export const handleUnhandledRejection = (err) => {
     // });
 };
 
-module.exports = logger;
+module.exports = { logger, handleUncaughtException, handleUnhandledRejection };
