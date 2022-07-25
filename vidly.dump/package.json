@@ -2,7 +2,7 @@
     "name": "vidly.dump",
     "version": "1.0.0",
     "main": "index.js",
-    "author": "Shihab Mahamud <sh048b@gmail.com>",
+    "author": "Shihab Mahamud <shihab4t@gmail.com>",
     "license": "GPL-2.0+",
     "engines": {
         "node": "^16.15.1"
@@ -11,7 +11,7 @@
         "start": "node ./src/index.js",
         "start:dev": "nodemon ./src/index.js",
         "test": "jest",
-        "test:dev": "jest"
+        "test:dev": "jest --watchAll"
     },
     "dependencies": {
         "bcrypt": "^5.0.1",
