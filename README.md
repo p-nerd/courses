@@ -193,4 +193,4 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 - Contest 01: Hitting the Bits
   - https://vjudge.net/contest/472687
   - 15/17
-- Total Solve: 15/17
+- [x] Total Solve: 15/17
