@@ -194,3 +194,28 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - https://vjudge.net/contest/472687
   - 15/17
 - [x] Total Solve: 15/17
+
+## 08. Moderate Modular Mode
+
+- Moderate Modular Mode | YouKn0wWho Academy: https://youtu.be/kHZdWPdtOLc
+- Reading materials:
+  - Modular Arithmetic for Beginners: https://codeforces.com/blog/entry/72527?locale=en
+  - Binary Exponentiation: https://cp-algorithms.com/algebra/binary-exp.html
+- Problems:
+  - Print last k digits of a^b (a raised to power b): https://www.geeksforgeeks.org/print-last-k-digits-of-ab-a-raised-to-power-b/
+- Topics:
+  - notation
+  - basic arithmetics
+  - binary exponentiation (bigmod)
+- Notes
+  - Notation:
+    - expr1 ≡ expr2(mod m). This is read as "expr1 is congruent to expr2 modulo m", and is shorthand for expr1 mod m=expr2 mod m.
+  - Basic arithmetics:
+    - `-b % m` = `(m - b) % m`
+      - `-4 % 6` = `(6 - 4) % 6`
+      - `-49 % 6` = `((-47 % 6) + 6) % 6`
+      - finally `-b % m` = `((-b % m) + m) % m`
+    - `a % b` = `a - (floor(a/b) * b)`
+    - `(a + b) % m` = `(a % m + b % m) % m`
+    - `(a - b) % m` = `(a % m - b % m) % m`
+    - `(a * b) % m` = `(a % m * b % m) % m`
