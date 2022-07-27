@@ -4,3 +4,4 @@ yarn-error.log
 .env
 error.log
 exceptions.log
+coverage
