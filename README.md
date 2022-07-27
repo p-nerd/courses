@@ -198,7 +198,7 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 ## 08. Moderate Modular Mode
 
 - Moderate Modular Mode | YouKn0wWho Academy: https://youtu.be/kHZdWPdtOLc
-- Reading materials:
+- Materials:
   - Modular Arithmetic for Beginners: https://codeforces.com/blog/entry/72527?locale=en
   - Binary Exponentiation: https://cp-algorithms.com/algebra/binary-exp.html
 - Problems:
