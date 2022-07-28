@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Fawn = require("fawn");
-const { MONGODB_URI } = require("./env");
+const { MONGODB_URI, NODE_ENV, appEnvs } = require("./env");
 const { logger } = require("./logger");
 
 const mongo = () => {
@@ -9,11 +9,13 @@ const mongo = () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-        logger.info(`Connection with mongodb successful! with ${MONGODB_URI}`);
+        if (NODE_ENV !== appEnvs.testing)
+            logger.info(`Connection with mongodb successful! with ${MONGODB_URI}`);
         Fawn.init(MONGODB_URI);
     }
     catch (err) {
-        logger.error(`Mongodb connection failure!! with ${MONGODB_URI} \n error: ${err}`);
+        if (NODE_ENV !== appEnvs.testing)
+            logger.error(`Mongodb connection failure!! with ${MONGODB_URI} \n error: ${err}`);
         process.exit(1);
     }
 };

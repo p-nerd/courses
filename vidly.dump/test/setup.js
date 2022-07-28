@@ -1,3 +1,3 @@
 const { appEnvs } = require("../src/utils/env");
 
-process.env.ENV = appEnvs.testing;
+process.env.NODE_ENV = appEnvs.testing;

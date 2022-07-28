@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const appEnvs = {
     development: "development",
-    testing: "testing",
+    testing: "test",
     production: "production"
 };
 
