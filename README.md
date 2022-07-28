@@ -201,12 +201,18 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 - Materials:
   - Modular Arithmetic for Beginners: https://codeforces.com/blog/entry/72527?locale=en
   - Binary Exponentiation: https://cp-algorithms.com/algebra/binary-exp.html
+  - Modular Multiplicative Inverse: https://cp-algorithms.com/algebra/module-inverse.html
+  - Proof of Fermat's Little Theorem: https://primes.utm.edu/notes/proofs/FermatsLittleTheorem.html
 - Problems:
   - Print last k digits of a^b (a raised to power b): https://www.geeksforgeeks.org/print-last-k-digits-of-ab-a-raised-to-power-b/
+  - Modulo Inverse: https://www.hackerearth.com/problem/algorithm/modulo-inverse-problem/
 - Topics:
   - notation
   - basic arithmetics
   - binary exponentiation (bigmod)
+  - modulo `2^32` and `2^64`
+  - modular multiplicative inverse (modular inverse)
+  - fermat's little theorem
 - Notes
   - Notation:
     - expr1 ≡ expr2(mod m). This is read as "expr1 is congruent to expr2 modulo m", and is shorthand for expr1 mod m=expr2 mod m.
@@ -219,3 +225,17 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
     - `(a + b) % m` = `(a % m + b % m) % m`
     - `(a - b) % m` = `(a % m - b % m) % m`
     - `(a * b) % m` = `(a % m * b % m) % m`
+  - modulo `2^32` and `2^64`
+    - `x % 10^k` got last k digit
+    - `x % 2^k` got last k bit
+    - `x % 2^k` = `x & (2^k - 1)`
+    - Note that `x % 2^k` = `x & (2^k - 1)`. So `unsigned int x, y, z; z = x * y` is the same as `z = 1LL * x * y % 2^32`. Similarly `unsigned long long` will automatically take modulo by `2^64`.
+  - modular multiplicative inverse
+    - mmi defined when `a` and `m` is coprime
+    - if `gcd(a, m) == 1` then `a` and `m` is coprime
+    - `(a / b) % m` => `(a * b^-1) % m` => `(a % m) * (b^-1 % m) % m`
+    - `b^-1 % m` - modular multiplicative inverse of `b`
+    - `(a * b) % m = 1` - `b` is mmi of `a` => `((a % m) * (b % m)) % m = 1`
+  - fermat's little theorem
+    - `a ^ m-1 = 1 % m` -> fermat's little theorem, here `m` is prime and `a` is not multiple of `m`
+    - `a ^ m-2 = a^-1 % m` => `a^m-2 % m = a^-1`
