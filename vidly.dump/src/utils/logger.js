@@ -20,9 +20,7 @@ const logger = createLogger({
     ]
 });
 
-runNotInProd(() => {
-    logger.add(new Console({ format: format.simple() }));
-})
+runNotInProd(() => { logger.add(new Console({ format: format.simple() })); });
 
 const handleUncaughtException = (err) => {
     logger.error("Uncaught exception detected!", err);

@@ -5,19 +5,19 @@ const { logger } = require("./logger");
 
 const mongo = () => {
     try {
+        const successfulMessage = `Connection with mongodb successful!`
+            + ` with ${MONGODB_URI}`;
         mongoose.connect(MONGODB_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-        runNotInTest(() => {
-            logger.info(`Connection with mongodb successful! with ${MONGODB_URI}`);
-        });
+        runNotInTest(() => { logger.info(successfulMessage); });
         Fawn.init(MONGODB_URI);
     }
     catch (err) {
-        runNotInTest(() => {
-            logger.error(`Mongodb connection failure!! with ${MONGODB_URI} \n error: ${err}`);
-        });
+        const failureMessage = `Mongodb connection failure!! with`
+            + ` ${MONGODB_URI} \n error: ${err}`;
+        runNotInTest(() => { logger.error(failureMessage); });
         process.exit(1);
     }
 };
