@@ -31,7 +31,7 @@ const createRental = async (req, res, next) => {
 
         const task = new Fawn.Task();
         task
-            .save(rentals, rental)
+            .save("rentals", rental)
             .update("movies", { _id: movie._id }, { $inc: { numberInStack: -1 } })
             .run();
 

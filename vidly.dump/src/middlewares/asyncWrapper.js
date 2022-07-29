@@ -1,4 +1,4 @@
-const asyncMiddleware = handlerFunc => async (req, res, next) => {
+const asyncWrapper = handlerFunc => async (req, res, next) => {
     try {
         await handlerFunc(req, res, next);
     } catch (err) {
@@ -6,4 +6,4 @@ const asyncMiddleware = handlerFunc => async (req, res, next) => {
     }
 };
 
-module.exports = asyncMiddleware;
+module.exports = asyncWrapper;

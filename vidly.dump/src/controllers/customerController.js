@@ -1,30 +1,29 @@
 const { Router } = require("express");
 const admin = require("../middlewares/admin");
+const asyncWrapper = require("../middlewares/asyncWrapper");
 const authenticate = require("../middlewares/authenticate");
 const validate = require("../middlewares/validate");
 const { Customer, customerCreateSchema, customerUpdateSchema } = require("./../models/customerModel");
 
-// this controller using the express-async-errors module feature
-
-const createCustomer = async (req, res, next) => {
+const createCustomer = asyncWrapper(async (req, res, next) => {
     const customer = new Customer(req.body);
     await customer.save();
     return res.status(201).json(customer);
-};
+});
 
-const getCustomers = async (req, res, next) => {
+const getCustomers = asyncWrapper(async (req, res, next) => {
     const customers = await Customer.find({});
     // throw new Error("This is error ");
     return res.status(200).json(customers);
-};
+});
 
-const getCustomer = async (req, res, next) => {
+const getCustomer = asyncWrapper(async (req, res, next) => {
     const customer = await Customer.findById(req.params.id);
     if (!customer) return res.status(404).json({ message: "Customer not found" });
     return res.status(200).json(customer);
-};
+});
 
-const updateCustomer = async (req, res, next) => {
+const updateCustomer = asyncWrapper(async (req, res, next) => {
     const id = req.params.id;
 
     const customer = await Customer.findById(id);
@@ -32,15 +31,15 @@ const updateCustomer = async (req, res, next) => {
 
     const updatedCustomer = await Customer.findByIdAndUpdate(req.params.id, req.body, { new: true });
     return res.status(200).json(updatedCustomer);
-};
+});
 
-const deleteCustomer = async (req, res, next) => {
+const deleteCustomer = asyncWrapper(async (req, res, next) => {
     const customer = await Customer.findById(req.params.id);
     if (!customer) return res.status(404).json({ message: "Customer not found" });
 
     await Customer.findByIdAndDelete(req.params.id);
     return res.status(200).json({ message: "Customer deleted" });
-};
+});
 
 const customerRouter = Router();
 

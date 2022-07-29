@@ -1,26 +1,25 @@
 const { Router } = require("express");
-const asyncMiddleware = require("../middlewares/asyncMiddleware");
+const asyncWrapper = require("../middlewares/asyncWrapper");
 const admin = require("../middlewares/admin");
 const authenticate = require("../middlewares/authenticate");
 const validate = require("../middlewares/validate");
 const { Genre } = require("../models/genresModel");
 const { createGenreSchema } = require("../models/genresModel");
 
-const createGenre = asyncMiddleware(async (req, res, next) => {
+const createGenre = asyncWrapper(async (req, res, next) => {
     const genre = new Genre(req.body);
     await genre.save();
     return res.status(201).send(genre);
 });
 
-const getGenres = asyncMiddleware(async (req, res, next) => {
-    const genres = await Genre.find()
-        .limit(10)
-        .sort({ name: -1 })
-        .select({ __v: 0 });
+const getGenres = asyncWrapper(async (req, res, next) => {
+    const genres = await Genre.find();
+    // .limit(10)
+    // .sort({ name: -1 })
     return res.status(200).send(genres);
 });
 
-const getGenre = asyncMiddleware(async (req, res) => {
+const getGenre = asyncWrapper(async (req, res) => {
     const id = req.params.id;
 
     const genre = await Genre.findById(id);
@@ -30,7 +29,7 @@ const getGenre = asyncMiddleware(async (req, res) => {
 });
 
 
-const updateGenre = asyncMiddleware(async (req, res) => {
+const updateGenre = asyncWrapper(async (req, res) => {
     const id = req.params.id;
 
     let genre = await Genre.findById(id);
@@ -40,7 +39,7 @@ const updateGenre = asyncMiddleware(async (req, res) => {
     return res.status(200).send(genre);
 });
 
-const deleteGenre = asyncMiddleware(async (req, res, next) => {
+const deleteGenre = asyncWrapper(async (req, res, next) => {
     const id = req.params.id;
 
     let genre = await Genre.findById(id);

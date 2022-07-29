@@ -1,12 +1,12 @@
 const { Router } = require("express");
-const asyncMiddleware = require("../middlewares/asyncMiddleware");
+const asyncWrapper = require("../middlewares/asyncWrapper");
 const authenticate = require("../middlewares/authenticate");
 const validate = require("../middlewares/validate");
 const { Movie } = require("../models/movieModel");
 const { Genre } = require("../models/genresModel");
 const { createMovieSchema } = require("../models/movieModel");
 
-const createMovie = asyncMiddleware(async (req, res, next) => {
+const createMovie = asyncWrapper(async (req, res, next) => {
     const payload = req.body;
 
     const genre = await Genre.findById(payload.genreId);
@@ -19,7 +19,7 @@ const createMovie = asyncMiddleware(async (req, res, next) => {
     return res.status(201).json(movie);
 });
 
-const getMovies = asyncMiddleware(async (req, res, next) => {
+const getMovies = asyncWrapper(async (req, res, next) => {
     const movies = await Movie.find();
     return res.status(200).json(movies);
 });
