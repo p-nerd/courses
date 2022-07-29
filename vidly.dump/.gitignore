@@ -1,7 +1,6 @@
 node_modules
 .vscode
 yarn-error.log
-.env-cmdrc
 error.log
 exceptions.log
 coverage
