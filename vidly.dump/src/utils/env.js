@@ -1,17 +1,8 @@
-require("dotenv").config();
-
-const appEnvs = {
-    development: "development",
-    testing: "test",
-    production: "production"
-};
-
 const JWT_EXPIRES_IN_MINUTE = parseInt(process.env.JWT_EXPIRES_IN_MINUTE);
-const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
 const APP_PORT = parseInt(process.env.APP_PORT);
+const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
 const NODE_ENV = process.env.NODE_ENV;
-const MONGODB_URI = NODE_ENV == appEnvs.testing
-    ? process.env.MONGODB_URI + "-testing" : process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGODB_URI;
 
 const verifyEnv = () => {
     if (!APP_PORT)
@@ -24,12 +15,16 @@ const verifyEnv = () => {
         throw new Error("Must have JWT_EXPIRES_IN_MINUTE in env");
 };
 
+const runNotInTest = callback => { if (NODE_ENV !== "test") callback(); };
+const runNotInProd = callback => { if (NODE_ENV !== "prod") callback(); };
+
 module.exports = {
     JWT_EXPIRES_IN_MINUTE,
     JWT_SECRET_KEY,
     APP_PORT,
     NODE_ENV,
     MONGODB_URI,
-    appEnvs,
-    verifyEnv
+    verifyEnv,
+    runNotInTest,
+    runNotInProd
 }

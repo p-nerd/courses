@@ -1,6 +1,6 @@
 const winston = require("winston");
 // require(winston-mongodb);
-const { appEnvs, NODE_ENV } = require("./env");
+const { runNotInProd } = require("./env");
 
 const { createLogger, transports, format } = winston;
 const { File, Console } = transports;
@@ -20,9 +20,9 @@ const logger = createLogger({
     ]
 });
 
-if (NODE_ENV !== appEnvs.production) {
+runNotInProd(() => {
     logger.add(new Console({ format: format.simple() }));
-}
+})
 
 const handleUncaughtException = (err) => {
     logger.error("Uncaught exception detected!", err);
