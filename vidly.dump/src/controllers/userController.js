@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const _ = require("lodash");
 const asyncWrapper = require("../middlewares/asyncWrapper");
-const authenticate = require("../middlewares/authenticate");
+const auth = require("../middlewares/auth");
 const validate = require("../middlewares/validate");
 const { comparePassword, hashPassword } = require("../utils/hash");
 const { User } = require("../models/userModel");
@@ -46,6 +46,6 @@ const userRouter = Router();
 
 userRouter.post("/register", validate(createUserSchema), createUser);
 userRouter.post("/login", validate(loginUserSchema), loginUser);
-userRouter.get("/me", authenticate, getMe)
+userRouter.get("/me", auth, getMe)
 
 module.exports = userRouter;

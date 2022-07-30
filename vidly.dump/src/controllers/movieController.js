@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const asyncWrapper = require("../middlewares/asyncWrapper");
-const authenticate = require("../middlewares/authenticate");
+const auth = require("../middlewares/auth");
 const validate = require("../middlewares/validate");
 const { Movie } = require("../models/movieModel");
 const { Genre } = require("../models/genresModel");
@@ -29,7 +29,7 @@ const movieRouter = Router();
 
 movieRouter
     .route("/")
-    .post(authenticate, validate(createMovieSchema), createMovie)
+    .post(auth, validate(createMovieSchema), createMovie)
     .get(getMovies);
 
 module.exports = movieRouter;

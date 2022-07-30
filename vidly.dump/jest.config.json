@@ -1,0 +1,7 @@
+{
+    "setupFiles": [
+        "<rootDir>/test/setup.js"
+    ],
+    "testEnvironment": "node",
+    "globalTeardown": "<rootDir>/test/terminate.js"
+}

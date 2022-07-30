@@ -3,7 +3,7 @@ const Fawn = require("fawn");
 const { Customer } = require("../models/customerModel");
 const { Movie } = require("../models/movieModel");
 const { Rental } = require("../models/rentalModel");
-const authenticate = require("../middlewares/authenticate");
+const auth = require("../middlewares/auth");
 const validate = require("../middlewares/validate");
 const { createRentalSchema } = require("../models/rentalModel");
 
@@ -60,7 +60,7 @@ const rentalRouter = Router();
 
 rentalRouter
     .route("/")
-    .post(authenticate, validate(createRentalSchema), createRental)
+    .post(auth, validate(createRentalSchema), createRental)
     .get(getRentals);
 
 module.exports = rentalRouter;

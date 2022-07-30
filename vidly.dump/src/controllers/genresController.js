@@ -1,10 +1,11 @@
 const { Router } = require("express");
 const asyncWrapper = require("../middlewares/asyncWrapper");
 const admin = require("../middlewares/admin");
-const authenticate = require("../middlewares/authenticate");
+const auth = require("../middlewares/auth");
 const validate = require("../middlewares/validate");
 const { Genre } = require("../models/genresModel");
 const { createGenreSchema } = require("../models/genresModel");
+const validId = require("../middlewares/validId");
 
 const createGenre = asyncWrapper(async (req, res, next) => {
     const genre = new Genre(req.body);
@@ -54,12 +55,13 @@ const genreRouter = Router();
 genreRouter
     .route("/")
     .get(getGenres)
-    .post(authenticate, validate(createGenreSchema), createGenre);
+    .post(auth, validate(createGenreSchema), createGenre);
 
 genreRouter
     .route("/:id")
+    .all(validId)
     .get(getGenre)
-    .put(authenticate, updateGenre)
-    .delete(authenticate, admin, deleteGenre);
+    .put(auth, updateGenre)
+    .delete(auth, admin, deleteGenre);
 
 module.exports = genreRouter;

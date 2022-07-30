@@ -1,6 +1,6 @@
 const { compareToken } = require("../utils/jwt");
 
-const authenticate = async (req, res, next) => {
+const auth = async (req, res, next) => {
     const token = req.headers["x-auth-token"];
     if (!token) return res.status(401)
         .send({ message: "Access denied. No token found" });
@@ -13,4 +13,4 @@ const authenticate = async (req, res, next) => {
     }
 };
 
-module.exports = authenticate;
+module.exports = auth;

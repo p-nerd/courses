@@ -7,10 +7,7 @@ const mongo = () => {
     try {
         const successfulMessage = `Connection with mongodb successful!`
             + ` with ${MONGODB_URI}`;
-        mongoose.connect(MONGODB_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        mongoose.connect(MONGODB_URI);
         runNotInTest(() => { logger.info(successfulMessage); });
         Fawn.init(MONGODB_URI);
     }

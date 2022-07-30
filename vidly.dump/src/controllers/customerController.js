@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const admin = require("../middlewares/admin");
 const asyncWrapper = require("../middlewares/asyncWrapper");
-const authenticate = require("../middlewares/authenticate");
+const auth = require("../middlewares/auth");
 const validate = require("../middlewares/validate");
 const { Customer, customerCreateSchema, customerUpdateSchema } = require("./../models/customerModel");
 
@@ -45,13 +45,13 @@ const customerRouter = Router();
 
 customerRouter
     .route("/")
-    .post(authenticate, validate(customerCreateSchema), createCustomer)
+    .post(auth, validate(customerCreateSchema), createCustomer)
     .get(getCustomers);
 
 customerRouter
     .route("/:id")
     .get(getCustomer)
-    .put(authenticate, validate(customerUpdateSchema), updateCustomer)
-    .delete(authenticate, admin, deleteCustomer);
+    .put(auth, validate(customerUpdateSchema), updateCustomer)
+    .delete(auth, admin, deleteCustomer);
 
 module.exports = customerRouter;
