@@ -1,3 +1,4 @@
+const { default: mongoose } = require("mongoose");
 const app = require("../../src/app");
 const { Genre } = require("../../src/models/genresModel");
 const { User } = require("../../src/models/userModel");
@@ -34,6 +35,12 @@ describe("GET /api/genres/:id", () => {
     });
     it("Should return 404 if invalid id is passed", async () => {
         const genreId = "1";
+        const res = await request.get("/api/genres/" + genreId);
+
+        expect(res.statusCode).toEqual(404);
+    });
+    it("Should return 404 if passed id is valid but genres not found", async () => {
+        const genreId = mongoose.Types.ObjectId();
         const res = await request.get("/api/genres/" + genreId);
 
         expect(res.statusCode).toEqual(404);

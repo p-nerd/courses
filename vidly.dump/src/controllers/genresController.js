@@ -44,7 +44,7 @@ const deleteGenre = asyncWrapper(async (req, res, next) => {
     const id = req.params.id;
 
     let genre = await Genre.findById(id);
-    if (!genre) return res.status(404).send("Genre not found");
+    if (!genre) return res.status(405).send("Genre not found");
 
     await Genre.findOneAndRemove(id);
     return res.status(200).send("deleted");

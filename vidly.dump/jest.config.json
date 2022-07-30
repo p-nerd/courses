@@ -3,5 +3,6 @@
         "<rootDir>/test/setup.js"
     ],
     "testEnvironment": "node",
-    "globalTeardown": "<rootDir>/test/terminate.js"
+    "globalTeardown": "<rootDir>/test/terminate.js",
+    "collectCoverage": true
 }
