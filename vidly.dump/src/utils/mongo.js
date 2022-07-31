@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Fawn = require("fawn");
+// const Fawn = require("fawn");
 const { MONGODB_URI, runNotInTest } = require("./env");
 const { logger } = require("./logger");
 
@@ -9,7 +9,7 @@ const mongo = () => {
             + ` with ${MONGODB_URI}`;
         mongoose.connect(MONGODB_URI);
         runNotInTest(() => { logger.info(successfulMessage); });
-        Fawn.init(MONGODB_URI);
+        // Fawn.init(MONGODB_URI);
     }
     catch (err) {
         const failureMessage = `Mongodb connection failure!! with`

@@ -20,4 +20,5 @@ describe("auth middleware unit test", () => {
         expect(req.user.email).toEqual(user.email);
         expect(req.user.isAdmin).toEqual(false);
     });
+    
 });

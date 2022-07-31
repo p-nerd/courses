@@ -4,7 +4,7 @@ const admin = require("../middlewares/admin");
 const auth = require("../middlewares/auth");
 const validate = require("../middlewares/validate");
 const { Genre } = require("../models/genresModel");
-const { createGenreSchema } = require("../models/genresModel");
+const { createGenreSchema, updateGenreSchema } = require("../models/genresModel");
 const validId = require("../middlewares/validId");
 
 const createGenre = asyncWrapper(async (req, res, next) => {
@@ -29,12 +29,11 @@ const getGenre = asyncWrapper(async (req, res) => {
     return res.status(200).send(genre);
 });
 
-
 const updateGenre = asyncWrapper(async (req, res) => {
     const id = req.params.id;
 
     let genre = await Genre.findById(id);
-    if (!genre) return res.status(404).send("Genre not found");
+    if (!genre) return res.status(404).send({ message: "Genre not found" });
 
     genre = await Genre.findByIdAndUpdate(id, req.body, { new: true });
     return res.status(200).send(genre);
@@ -44,10 +43,11 @@ const deleteGenre = asyncWrapper(async (req, res, next) => {
     const id = req.params.id;
 
     let genre = await Genre.findById(id);
-    if (!genre) return res.status(405).send("Genre not found");
+    if (!genre) return res.status(404)
+        .send({ message: "Genre not found in delete" });
 
     await Genre.findOneAndRemove(id);
-    return res.status(200).send("deleted");
+    return res.status(200).send({ message: "deleted successfully" });
 });
 
 const genreRouter = Router();
@@ -61,7 +61,7 @@ genreRouter
     .route("/:id")
     .all(validId)
     .get(getGenre)
-    .put(auth, updateGenre)
+    .put(auth, validate(updateGenreSchema), updateGenre)
     .delete(auth, admin, deleteGenre);
 
 module.exports = genreRouter;

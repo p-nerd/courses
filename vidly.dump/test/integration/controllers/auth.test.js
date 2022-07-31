@@ -1,17 +1,21 @@
-const app = require("../../src/app");
-const { Genre } = require("../../src/models/genresModel");
-const { User } = require("../../src/models/userModel");
+const { default: mongoose } = require("mongoose");
+const app = require("../../../src/app");
+const { Genre } = require("../../../src/models/genresModel");
+const { User } = require("../../../src/models/userModel");
 const request = require("supertest")(app);
 
 describe("auth middleware", () => {
-
+    /**
+     * Define the happy path, and then in each test, we
+     * change one parameter that clearly aligns with the
+     * test. 
+     */
     let token;
+    const data = { name: "genre1" };
     const exec = () => request
         .post("/api/genres")
         .set("x-auth-token", token)
-        .send({ name: "genre1" });
-
-    afterEach(async () => { await Genre.deleteMany(); });
+        .send(data);
 
     it("Should return 401 if no jwt token provide", async () => {
         token = "";
@@ -29,5 +33,11 @@ describe("auth middleware", () => {
         token = await new User().generateToken2();
         const res = await exec();
         expect(res.statusCode).toEqual(201);
+
+        await Genre.deleteMany();
     });
 });
+
+afterAll(async () => {
+    await mongoose.connection.close();
+})

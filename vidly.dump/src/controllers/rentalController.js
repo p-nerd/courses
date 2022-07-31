@@ -26,14 +26,14 @@ const createRental = async (req, res, next) => {
         const rental = new Rental({ customer, movie });
         // const savedRental = await rental.save();
 
-        // movie.numberInStack--;
-        // await movie.save();
+        movie.numberInStack--;
+        await movie.save();
 
-        const task = new Fawn.Task();
-        task
-            .save("rentals", rental)
-            .update("movies", { _id: movie._id }, { $inc: { numberInStack: -1 } })
-            .run();
+        // const task = new Fawn.Task();
+        // task
+        //     .save("rentals", rental)
+        //     .update("movies", { _id: movie._id }, { $inc: { numberInStack: -1 } })
+        //     .run();
 
         return res.status(201).json(rental);
     } catch (err) {
