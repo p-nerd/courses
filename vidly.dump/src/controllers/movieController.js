@@ -24,7 +24,6 @@ const getMovies = asyncWrapper(async (req, res, next) => {
     return res.status(200).json(movies);
 });
 
-
 const movieRouter = Router();
 
 movieRouter
