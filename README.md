@@ -206,6 +206,8 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 - Problems:
   - Print last k digits of a^b (a raised to power b): https://www.geeksforgeeks.org/print-last-k-digits-of-ab-a-raised-to-power-b/
   - Modulo Inverse: https://www.hackerearth.com/problem/algorithm/modulo-inverse-problem/
+  - Mulmod: Find x \* y mod 10^18 where x <= 10^18 and y <= 10^18. Solve it in O(log(min(x, y)))
+  - Intuitive Mod: https://www.geeksforgeeks.org/find-the-maximum-possible-value-of-ai-aj-over-all-pairs-of-i-and-j/
 - Topics:
   - notation
   - basic arithmetics
@@ -213,6 +215,10 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - modulo `2^32` and `2^64`
   - modular multiplicative inverse (modular inverse)
   - fermat's little theorem
+  - mulmod
+  - \_\_int128
+  - intuitive mod
+  - assert function
 - Notes
   - Notation:
     - expr1 ≡ expr2(mod m). This is read as "expr1 is congruent to expr2 modulo m", and is shorthand for expr1 mod m=expr2 mod m.
@@ -238,4 +244,11 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
     - `(a * b) % m = 1` - `b` is mmi of `a` => `((a % m) * (b % m)) % m = 1`
   - fermat's little theorem
     - `a ^ m-1 = 1 % m` -> fermat's little theorem, here `m` is prime and `a` is not multiple of `m`
-    - `a ^ m-2 = a^-1 % m` => `a^m-2 % m = a^-1`
+    - `a^-1 % m = a^m-2` => `a^-1 = a^m-2 % m`
+    - `a / b % m` = `a * b^m-2 % m` if `m` is prime
+  - intuitive mod
+    - x mod m < m / 2 when x >= m.
+- Contest 01: Moderate Modular Mode
+  - https://vjudge.net/contest/473032
+  - 00/18
+- Total Solve: 00/18
