@@ -12,13 +12,19 @@ const customerInRentalSchema = new Schema({
     isGold: { type: Boolean, default: false }
 });
 
-const Rental = model("Rental", new Schema({
+const rentalSchema = new Schema({
     customer: { type: customerInRentalSchema, required: true },
     movie: { type: movieSchema, required: true },
     dateOut: { type: Date, required: true, default: Date.now() },
     dateReturned: { type: Date },
     rentalFee: { type: Number, min: 0, default: 0 }
-}));
+});
+
+rentalSchema.static("lookup", function (customerId, movieId) {
+    return this.findOne({ "customer._id": customerId, "movie._id": movieId });
+});
+
+const Rental = model("Rental", rentalSchema);
 
 const createRentalSchema = Joi.object({
     customerId: Joi.objectId().required(),
