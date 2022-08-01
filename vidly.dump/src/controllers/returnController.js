@@ -1,13 +1,20 @@
 const auth = require("../middlewares/auth");
 const { Rental } = require("../models/rentalModel");
 const returnRouter = require("express").Router();
+const moment = require("moment");
+const Joi = require("joi");
+const joiObjectid = require("joi-objectid");
+const validate = require("../middlewares/validate");
 
-returnRouter.post("/", auth, async (req, res) => {
+Joi.objectId = joiObjectid(Joi);
+
+const returnRentalSchema = Joi.object({
+    customerId: Joi.objectId().required(),
+    movieId: Joi.objectId().required()
+});
+
+const returnRental = async (req, res) => {
     const payload = req.body;
-    if (!payload.customerId)
-        return res.status(400).send({ message: "customerId is not found" });
-    if (!payload.movieId)
-        return res.status(400).send({ message: "movieId is not found" });
 
     const rental = await Rental.findOne({
         "customer._id": payload.customerId,
@@ -20,10 +27,14 @@ returnRouter.post("/", auth, async (req, res) => {
         return res.status(400).send({ message: "rental already processed" });
 
     rental.dateReturned = Date.now();
-    rental.rentalFee = (rental.dateReturned - rental.dateOut) * rental.movie.dailyRentalRate;
+    rental.rentalFee = moment().diff(rental.dateOut, "days") * rental.movie.dailyRentalRate;
+    rental.movie.numberInStock++;
+
     await rental.save();
 
     return res.status(200).send(rental);
-});
+}
+
+returnRouter.post("/", auth, validate(returnRentalSchema), returnRental);
 
 module.exports = returnRouter;

@@ -19,20 +19,20 @@ const createRental = async (req, res, next) => {
             .status(404)
             .json({ "message": "Movie not found" });
 
-        if (movie.numberInStack <= 0) return res
+        if (movie.numberInStock <= 0) return res
             .status(400)
             .json({ "message": "Movie not in stack" })
 
         const rental = new Rental({ customer, movie });
         // const savedRental = await rental.save();
 
-        movie.numberInStack--;
+        movie.numberInStock--;
         await movie.save();
 
         // const task = new Fawn.Task();
         // task
         //     .save("rentals", rental)
-        //     .update("movies", { _id: movie._id }, { $inc: { numberInStack: -1 } })
+        //     .update("movies", { _id: movie._id }, { $inc: { numberInStock: -1 } })
         //     .run();
 
         return res.status(201).json(rental);

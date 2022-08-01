@@ -23,12 +23,7 @@ const updateGenreSchema = Joi.object({
 });
 
 const genreSchema = new Schema({
-    name: {
-        type: String,
-        required: true,
-        minlength: 3,
-        maxlength: 50
-    },
+    name: { type: String, required: true, minlength: 3, maxlength: 50 },
 });
 
 const Genre = model("Genre", genreSchema);
