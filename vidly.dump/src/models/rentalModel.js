@@ -2,6 +2,7 @@ const Joi = require("joi");
 const mongoose = require("mongoose");
 const joiObjectid = require("joi-objectid");
 const { movieSchema } = require("./movieModel");
+const moment = require("moment");
 
 const { model, Schema } = mongoose;
 Joi.objectId = joiObjectid(Joi);
@@ -23,6 +24,15 @@ const rentalSchema = new Schema({
 rentalSchema.static("lookup", function (customerId, movieId) {
     return this.findOne({ "customer._id": customerId, "movie._id": movieId });
 });
+
+rentalSchema.methods.return = function () {
+    this.dateReturned = Date.now();
+
+    this.rentalFee = moment().diff(this.dateOut, "days") * this.movie.dailyRentalRate;
+    this.movie.numberInStock++;
+    
+    return this.save();
+};
 
 const Rental = model("Rental", rentalSchema);
 
