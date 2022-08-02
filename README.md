@@ -251,4 +251,4 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 - Contest 01: Moderate Modular Mode
   - https://vjudge.net/contest/473032
   - 15/18
-- Total Solve: 15/18
+- [x] Total Solve: 15/18
