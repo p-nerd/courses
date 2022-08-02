@@ -11,28 +11,17 @@ using namespace std;
 const lli mod = 109546051211;
 const int inf = 1e9;
 
-// 1 -> 1
-// 2 -> 2
-// 3 -> 3 * 2 = 6
-// 4 -> 6 * 4 = 24
-// 3 -> 24 / 4 = 6;
-
 bool solve(int ti = 0)
 {
-    lli fac = 1, n;
+    lli n, result = 1, fact = 1;
     cin >> n;
     for (int i = 1; i <= n; i++)
-        fac = fac * i % mod;
-
-    lli ans = fac;
-    for (int i = n; i >= 2; i--)
     {
-        fac /= i;
-        ans = ans * fac % mod;
+        fact *= i % mod;
+        fact %= mod;
+        result = (__int128(result) * fact) % mod;
     }
-
-    cout << ans << ed;
-
+    cout << result << ed;
     return true;
 }
 

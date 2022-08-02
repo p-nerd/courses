@@ -250,5 +250,5 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
     - x mod m < m / 2 when x >= m.
 - Contest 01: Moderate Modular Mode
   - https://vjudge.net/contest/473032
-  - 00/18
-- Total Solve: 00/18
+  - 15/18
+- Total Solve: 15/18
