@@ -252,3 +252,12 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - https://vjudge.net/contest/473032
   - 15/18
 - [x] Total Solve: 15/18
+
+## Short Contests
+
+- [x] Contest 01
+  - Link: https://codeforces.com/contestInvitation/1fe29c29f6566a372696c533494d83781d018b5d
+  - Register and Pick a Time: https://codeforces.com/gymRegistration/359895/virtual/true
+- [x] Contest 02
+  - Link: https://codeforces.com/contestInvitation/0809d38b04cbaffb0ae2b4d7b20b69cff5553132
+  - Register and Pick a Time: https://codeforces.com/gymRegistration/359897/virtual/true
