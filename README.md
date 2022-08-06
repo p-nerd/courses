@@ -222,3 +222,12 @@ new mongoose.Schema({
   // Validating ObjectIDs
   mongoose.Types.ObjectID.isValid(id);
 - To validate ObjectIDs using joi, use joi-objectid NPM package.
+
+## Deployment
+
+- `export HTTP_PROXY=http://proxy.server.com:1234`
+- `heroku create`
+- `git push heroku master`
+- `heroku logs`
+- `heroku config:set NODE_ENV=production`
+- `git remote add heroku https://git.heroku.com/vidly-dump-server.git`

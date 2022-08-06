@@ -8,7 +8,7 @@
         "node": "16.15.1"
     },
     "scripts": {
-        "start": "env-cmd -e prod --no-override node ./src/index.js",
+        "start": "node ./src/index.js",
         "start:dev": "env-cmd --verbose -e dev nodemon ./src/index.js",
         "test": "env-cmd -e test jest --verbose --detectOpenHandles",
         "test:dev": "env-cmd --verbose -e test jest --watchAll --verbose --detectOpenHandles"

@@ -1,8 +1,8 @@
-const JWT_EXPIRES_IN_MINUTE = parseInt(process.env.JWT_EXPIRES_IN_MINUTE);
-const APP_PORT = parseInt(process.env.APP_PORT);
-const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
-const NODE_ENV = process.env.NODE_ENV;
+const APP_PORT = parseInt(process.env.PORT) || 3000;
 const MONGODB_URI = process.env.MONGODB_URI;
+const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY || "key";
+const JWT_EXPIRES_IN_MINUTE = parseInt(process.env.JWT_EXPIRES_IN_MINUTE) || 43200;
+const NODE_ENV = process.env.NODE_ENV || "production";
 
 const verifyEnv = () => {
     if (!APP_PORT)
@@ -16,7 +16,7 @@ const verifyEnv = () => {
 };
 
 const runNotInTest = callback => { if (NODE_ENV !== "test") callback(); };
-const runNotInProd = callback => { if (NODE_ENV !== "prod") callback(); };
+const runNotInProd = callback => { if (NODE_ENV !== "production") callback(); };
 
 module.exports = {
     JWT_EXPIRES_IN_MINUTE,
