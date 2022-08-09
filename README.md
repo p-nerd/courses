@@ -136,8 +136,8 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
 - Binary Search
   - [x] CodeForce A. Binary Search: https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/A
   - [x] CodeForce edu Binary search step 1 practice (4/4): https://codeforces.com/edu/course/2/lesson/6/1/practice
-  - [x] CodeForce edu Binary search step 2 practice (4/4): https://codeforces.com/edu/course/2/lesson/6/2/practice
-  - CodeForce edu Binary search step 3 practice (0/2): https://codeforces.com/edu/course/2/lesson/6/3/practice
+  - [x] CodeForce edu Binary search step 2 practice (8/8): https://codeforces.com/edu/course/2/lesson/6/2/practice
+  - CodeForce edu Binary search step 3 practice (2/2): https://codeforces.com/edu/course/2/lesson/6/3/practice
   - [x] CodeForce C. K-th Not Divisible by n: https://codeforces.com/problemset/problem/1352/C
 - Sorting
   - Selection Sort
@@ -148,8 +148,8 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - https://visualgo.net/en/sorting
 - Contest 01: Sort Your Life Out
   - https://vjudge.net/contest/471184
-  - 15/21
-- Total Solve: 23/37
+  - 18/21
+- [x] Total Solve: 32/37
 
 ## 06. CP is FUN
 
