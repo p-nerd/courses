@@ -24,6 +24,8 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - Solved at least 80% of the problems from each of the 2 short contests.
   - Participated in at least 10 online programming contests in total on Codeforces, CodeChef, and Atcoder.
 
+- Total problems solved: 70 + 65 + 51 + 22 + 32 + 15 + 15 + 7 + 7 => `284`
+
 ## 00 How to Take this Course
 
 - Major online contests
