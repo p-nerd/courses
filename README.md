@@ -10,7 +10,8 @@ Phase - 1 A Deeeep Introduction to Competitive Programming (YouKn0wWho Academy)
   - https://academy.shahjalalshohag.com
   - https://blog.shahjalalshohag.com/appreciation/
 
-- Joined on: Apr 24, 2022
+- Joined on: April 24, 2022
+- Finished on: August 09, 2022
 
 - Academy Gold Pass Criteria (Phase 1)
   - Solved at least 250 problems in total (out of 295 problems).
