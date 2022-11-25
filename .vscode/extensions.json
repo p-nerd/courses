@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "formulahendry.auto-rename-tag",
+        "moalamri.inline-fold",
+        "ritwickdey.liveserver",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "csstools.postcss"
+    ]
+}
