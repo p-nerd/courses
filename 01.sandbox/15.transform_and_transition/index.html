@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Columns Layouts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    transitionDuration: {
+                        2000: "2000ms"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button class="px-8 py-2 m-24 text-white bg-blue-500 rounded hover:bg-blue-700">
+        Click me
+    </button>
+
+    <!-- Transition -->
+    <button
+        class="px-8 py-2 m-24 text-white bg-blue-500 rounded hover:bg-blue-700 transition duration-1000 hover:opacity-20">
+        Click me
+    </button>
+
+    <!-- Transform  -->
+    <button
+        class="px-8 py-2 m-24 text-white bg-blue-500 rounded hover:bg-blue-700 hover:rotate-12 transition-transform duration-1000">
+        Click me
+    </button>
+
+    <img src="./../assets/img/img1.jpg"
+        class="w-48 hover:rotate-180 hover:scale-75 hover:skew-x-12 transition duration-2000">
+
+</body>
+
+</html>
