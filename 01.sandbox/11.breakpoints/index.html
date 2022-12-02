@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Breakpoints</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black sm:bg-green-800 md:bg-blue-800 lg:bg-yellow-800 xl:bg-purple-800 2xl:bg-red-800">
+    <h1 class="text-white text-xl md:text-3xl lg:text-5xl"></h1>
+
+    <script>
+        const showBrowserWidth = () => {
+            const width = window.innerWidth;
+            document.querySelector("h1").innerText = `Width: ${width}px`;
+        };
+        window.onload = showBrowserWidth;
+        window.onresize = showBrowserWidth;
+    </script>
+</body>
+
+</html>
