@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Customization & Config</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    sm: "550px",
+                    md: "800px",
+                    lg: "1200px",
+                    xl: "1440px"
+                },
+                fontFamily: {
+                    sans: ['Graphik', "sans-serif"],
+                    serif: ['Meeriweather', "serif"],
+                },
+                extend: {
+                    colors: {
+                        primary: "#ff5733",
+                        secondary: "#fffc33"
+                    },
+                    spacing: {
+                        6: "2.5rem",
+                        128: "32rem"
+                    },
+                    borderRadius: {
+                        "4xl": "2rem"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-black sm:bg-green-800 md:bg-blue-800 lg:bg-yellow-800 xl:bg-purple-800 2xl:bg-red-800">
+
+    <div class="border border-secondary p-6 mb-128 max-w-sm mx-auto rounded-4xl">
+        <h1 class="text-primary text-xl"></h1>
+    </div>
+
+    <script>
+        const showBrowserWidth = () => {
+            const width = window.innerWidth;
+            document.querySelector("h1").innerText = `Width: ${width}px`;
+        };
+        window.onload = showBrowserWidth;
+        window.onresize = showBrowserWidth;
+    </script>
+</body>
+
+</html>
