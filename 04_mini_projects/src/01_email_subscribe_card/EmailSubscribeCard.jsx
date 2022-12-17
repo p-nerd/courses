@@ -4,7 +4,7 @@ const EmailSubscribeCard = () => {
             <div class="mx-6 rounded-2xl bg-zinc-800 p-2">
                 <div class="flex flex-col rounded-l-xl md:flex-row">
                     <img
-                        src="./images/bg-email-card.jpg"
+                        src="./images/02/bg-email-card.jpg"
                         class="h-80 rounded-xl object-fill transition duration-200 hover:scale-105 hover:rounded-xl md:h-64 md:rounded-r-none"
                     />
                     <div class="p-6 md:p-12">
