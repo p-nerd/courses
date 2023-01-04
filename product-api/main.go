@@ -36,12 +36,12 @@ func main() {
 		}
 	}()
 
-	sigChan := make(chan os.Signal)
-	signal.Notify(sigChan, os.Interrupt)
-	signal.Notify(sigChan, os.Kill)
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, os.Interrupt)
+	signal.Notify(c, os.Kill)
 
-	sig := <-sigChan
-	l.Println("Received terminate, graceful shutdown", sig)
+	sig := <-c
+	log.Println("Got signal:", sig)
 
 	ctx, _ := context.WithTimeout(context.Background(), 30*time.Second)
 
