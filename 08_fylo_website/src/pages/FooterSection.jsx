@@ -1,10 +1,11 @@
 import FooterItem from "../components/FooterItem";
+import SocialIcon from "../components/SocialIcon";
 
 const FooterSection = () => {
     return (
-        <footer className="bg-dark-blue-2">
-            <div className="container mx-auto px-5 pb-10">
-                <div className="flex flex-col justify-center space-y-24 md:flex-row md:space-y-0">
+        <footer className="bg-dark-blue-2 text-white">
+            <div className="container mx-auto px-5 pt-12 pb-10">
+                <div className="flex flex-col justify-between space-y-24 md:flex-row md:space-y-0">
                     <div className="mt-10 space-y-6">
                         <FooterItem
                             img="/images/icon-phone.svg"
@@ -27,6 +28,11 @@ const FooterSection = () => {
                             <a href="#">Terms</a>
                             <a href="#">Privacy</a>
                         </div>
+                    </div>
+                    <div className="flex justify-center space-x-3 pb-10">
+                        <SocialIcon img="/images/facebook.svg" />
+                        <SocialIcon img="/images/instagram.svg" />
+                        <SocialIcon img="/images/twitter.svg" />
                     </div>
                 </div>
             </div>
