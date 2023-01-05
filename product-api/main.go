@@ -8,18 +8,17 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/shh26b/microservices-with-go/product-api/handlers"
+	"github.com/shihab4t/microservices-with-go/product-api/handlers"
 )
 
 func main() {
 	l := log.New(os.Stdout, "product-api ", log.LstdFlags)
-	hh := handlers.NewHello(l)
-	gh := handlers.NewGoodbye(l)
+
+	ph := handlers.NewProduct(l)
 
 	sm := http.NewServeMux()
 
-	sm.Handle("/", hh)
-	sm.Handle("/goodbye", gh)
+	sm.Handle("/", ph)
 
 	s := &http.Server{
 		Addr:         ":9090",
@@ -38,12 +37,12 @@ func main() {
 
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt)
-	signal.Notify(c, os.Kill)
 
 	sig := <-c
 	log.Println("Got signal:", sig)
 
-	ctx, _ := context.WithTimeout(context.Background(), 30*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	defer cancel()
 
 	s.Shutdown(ctx)
 }
