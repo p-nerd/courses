@@ -1,7 +1,6 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { FC, FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../firebase/setup";
+import { login } from "../firebase/authentication";
 import SubmitButton from "./SubmitButton";
 import TextInput from "./TextInput";
 
@@ -18,8 +17,7 @@ const LoginForm: FC = () => {
         try {
             setError("");
             setLoading(true);
-            const x = await signInWithEmailAndPassword(auth, email, password);
-            console.log(x);
+            await login(email, password);
             setLoading(false);
             navigate("/");
         } catch (e: any) {

@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { FC } from "react";
 import { useAuth } from "../contexts/authContext";
 
 const Home: FC = () => {

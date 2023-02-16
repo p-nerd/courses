@@ -1,8 +1,6 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { FC, FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { writeUserData } from "..//firebase/database";
-import { auth } from "../firebase/setup";
+import { signupOnFirebase } from "../firebase/mixed";
 import SubmitButton from "./SubmitButton";
 import TextInput from "./TextInput";
 
@@ -25,8 +23,7 @@ const SingupForm: FC = () => {
         try {
             setError("");
             setLoading(true);
-            const uc = await createUserWithEmailAndPassword(auth, email, password);
-            writeUserData(uc?.user.uid, { name, email, agree });
+            await signupOnFirebase(name, email, agree, password);
             setLoading(false);
             navigate("/");
         } catch (e: any) {
