@@ -5,18 +5,14 @@ type Props = {
     placeholder: string;
     icon: string;
     name: string;
-    onChange: (name: string, value: string) => void;
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    value: string;
 };
 
 const TextInput: FC<Props> = ({ placeholder, icon, name, onChange, type = "text" }) => {
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        onChange(name, value);
-    };
     return (
         <div className="textInput">
-            <input name={name} type={type} placeholder={placeholder} onChange={handleChange} />
+            <input name={name} type={type} placeholder={placeholder} onChange={onChange} />
             <span className="material-icons-outlined">{icon}</span>
         </div>
     );

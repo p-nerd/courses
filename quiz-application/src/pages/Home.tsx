@@ -1,9 +1,15 @@
 import type { FC } from "react";
+import { useAuth } from "../contexts/authContext";
 
-type Props = {};
+const Home: FC = () => {
+    const { loading, currentUser } = useAuth();
 
-const Home: FC<Props> = () => {
-    return <>Home</>;
+    return (
+        <div>
+            <div>{loading && <p>Loading ...</p>}</div>
+            <div>{JSON.stringify(currentUser)}</div>
+        </div>
+    );
 };
 
 export default Home;

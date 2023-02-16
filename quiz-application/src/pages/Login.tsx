@@ -1,6 +1,6 @@
-import type { FC } from "react";
+import { FC } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import LoginForm from "../components/LoginForm";
 
 const Login: FC = () => {
     return (
@@ -15,22 +15,7 @@ const Login: FC = () => {
                     <div className="illustration">
                         <img src="/images/login.svg" alt="Login" />
                     </div>
-                    <form className="login form" action="#">
-                        <div className="textInput">
-                            <input type="text" placeholder="Enter email" />
-                            <span className="material-icons-outlined"> alternate_email </span>
-                        </div>
-                        <div className="textInput">
-                            <input type="password" placeholder="Enter password" />
-                            <span className="material-icons-outlined"> lock </span>
-                        </div>
-                        <button className="button">
-                            <span>Submit now</span>
-                        </button>
-                        <div className="info">
-                            Don't have an account? <Link to="/signup">Signup</Link> instead.
-                        </div>
-                    </form>
+                    <LoginForm />
                 </div>
             </div>
         </>
