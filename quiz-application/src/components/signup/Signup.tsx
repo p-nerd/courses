@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Helmet } from "react-helmet-async";
-import SingupForm from "../components/SignupForm";
+import Illustration from "../common/Illustration";
+import SingupForm from "./SignupForm";
 
 const Singup: FC = () => {
     return (
@@ -9,15 +10,13 @@ const Singup: FC = () => {
                 <meta charSet="utf-8" />
                 <title>Signup - Quiz Application</title>
             </Helmet>
-            <div className="container">
+            <>
                 <h1>Create an account</h1>
                 <div className="column">
-                    <div className="illustration">
-                        <img src="/images/signup.svg" alt="Signup" />
-                    </div>
+                    <Illustration src="/images/signup.svg" alt="signup" />
                     <SingupForm />
                 </div>
-            </div>
+            </>
         </>
     );
 };

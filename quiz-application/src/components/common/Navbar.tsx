@@ -1,7 +1,8 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../contexts/authContext";
-import { logout } from "../firebase/authentication";
+import { useAuth } from "../../contexts/authContext";
+import { logout } from "../../firebase/authentication";
+import "./navbar.css";
 
 const Navbar: FC = () => {
     const { currentUser } = useAuth();

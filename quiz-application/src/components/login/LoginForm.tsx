@@ -1,8 +1,10 @@
 import { FC, FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { login } from "../firebase/authentication";
-import SubmitButton from "./SubmitButton";
-import TextInput from "./TextInput";
+import { login } from "../../firebase/authentication";
+import Form from "../common/Form";
+import SubmitButton from "../common/SubmitButton";
+import TextInput from "../common/TextInput";
+import "./loginForm.css";
 
 const LoginForm: FC = () => {
     const [email, setEmail] = useState("");
@@ -28,7 +30,7 @@ const LoginForm: FC = () => {
     };
 
     return (
-        <form className="login form" onSubmit={handleSubmit}>
+        <Form className="login" onSubmit={handleSubmit}>
             <TextInput
                 name="email"
                 placeholder="Enter email"
@@ -49,7 +51,7 @@ const LoginForm: FC = () => {
             <div className="info">
                 Don't have an account? <Link to="/signup">Signup</Link> instead.
             </div>
-        </form>
+        </Form>
     );
 };
 

@@ -1,8 +1,11 @@
-import { FC, FormEvent, useState } from "react";
+import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signupOnFirebase } from "../firebase/mixed";
-import SubmitButton from "./SubmitButton";
-import TextInput from "./TextInput";
+import { signupOnFirebase } from "../../firebase/mixed";
+import Form from "../common/Form";
+import SubmitButton from "../common/SubmitButton";
+import TextInput from "../common/TextInput";
+import "./signupForm.css";
+import Checkbox from "./Checkbox";
 
 const SingupForm: FC = () => {
     const [name, setName] = useState("");
@@ -34,7 +37,7 @@ const SingupForm: FC = () => {
     };
 
     return (
-        <form className="signup form" onSubmit={handleSubmit}>
+        <Form className="signup" onSubmit={handleSubmit}>
             <TextInput
                 name="name"
                 placeholder="Enter name"
@@ -65,16 +68,13 @@ const SingupForm: FC = () => {
                 onChange={e => setConfirmPassword(e.target.value)}
                 value={confirmPassword}
             />
-            <label>
-                <input required type="checkbox" onChange={e => setAgree(e.target.checked)} />
-                <span style={{ marginLeft: 5 }}>I agree to the Terms &amp; Conditions</span>
-            </label>
+            <Checkbox onChange={e => setAgree(e.target.checked)} />
             <SubmitButton loading={loading} />
             {error && <p className="error">{error}</p>}
             <div className="info">
                 Already have an account? <Link to="/login">Login</Link> instead.
             </div>
-        </form>
+        </Form>
     );
 };
 

@@ -1,11 +1,12 @@
-import type { ChangeEvent, FC } from "react";
+import { ChangeEventHandler, FC } from "react";
+import "./textInput.css";
 
 type Props = {
     type?: string;
     placeholder: string;
     icon: string;
     name: string;
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    onChange: ChangeEventHandler<HTMLInputElement>;
     value: string;
 };
 
