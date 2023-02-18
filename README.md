@@ -2,6 +2,12 @@
 
 LWS think in a redux way paid course
 
+## Links
+
+-   A1: Scoreboard Application
+    -   https://p-nerd-lws-scoreboard.netlify.app/
+    -   https://github.com/Learn-with-Sumit/batch-2---assignment-1---scoreboard-p-nerd
+
 ## React one-way data flow
 
 -   Our application had 3 parts - `state`, view and action
