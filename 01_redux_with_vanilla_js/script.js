@@ -4,17 +4,30 @@ const counterEl = document.getElementById("counter");
 
 const INCREMENT = "increment";
 const DECREMENT = "decrement";
+const IMMUTABILITY_TEST = "immutability-test";
 
 const initialState = {
     count: 0,
+    properties: {
+        a: 5,
+        b: 6,
+    },
 };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case INCREMENT:
-            return { ...state, count: state.count + 1 };
+            return { ...state, count: state.count + action.payload };
         case DECREMENT:
-            return { ...state, count: state.count - 1 };
+            return { ...state, count: state.count - action.payload };
+        case IMMUTABILITY_TEST:
+            return {
+                ...state,
+                properties: {
+                    ...state.properties,
+                    b: state.properties.b + 1,
+                },
+            };
         default:
             return state;
     }
@@ -22,11 +35,21 @@ const reducer = (state = initialState, action) => {
 
 const store = Redux.createStore(reducer);
 
+const incrementAction = value => ({
+    type: INCREMENT,
+    payload: value,
+});
+
+const decrementAction = value => ({
+    type: DECREMENT,
+    payload: value,
+});
+
 incrementEl.addEventListener("click", () => {
-    store.dispatch({ type: INCREMENT });
+    store.dispatch(incrementAction(5));
 });
 decrementEl.addEventListener("click", () => {
-    store.dispatch({ type: DECREMENT });
+    store.dispatch(decrementAction(2));
 });
 
 const render = () => {
