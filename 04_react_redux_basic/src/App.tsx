@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Counter from "./components/Counter";
 import DynamicCounter from "./components/DynamicCounter";
+import VariableCounter from "./components/VariableCounter";
 
 const App: FC = () => {
     return (
@@ -10,8 +11,10 @@ const App: FC = () => {
             </h1>
 
             <div className="max-w-md mx-auto mt-10 space-y-5">
-                <DynamicCounter />
                 <Counter />
+                <DynamicCounter />
+                <VariableCounter />
+                <VariableCounter dynamic={true} />
             </div>
         </div>
     );

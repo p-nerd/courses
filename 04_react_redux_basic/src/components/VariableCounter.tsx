@@ -2,13 +2,17 @@ import { Dispatch, FC } from "react";
 import { connect } from "react-redux";
 import { Action } from "redux";
 import {
+    decrementAction,
+    incrementAction,
+} from "../redux/counter/counterActions";
+import {
     dynamicDecrementAction,
     dynamicIncrementAction,
 } from "../redux/dynamicCounter/dynamicCounterActions";
 import { State } from "../redux/rootReducer";
 
 interface OwnProps {
-    id: string;
+    dynamic?: boolean;
 }
 
 interface Props extends OwnProps {
@@ -17,10 +21,9 @@ interface Props extends OwnProps {
     decrement: (value: number) => void;
 }
 
-const Counter: FC<Props> = ({ count, increment, decrement, id }) => {
+const VariableCounter: FC<Props> = ({ count, increment, decrement }) => {
     return (
         <div className="p-4 h-auto flex flex-col items-center justify-center space-y-5 bg-white rounded shadow">
-            <div>{id}</div>
             <div className="text-2xl font-semibold">{count}</div>
             <div className="flex space-x-3">
                 <button
@@ -41,17 +44,31 @@ const Counter: FC<Props> = ({ count, increment, decrement, id }) => {
 };
 
 const mapStateToProps = (state: State, ownProps: OwnProps) => {
-    console.log(ownProps);
     return {
-        count: state.dynamicCounter.value,
+        count: ownProps.dynamic
+            ? state.dynamicCounter.value
+            : state.counter.value,
     };
 };
 
-const mapDispatchToProps = (dispatch: Dispatch<Action<unknown>>) => {
+const mapDispatchToProps = (
+    dispatch: Dispatch<Action<unknown>>,
+    ownProps: OwnProps
+) => {
     return {
-        increment: (value: number) => dispatch(dynamicIncrementAction(value)),
-        decrement: (value: number) => dispatch(dynamicDecrementAction(value)),
+        increment: (value: number) =>
+            dispatch(
+                ownProps.dynamic
+                    ? dynamicIncrementAction(value)
+                    : incrementAction()
+            ),
+        decrement: (value: number) =>
+            dispatch(
+                ownProps.dynamic
+                    ? dynamicDecrementAction(value)
+                    : decrementAction()
+            ),
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(VariableCounter);
