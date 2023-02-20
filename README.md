@@ -10,8 +10,11 @@ LWS think in a redux way paid course
 ## Links
 
 -   A1: Scoreboard Application
-    -   https://p-nerd-lws-scoreboard.netlify.app/
+    -   https://p-nerd-lws-scoreboard.netlify.app
     -   https://github.com/Learn-with-Sumit/batch-2---assignment-1---scoreboard-p-nerd
+-   A2: Flight Booking Application
+    -   https://p-nerd-lws-flight-booking.netlify.app
+    -   https://github.com/Learn-with-Sumit/batch-2---assignment-2---flight-booking-p-nerd
 
 ## React one-way data flow
 
