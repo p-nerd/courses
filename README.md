@@ -3,9 +3,9 @@
 LWS think in a redux way paid course
 
 ## Padding Todo
-
--   [] HOC Components
--   [] React Hooks
+ 
+- [ ] HOC Components
+- [ ] React Hooks
 
 ## Links
 
