@@ -3,9 +3,9 @@
 LWS think in a redux way paid course
 
 ## Padding Todo
- 
-- [ ] HOC Components
-- [ ] React Hooks
+
+-   [ ] HOC Components
+-   [ ] React Hooks
 
 ## Links
 
@@ -15,6 +15,8 @@ LWS think in a redux way paid course
 -   A2: Flight Booking Application
     -   https://p-nerd-lws-flight-booking.netlify.app
     -   https://github.com/Learn-with-Sumit/batch-2---assignment-2---flight-booking-p-nerd
+
+# Notes
 
 ## React one-way data flow
 
