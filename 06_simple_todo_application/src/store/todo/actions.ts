@@ -17,6 +17,6 @@ export const deleteAllTodoDoneAction = () => {
     return { type: DELETE_ALL_DONE };
 };
 
-export const updateAllTodoDone = () => {
+export const updateAllTodoDoneAction = () => {
     return { type: UPDATE_ALL_DONE };
 };

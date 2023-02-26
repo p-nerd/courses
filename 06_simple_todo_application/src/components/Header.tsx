@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { deleteAllTodoDoneAction, updateAllTodoDone } from "../store/todo/actions";
+import { deleteAllTodoDoneAction, updateAllTodoDoneAction } from "../store/todo/actions";
 import doubleTick from "./../assets/images/double-tick.png";
 import InputTodo from "./InputTodo";
 
@@ -7,7 +7,7 @@ const Header = () => {
     const dispatch = useDispatch();
 
     const handleAllComplete = () => {
-        dispatch(updateAllTodoDone());
+        dispatch(updateAllTodoDoneAction());
     };
 
     const handleClearAllCompleted = () => {
