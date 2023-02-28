@@ -3,39 +3,39 @@ import thunk from "redux-thunk";
 import { fetchTodos } from "./api-call";
 
 type TTodo = {
-  title: string;
+    title: string;
 };
 
 type TState = {
-  todos: TTodo[];
+    todos: TTodo[];
 };
 
 const initialState: TState = {
-  todos: [],
+    todos: [],
 };
 
 const reducer = (state = initialState, action: any) => {
-  switch (action.type) {
-    case "todos/add-todo":
-      return {
-        ...state,
-        todos: [...state.todos, { title: action.payload }],
-      };
-    case "todos/load-todos":
-      return {
-        ...state,
-        todos: [...state.todos, ...action.payload],
-      };
-    default:
-      return state;
-  }
+    switch (action.type) {
+        case "todos/add-todo":
+            return {
+                ...state,
+                todos: [...state.todos, { title: action.payload }],
+            };
+        case "todos/load-todos":
+            return {
+                ...state,
+                todos: [...state.todos, ...action.payload],
+            };
+        default:
+            return state;
+    }
 };
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
 const render = () => {
-  const state = store.getState();
-  console.log(state);
+    const state = store.getState();
+    console.log(state);
 };
 
 store.subscribe(render);
