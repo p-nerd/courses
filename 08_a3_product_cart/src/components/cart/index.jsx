@@ -11,7 +11,7 @@ const Cart = () => {
             <div className="cartListContainer">
                 <div className="space-y-6">
                     {cart.length === 0
-                        ? "no"
+                        ? "No products in cart"
                         : cart.map(cartItem => <CartItem key={cartItem.id} cartItem={cartItem} />)}
                 </div>
                 <BillDetails />

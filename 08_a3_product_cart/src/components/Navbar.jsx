@@ -13,7 +13,7 @@ const Navbar = ({ setCurrentPage }) => {
     return (
         <nav className="bg-[#171C2A] py-4">
             <div className="navBar">
-                <a href="index.html">
+                <a onClick={() => handleSetCurrentPage("products")}>
                     <img src={logoImage} alt="LWS" className="max-w-[140px]" />
                 </a>
                 <div className="flex gap-4">

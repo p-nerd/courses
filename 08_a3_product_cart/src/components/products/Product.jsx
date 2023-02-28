@@ -8,7 +8,7 @@ const Product = ({ product }) => {
     const { id, name, category, imageUrl, price, quantity } = product;
 
     const handleAddToCart = () => {
-        dispatch(addToCart(id, name, category, imageUrl, price));
+        dispatch(addToCart(id, price));
         dispatch(decreaseProductQuantity(id));
     };
 

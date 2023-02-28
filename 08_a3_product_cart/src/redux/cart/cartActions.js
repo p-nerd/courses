@@ -5,14 +5,11 @@ import {
     INCREASE_QUANTITY,
 } from "./cartActionsType";
 
-export const addToCart = (productId, name, category, imageUrl, price) => {
+export const addToCart = (productId, price) => {
     return {
         type: ADD_TO_CART,
         payload: {
-            id: productId,
-            name,
-            category,
-            imageUrl,
+            productId,
             price,
         },
     };

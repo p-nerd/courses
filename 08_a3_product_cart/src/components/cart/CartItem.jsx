@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { decreaseQuantity, deleteCartItem, increaseQuantity } from "../../redux/cart/cartActions";
 import {
     decreaseProductQuantity,
@@ -8,8 +8,9 @@ import {
 const CartItem = ({ cartItem }) => {
     const dispatch = useDispatch();
 
-    const { id, product, quantity } = cartItem;
-    const { id: productId, name, category, imageUrl, price } = product;
+    const { id, productId, quantity, price } = cartItem;
+    const product = useSelector(state => state.products).find(item => item.id === productId);
+    const { name, category, imageUrl, quantity: productQuantity } = product;
 
     const totalPrice = price * quantity;
 
@@ -45,11 +46,19 @@ const CartItem = ({ cartItem }) => {
             <div className="flex items-center justify-center col-span-4 mt-4 space-x-8 md:mt-0">
                 {/* amount buttons */}
                 <div className="flex items-center space-x-4">
-                    <button onClick={handleIncreaseQuantity} className="lws-incrementQuantity">
+                    <button
+                        onClick={handleIncreaseQuantity}
+                        disabled={productQuantity === 0}
+                        className="lws-incrementQuantity"
+                    >
                         <i className="text-lg fa-solid fa-plus" />
                     </button>
                     <span className="lws-cartQuantity">{quantity}</span>
-                    <button onClick={handleDecreaseQuantity} className="lws-decrementQuantity">
+                    <button
+                        disabled={quantity === 1}
+                        onClick={handleDecreaseQuantity}
+                        className="lws-decrementQuantity"
+                    >
                         <i className="text-lg fa-solid fa-minus" />
                     </button>
                 </div>

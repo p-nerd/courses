@@ -12,15 +12,16 @@ const nextCartId = cart => {
 };
 
 const isProductExist = (cart, productId) => {
-    return cart.filter(cartItem => cartItem.product.id === productId).length === 1;
+    return cart.filter(cartItem => cartItem.productId === productId).length === 1;
 };
 
 const cartReducer = (state = cartInitialState, action) => {
     switch (action.type) {
         case ADD_TO_CART:
-            if (isProductExist(state, action.payload.id)) {
+            const { productId, price } = action.payload;
+            if (isProductExist(state, productId)) {
                 return state.map(cartItem => {
-                    if (cartItem.product.id === action.payload.id) {
+                    if (cartItem.productId === productId) {
                         return { ...cartItem, quantity: cartItem.quantity + 1 };
                     }
                     return cartItem;
@@ -30,8 +31,9 @@ const cartReducer = (state = cartInitialState, action) => {
                 ...state,
                 {
                     id: nextCartId(state),
-                    product: action.payload,
                     quantity: 1,
+                    productId,
+                    price,
                 },
             ];
         case INCREASE_QUANTITY:

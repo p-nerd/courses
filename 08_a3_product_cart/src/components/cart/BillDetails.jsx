@@ -3,10 +3,7 @@ import { useSelector } from "react-redux";
 const BillDetails = () => {
     const cart = useSelector(state => state.cart);
 
-    const totalPrice = cart.reduce(
-        (sum, cartItem) => sum + cartItem.product.price * cartItem.quantity,
-        0
-    );
+    const totalPrice = cart.reduce((sum, cartItem) => sum + cartItem.price * cartItem.quantity, 0);
 
     return (
         <div>
