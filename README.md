@@ -15,6 +15,9 @@ LWS think in a redux way paid course
 -   A2: Flight Booking Application
     -   https://p-nerd-lws-flight-booking.netlify.app
     -   https://github.com/Learn-with-Sumit/batch-2---assignment-2---flight-booking-p-nerd
+-   A3: Product Cart
+    -   https://github.com/Learn-with-Sumit/batch-2---assignment-3---product-cart-p-nerd
+    -   https://p-nerd-lws-product-cart.netlify.app
 
 # Notes
 
