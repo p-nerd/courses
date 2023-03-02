@@ -18,6 +18,9 @@ LWS think in a redux way paid course
 -   A3: Product Cart
     -   https://github.com/Learn-with-Sumit/batch-2---assignment-3---product-cart-p-nerd
     -   https://p-nerd-lws-product-cart.netlify.app
+-   A4: Manage Bookstore
+    -   https://github.com/Learn-with-Sumit/batch-2---assignment-4--manage-bookstore-p-nerd	
+    -   https://p-nerd-lws-manage-bookstore.netlify.app
 
 # Notes
 
