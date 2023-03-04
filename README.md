@@ -19,7 +19,7 @@ LWS think in a redux way paid course
     -   https://github.com/Learn-with-Sumit/batch-2---assignment-3---product-cart-p-nerd
     -   https://p-nerd-lws-product-cart.netlify.app
 -   A4: Manage Bookstore
-    -   https://github.com/Learn-with-Sumit/batch-2---assignment-4--manage-bookstore-p-nerd	
+    -   https://github.com/Learn-with-Sumit/batch-2---assignment-4--manage-bookstore-p-nerd
     -   https://p-nerd-lws-manage-bookstore.netlify.app
 
 # Notes
@@ -52,3 +52,20 @@ LWS think in a redux way paid course
     -   Reducers are supposed to be `pure` & that's where the predictability comes from
 -   Why `Redux` is predictable
     -   because using `Redux` you'll know what every single action in application will do and how `state` will change
+
+## Problems writing Redux
+
+-   Redux requires to much `boilerplate`
+    -   Action Types
+    -   Action Creators
+    -   Switch statements in reducer
+    -   Too much modular file structure
+-   Other `packages` need to be installed
+    -   redux-thunk
+    -   redux-devtools
+-   Biggest Concern
+    -   Immutable state updates
+
+## Redux Toolkit
+
+-   The official, opinionated, batteries-included toolset for efficient Redux development
