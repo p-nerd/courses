@@ -9,6 +9,10 @@ LWS think in a redux way paid course
 
 ## Links
 
+-   https://github.com/Learn-with-Sumit/think-in-a-redux-way
+
+## Assignments
+
 -   A1: Scoreboard Application
     -   https://p-nerd-lws-scoreboard.netlify.app
     -   https://github.com/Learn-with-Sumit/batch-2---assignment-1---scoreboard-p-nerd

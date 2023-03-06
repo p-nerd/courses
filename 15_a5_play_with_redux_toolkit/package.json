@@ -1,0 +1,14 @@
+{
+    "name": "15_a5_play_with_redux_toolkit",
+    "version": "1.0.0",
+    "main": "./src/index.js",
+    "license": "MIT",
+    "scripts": {
+        "execute": "node ."
+    },
+    "dependencies": {
+        "@reduxjs/toolkit": "^1.9.3",
+        "node-fetch": "2",
+        "redux-logger": "^3.0.6"
+    }
+}
