@@ -10,11 +10,11 @@ type Props = {
     date: string;
 };
 
-const RelatedVideo = ({ id, thumbnail, title, duration, author, views, date }: Props) => {
+const SingleRelatedVideo = ({ id, thumbnail, title, duration, author, views, date }: Props) => {
     return (
         <div className="w-full flex flex-row gap-2 mb-4">
             <div className="relative w-[168px] h-[94px] flex-none duration-300 hover:scale-[1.03]">
-                <Link to={`/video/${id}`}>
+                <Link to={`/videos/${id}`}>
                     <img src={thumbnail} className="object-cover" alt={title} />
                 </Link>
                 <p className="absolute right-2 bottom-2 bg-gray-900 text-gray-100 text-xs px-1 py">
@@ -22,7 +22,7 @@ const RelatedVideo = ({ id, thumbnail, title, duration, author, views, date }: P
                 </p>
             </div>
             <div className="flex flex-col w-full">
-                <Link to={`/video/${id}`}>
+                <Link to={`/videos/${id}`}>
                     <p className="text-slate-900 text-sm font-semibold">{title}</p>
                 </Link>
 
@@ -40,4 +40,4 @@ const RelatedVideo = ({ id, thumbnail, title, duration, author, views, date }: P
     );
 };
 
-export default RelatedVideo;
+export default SingleRelatedVideo;

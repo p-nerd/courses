@@ -8,14 +8,14 @@ import VideoCard from "./VideoCard";
 
 const filterBySearch = (searchString: string, videos: Video[]) => {
     if (searchString === "") return videos;
-    return videos.filter(video => {
+    return videos.filter((video) => {
         return video.title.toLowerCase().includes(searchString.toLowerCase());
     });
 };
 
 const filterVideosByTags = (tag: string, videos: Video[]) => {
     if (tag === "") return videos;
-    return videos.filter(video => {
+    return videos.filter((video) => {
         for (let t of video.tags) {
             if (t === tag) return true;
         }
@@ -26,8 +26,14 @@ const filterVideosByTags = (tag: string, videos: Video[]) => {
 const VideoGird = () => {
     const dispatch = useAppDispatch();
 
-    const { loading, error, videos } = useSelector((state: State) => state.videos);
-    const { searchString, selectedTag } = useSelector((state: State) => state.common);
+    const {
+        isLoading: loading,
+        error,
+        videos,
+    } = useSelector((state: State) => state.videos);
+    const { searchString, selectedTag } = useSelector(
+        (state: State) => state.common
+    );
 
     const searchedVideos = filterBySearch(searchString, videos);
     const filteredVideos = filterVideosByTags(selectedTag, searchedVideos);
@@ -45,7 +51,7 @@ const VideoGird = () => {
                     ) : error ? (
                         <div className="col-span-12 text-red-500">{error}</div>
                     ) : (
-                        filteredVideos.map(video => (
+                        filteredVideos.map((video) => (
                             <VideoCard
                                 key={video.id}
                                 id={video.id}

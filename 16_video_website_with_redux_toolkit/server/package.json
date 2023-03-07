@@ -1,8 +1,5 @@
 {
-    "name": "lws-json-server-todos",
-    "description": "Example in memory videos api with json-server by Learn with Sumit",
-    "version": "1.0.0",
-    "main": "index.js",
+    "license": "MIT",
     "scripts": {
         "start": "json-server --watch db_videos.json --no-cors true --port 9000"
     },

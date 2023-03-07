@@ -17,15 +17,17 @@ export type Video = {
     unlikes: number;
 };
 
-type VideosState = {
-    loading: boolean;
+export type VideosState = {
+    isLoading: boolean;
     error: string;
+    isError: boolean;
     videos: Video[];
 };
 
 const initialState: VideosState = {
-    loading: false,
+    isLoading: false,
     error: "",
+    isError: false,
     videos: [],
 };
 
@@ -52,19 +54,19 @@ const videosSlice = createSlice({
     },
     extraReducers: builder => {
         builder.addCase(fetchVideos.pending, state => {
-            state.loading = true;
+            state.isLoading = true;
             state.error = "";
             state.videos = [];
         });
 
         builder.addCase(fetchVideos.fulfilled, (state, action) => {
-            state.loading = false;
+            state.isLoading = false;
             state.error = "";
             state.videos = action.payload;
         });
 
         builder.addCase(fetchVideos.rejected, (state, action) => {
-            state.loading = false;
+            state.isLoading = false;
             state.error = action.error.message || "";
             state.videos = [];
         });
