@@ -1,77 +1,50 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { fetchVideos } from "./videosAPI";
-
-export type Video = {
-    id: number;
-    title: string;
-    description: string;
-    author: string;
-    avatar: string;
-    date: string;
-    duration: string;
-    views: string;
-    link: string;
-    thumbnail: string;
-    tags: string[];
-    likes: number;
-    unlikes: number;
-};
-
-export type VideosState = {
-    isLoading: boolean;
-    error: string;
-    isError: boolean;
-    videos: Video[];
-};
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { VideosState } from "../types";
+import { getVideos } from "./videosAPI";
 
 const initialState: VideosState = {
-    isLoading: false,
-    error: "",
-    isError: false,
     videos: [],
+    isLoading: false,
+    isError: false,
+    error: "",
 };
 
+export const fetchVideos = createAsyncThunk(
+    "videos/fetchVideos",
+    async ({
+        searchString,
+        selectedTags,
+    }: {
+        searchString: string;
+        selectedTags: string[];
+    }) => {
+        const videos = await getVideos(selectedTags, searchString);
+        return videos;
+    }
+);
+
 const videosSlice = createSlice({
-    name: "videos",
+    name: "relatedVideos",
     initialState,
-    reducers: {
-        incrementLike: (state, action) => {
-            state.videos = state.videos.map(video => {
-                if (video.id === action.payload) {
-                    video.likes++;
-                }
-                return video;
-            });
-        },
-        decrementLike: (state, action) => {
-            state.videos = state.videos.map(video => {
-                if (video.id === action.payload) {
-                    video.likes--;
-                }
-                return video;
-            });
-        },
-    },
+    reducers: {},
     extraReducers: builder => {
-        builder.addCase(fetchVideos.pending, state => {
-            state.isLoading = true;
-            state.error = "";
-            state.videos = [];
-        });
-
-        builder.addCase(fetchVideos.fulfilled, (state, action) => {
-            state.isLoading = false;
-            state.error = "";
-            state.videos = action.payload;
-        });
-
-        builder.addCase(fetchVideos.rejected, (state, action) => {
-            state.isLoading = false;
-            state.error = action.error.message || "";
-            state.videos = [];
-        });
+        builder
+            .addCase(fetchVideos.pending, state => {
+                state.isLoading = true;
+                state.isError = false;
+            })
+            .addCase(fetchVideos.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isError = false;
+                state.videos = action.payload;
+            })
+            .addCase(fetchVideos.rejected, (state, action) => {
+                state.isLoading = false;
+                state.videos = [];
+                state.isError = true;
+                state.error = action.error.message || "";
+            });
     },
 });
 
 export const videosReducer = videosSlice.reducer;
-export const { incrementLike, decrementLike } = videosSlice.actions;

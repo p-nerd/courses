@@ -1,8 +1,6 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { BASE_API_URL } from "../../utils/env";
+import http from "../../utils/http";
 
-export const fetchTags = createAsyncThunk("tags/fetchTags", async () => {
-    const response = await fetch(`${BASE_API_URL}/tags`);
-    const tags = await response.json();
-    return tags;
-});
+export const getTags = async () => {
+    const response = await http.get("/tags");
+    return await response.json();
+};

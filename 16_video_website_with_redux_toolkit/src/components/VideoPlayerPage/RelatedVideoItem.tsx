@@ -1,16 +1,8 @@
 import { Link } from "react-router-dom";
+import { Video } from "../../features/types";
 
-type Props = {
-    id: number;
-    thumbnail: string;
-    title: string;
-    duration: string;
-    author: string;
-    views: string;
-    date: string;
-};
-
-const SingleRelatedVideo = ({ id, thumbnail, title, duration, author, views, date }: Props) => {
+const RelatedVideoItem = ({ video }: { video: Video }) => {
+    const { id, thumbnail, title, duration, author, views, date } = video;
     return (
         <div className="w-full flex flex-row gap-2 mb-4">
             <div className="relative w-[168px] h-[94px] flex-none duration-300 hover:scale-[1.03]">
@@ -40,4 +32,4 @@ const SingleRelatedVideo = ({ id, thumbnail, title, duration, author, views, dat
     );
 };
 
-export default SingleRelatedVideo;
+export default RelatedVideoItem;
