@@ -27,6 +27,9 @@ LWS think in a redux way paid course
     -   https://p-nerd-lws-manage-bookstore.netlify.app
 -   A5: Play with Redux Toolkit
     -   https://github.com/Learn-with-Sumit/batch-2---assignment-5---play-with-redux-toolkit-p-nerd
+-   A6: Blog Application
+    -   https://github.com/Learn-with-Sumit/batch-2---assignment-6--blog-application-p-nerd
+    -   https://p-nerd-lws-blog-application.netlify.app
 
 # Notes
 
