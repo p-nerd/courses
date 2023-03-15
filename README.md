@@ -30,6 +30,9 @@ LWS think in a redux way paid course
 -   A6: Blog Application
     -   https://github.com/Learn-with-Sumit/batch-2---assignment-6--blog-application-p-nerd
     -   https://p-nerd-lws-blog-application.netlify.app
+-   A7: Job Finder
+    -   https://github.com/Learn-with-Sumit/batch-2---assignment-7---job-finder-p-nerd	
+    -   https://p-nerd-lws-job-finder.netlify.app
 
 # Notes
 
