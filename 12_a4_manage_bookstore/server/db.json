@@ -1,0 +1,40 @@
+{
+    "books": [
+        {
+            "name": "Eloquent JavaScript, 3rd Edition",
+            "author": "Marijn Haverbeke",
+            "thumbnail": "https://m.media-amazon.com/images/I/51InjRPaF7L._SX377_BO1,204,203,200_.jpg",
+            "price": 23.99,
+            "rating": 4,
+            "featured": false,
+            "id": 4
+        },
+        {
+            "name": "computer programming part 1",
+            "author": "subeen",
+            "thumbnail": "https://static-01.daraz.com.bd/p/e5af5d950fff75fffd7f6a79d7aab4e3.jpg_720x720.jpg_.webp",
+            "price": 16000000,
+            "rating": 5,
+            "featured": true,
+            "id": 10
+        },
+        {
+            "name": "computer programming part hello",
+            "author": "subeen sir",
+            "thumbnail": "https://i.ytimg.com/vi/mWvyv3xSyP4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBghQonLaHjwGg-SJHLc3-H1JKeQA",
+            "price": 1234,
+            "rating": 2,
+            "featured": true,
+            "id": 11
+        },
+        {
+            "name": "Tech Your Self C",
+            "author": "harvert sheld",
+            "thumbnail": "https://static-01.daraz.com.bd/p/e5af5d950fff75fffd7f6a79d7aab4e3.jpg_720x720.jpg_.webp",
+            "price": 10000,
+            "rating": 4,
+            "featured": true,
+            "id": 12
+        }
+    ]
+}

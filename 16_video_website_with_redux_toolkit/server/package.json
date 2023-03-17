@@ -1,0 +1,11 @@
+{
+    "license": "MIT",
+    "scripts": {
+        "start": "json-server --watch db_videos.json --no-cors true --port 9000"
+    },
+    "dependencies": {
+        "json-server": "^0.17.0"
+    },
+    "keywords": [],
+    "author": "Sumit Saha, Learn with Sumit"
+}
