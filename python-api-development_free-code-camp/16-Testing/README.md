@@ -1,0 +1,31 @@
+# Section 16: Testing
+
+- Testing Intro
+- Writing your first test
+- The -s & -v flags
+- Testing more functions
+- Parametrize
+- Testing Classes
+- Fixtures
+- Combining Fixtures + Parametrize
+- Testing Exceptions
+- FastAPI TestClient
+- Pytest flags
+- Test create user
+- Setup testing database
+- Create & destroy database after each test
+- More Fixtures to handle database interaction
+- Trailing slashes in path
+- Fixture scope
+- Test user fixture
+- Test/validate token
+- Conftest.py
+- Failed login test
+- Get all posts test
+- Posts fixture to create test posts
+- Unauthorized Get Posts test
+- Get one post test
+- Create post test
+- Delete post test
+- Update post
+- Voting tests

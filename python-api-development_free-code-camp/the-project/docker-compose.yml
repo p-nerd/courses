@@ -1,0 +1,30 @@
+version: '3'
+services:
+  api:
+    image: shihab4t/social_media_api.py
+    ports:
+      - 80:8000
+    environment:
+      - DATABASE_HOSTNAME=db
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_USERNAME=${DATABASE_USERNAME}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - SECRET_KEY=${SECRET_KEY}
+      - ALGORITHM=${ALGORITHM}
+      - ACCESS_TOKEN_EXPIRE_MINUTES=${ACCESS_TOKEN_EXPIRE_MINUTES}
+    depends_on:
+      - db
+    volumes:
+      - ./:/usr/src/app:ro
+
+  db:
+    image: postgres:14-alpine
+    environment:
+      - POSTGRES_PASSWORD=${DATABASE_NAME}
+      - POSTGRES_DB=${DATABASE_NAME}
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+
+volumes:
+  postgres_db:
