@@ -1,5 +1,7 @@
 import { ChangeEventHandler, FormEventHandler, useState } from "react";
-import { TAddVideo, TVideo } from "../../features/api/apiSlice";
+import { TAddVideo, TVideo, useEditVideoMutation } from "../../features/api/apiSlice";
+import Error from "../ui/Error";
+import Success from "../ui/Success";
 import TextArea from "../ui/TextArea";
 import TextInput from "../ui/TextInput";
 
@@ -40,8 +42,11 @@ const Form = ({ video }: Props) => {
         setFormData(prevFormData => ({ ...prevFormData, [name]: value }));
     };
 
+    const [editVideo, { isLoading, isError, isSuccess }] = useEditVideoMutation();
+
     const handleSubmit: HandleSubmit = async event => {
         event.preventDefault();
+        editVideo({ id: video.id, data: formData });
         resetFormData();
     };
 
@@ -125,7 +130,7 @@ const Form = ({ video }: Props) => {
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                     <button
-                        // disabled={isLoading}
+                        disabled={isLoading}
                         type="submit"
                         className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-0 focus:ring-offset-0 focus:ring-indigo-500"
                     >
@@ -133,8 +138,8 @@ const Form = ({ video }: Props) => {
                     </button>
                 </div>
 
-                {/* {isSuccess && <Success message="Video was added successfully" />}
-                {isError && <Error message="There was an error adding video!" />} */}
+                {isSuccess && <Success message="Video was added successfully" />}
+                {isError && <Error message="There was an error adding video!" />}
             </div>
         </form>
     );
