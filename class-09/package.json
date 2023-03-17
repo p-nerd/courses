@@ -1,0 +1,27 @@
+{
+    "name": "project",
+    "version": "1.1.0",
+    "description": "",
+    "main": "index.js",
+    "type": "commonjs",
+    "scripts": {
+        "start:dev": "nodemon ./index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "dotenv": "^16.0.1",
+        "express": "^4.17.3",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.3.1",
+        "morgan": "^1.10.0"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.13",
+        "@types/mongoose": "^5.11.97",
+        "@types/node": "^17.0.34",
+        "nodemon": "^2.0.15"
+    }
+}
