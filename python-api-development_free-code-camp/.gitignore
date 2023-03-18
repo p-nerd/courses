@@ -1,7 +1,0 @@
-fastapi-course
-__pycache__
-.venv
-.vscode
-.idea
-.env
-tmp.*

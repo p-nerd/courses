@@ -1,6 +1,0 @@
-__pycache__
-.venv
-.env
-.idea
-tmp.*
-.pytest_cache
