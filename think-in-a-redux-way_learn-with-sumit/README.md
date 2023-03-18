@@ -31,8 +31,11 @@ LWS think in a redux way paid course
     -   https://github.com/Learn-with-Sumit/batch-2---assignment-6--blog-application-p-nerd
     -   https://p-nerd-lws-blog-application.netlify.app
 -   A7: Job Finder
-    -   https://github.com/Learn-with-Sumit/batch-2---assignment-7---job-finder-p-nerd	
+    -   https://github.com/Learn-with-Sumit/batch-2---assignment-7---job-finder-p-nerd
     -   https://p-nerd-lws-job-finder.netlify.app
+-   A8: Manage Bookstore RTK Query
+    -   https://github.com/Learn-with-Sumit/batch-2---assignment-8---bookstore-with-rtk-query-p-nerd
+    -   https://p-nerd-lws-manage-bookstore-rtk-query.netlify.app
 
 # Notes
 
