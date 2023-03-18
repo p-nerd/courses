@@ -1,0 +1,58 @@
+{
+  "books": [
+    {
+      "name": "Slow Horses (Deluxe Edition)",
+      "author": "Mick Herron",
+      "thumbnail": "https://m.media-amazon.com/images/I/51Ga5GuElyL._SX331_BO1,204,203,200_.jpg",
+      "price": 55,
+      "rating": 3,
+      "featured": false,
+      "id": 1
+    },
+    {
+      "name": "The Last Thing He Told Me: A Novel",
+      "author": "Laura Dave",
+      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
+      "price": 13.99,
+      "rating": 4,
+      "featured": true,
+      "id": 2
+    },
+    {
+      "name": "Eloquent JavaScript, 3rd Edition",
+      "author": "Marijn Haverbeke",
+      "thumbnail": "https://m.media-amazon.com/images/I/51InjRPaF7L._SX377_BO1,204,203,200_.jpg",
+      "price": 23.99,
+      "rating": 4,
+      "featured": true,
+      "id": 4
+    },
+    {
+      "name": "Computer Programming",
+      "author": "Tamim Shariar Subben",
+      "thumbnail": "https://static-01.daraz.com.bd/p/e5af5d950fff75fffd7f6a79d7aab4e3.jpg",
+      "price": 250,
+      "featured": false,
+      "id": 5,
+      "rating": 4
+    },
+    {
+      "name": "Computer Programming part 2",
+      "author": "Tamim Shariar Subben",
+      "thumbnail": "https://raw.githubusercontent.com/theanasuddin/Computer-Programming-Part-2-by-Tamim-Shahriar-Subeen/main/cover.png",
+      "price": 3000,
+      "featured": false,
+      "id": 6,
+      "rating": 5
+    },
+    {
+      "name": "Computer Programming part 3",
+      "author": "Tamim Shariar Subben",
+      "thumbnail": "https://static-01.daraz.com.bd/p/47f48b2b01bda64b12b8ab4570108497.jpg",
+      "price": 255,
+      "featured": true,
+      "rating": 5,
+      "id": 8
+    }
+  ]
+}
