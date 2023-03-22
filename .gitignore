@@ -47,3 +47,5 @@ html
 public/uploads/avatars
 
 .pytest_cache
+
+*tmp*
