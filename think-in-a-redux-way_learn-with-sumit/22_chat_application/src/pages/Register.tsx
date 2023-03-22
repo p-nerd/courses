@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logoImage from "../assets/images/lws-logo-light.svg";
-import RegisterForm from "../components/auth/RegisterForm";
+import RegisterForm from "../components/forms/RegisterForm";
 
 const Register = () => {
     return (

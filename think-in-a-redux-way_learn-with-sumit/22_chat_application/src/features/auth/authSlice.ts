@@ -20,7 +20,8 @@ const authSlice = createSlice({
             state.accessToken = action.payload.accessToken;
             state.user = action.payload.user;
         },
-        userLoggedOut: (state, action) => {
+        userLoggedOut: state => {
+            localStorage.removeItem("auth");
             state.accessToken = "";
             state.user = {
                 id: 0,

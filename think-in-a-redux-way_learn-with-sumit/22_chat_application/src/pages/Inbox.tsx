@@ -2,7 +2,7 @@ import ChatBody from "../components/inbox/chatbody/ChatBody";
 import Navigation from "../components/inbox/Navigation";
 import Sidebar from "../components/inbox/Sidebar";
 
-export default function Inbox() {
+const Inbox = () => {
     return (
         <div>
             <Navigation />
@@ -14,4 +14,6 @@ export default function Inbox() {
             </div>
         </div>
     );
-}
+};
+
+export default Inbox;

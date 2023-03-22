@@ -28,7 +28,7 @@ const RegisterForm = () => {
         }
     }, [data, isError]);
 
-    const handleSumit = () => {
+    const handleSubmit = () => {
         if (confirmPassword !== password) {
             setError("Password do not match!");
         } else {
@@ -47,7 +47,7 @@ const RegisterForm = () => {
             className="mt-8 space-y-6"
             onSubmit={e => {
                 e.preventDefault();
-                handleSumit();
+                handleSubmit();
             }}
         >
             <div className="rounded-md shadow-sm -space-y-px">
