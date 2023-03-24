@@ -23,8 +23,6 @@ const RegisterForm = () => {
         }
         if (data?.accessToken && data?.user) {
             navigate("/inbox");
-        } else {
-            setError("Something wrong");
         }
     }, [data, isError]);
 

@@ -2,7 +2,7 @@
     "license": "MIT",
     "main": "server.js",
     "scripts": {
-        "start": "nodemon server.js"
+        "start": "node ./server.js"
     },
     "dependencies": {
         "json-server": "^0.17.0",

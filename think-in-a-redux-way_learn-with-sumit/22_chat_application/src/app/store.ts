@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import apiSlice from "../features/api/apiSlice";
 import authSlice from "../features/auth/authSlice";
-import conversionsSlice from "../features/conversions/conversionsSlice";
+import conversionsSlice from "../features/conversations/conversationsSlice";
 import messagesSlice from "../features/messages/messagesSlice";
 
 export const store = configureStore({

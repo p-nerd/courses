@@ -1,8 +1,8 @@
 import blankImage from "../../../assets/images/blank.svg";
 
-export default function Blank() {
+const Blank = () => {
     return (
-        <div className="relative w-full overflow-y-hiddeen h-[calc(100vh_-_64px)] flex flex-col items-center justify-center text-gray-700 p-5 space-y-5">
+        <div className="relative w-full overflow-y-hidden h-[calc(100vh_-_64px)] flex flex-col items-center justify-center text-gray-700 p-5 space-y-5">
             <div>
                 <img src={blankImage} alt="Nothing here!" className="w-20" />
             </div>
@@ -12,4 +12,6 @@ export default function Blank() {
             </div>
         </div>
     );
-}
+};
+
+export default Blank;

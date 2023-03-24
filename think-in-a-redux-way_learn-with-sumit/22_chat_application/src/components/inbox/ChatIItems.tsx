@@ -1,28 +1,56 @@
+import gravatarUrl from "gravatar-url";
+import moment from "moment";
+import { Link } from "react-router-dom";
+import { useAppSelector } from "../../app/hooks";
+import { useGetConversionsQuery } from "../../features/conversations/conversationsApi";
+import { getPartnerInfo } from "../../utils/func";
 import ChatItem from "./ChatItem";
 
-export default function ChatItems() {
+const ChatItems = () => {
+    const {
+        user: { email },
+    } = useAppSelector(state => state.auth);
+
+    const {
+        data: conversions,
+        isLoading,
+        isError,
+        error,
+    } = useGetConversionsQuery(email);
+
+    let error2: any = error;
+
     return (
         <ul>
-            <li>
-                <ChatItem
-                    avatar="https://cdn.pixabay.com/photo/2018/09/12/12/14/man-3672010__340.jpg"
-                    name="Saad Hasan"
-                    lastMessage="bye"
-                    lastTime="25 minutes"
-                />
-                <ChatItem
-                    avatar="https://cdn.pixabay.com/photo/2018/09/12/12/14/man-3672010__340.jpg"
-                    name="Sumit Saha"
-                    lastMessage="will talk to you later"
-                    lastTime="10 minutes"
-                />
-                <ChatItem
-                    avatar="https://cdn.pixabay.com/photo/2018/09/12/12/14/man-3672010__340.jpg"
-                    name="Mehedi Hasan"
-                    lastMessage="thanks for your support"
-                    lastTime="15 minutes"
-                />
-            </li>
+            {isLoading ? (
+                <li>Loading...</li>
+            ) : isError ? (
+                <li>{error2?.error}</li>
+            ) : conversions && conversions.length === 0 ? (
+                <li>There is no conversions by the user</li>
+            ) : (
+                <li>
+                    {conversions?.map(item => {
+                        const { id, message, users, timestamp } = item;
+                        const otherUser = getPartnerInfo(users, email);
+
+                        return (
+                            <Link key={id} to={`/inbox/${id}`}>
+                                <ChatItem
+                                    avatar={gravatarUrl(otherUser.email, {
+                                        size: 80,
+                                    })}
+                                    name={otherUser.name}
+                                    lastMessage={message}
+                                    lastTime={moment(timestamp).fromNow()}
+                                />
+                            </Link>
+                        );
+                    })}
+                </li>
+            )}
         </ul>
     );
-}
+};
+
+export default ChatItems;

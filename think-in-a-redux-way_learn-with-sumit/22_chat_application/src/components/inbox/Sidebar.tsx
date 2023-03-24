@@ -7,7 +7,7 @@ export default function Sidebar() {
     const [opened, setOpened] = useState(false);
 
     const controlModal = () => {
-        setOpened((prevState) => !prevState);
+        setOpened(prevState => !prevState);
     };
 
     return (
