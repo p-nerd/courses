@@ -6,6 +6,8 @@ import {
     TAddConversion,
     TEditConversion,
 } from "./conversationsTypes";
+import { BASE_URL } from "./../../utils/env";
+import { io } from "socket.io-client";
 
 const conversionsApi = apiSlice.injectEndpoints({
     endpoints: builder => ({
@@ -15,6 +17,42 @@ const conversionsApi = apiSlice.injectEndpoints({
                 `?participants_like=${email}` +
                 `&_sort=timestamp&_order=desc` +
                 `&_page=1&_limit=${CONVERSIONS_PER_PAGE}`,
+            onCacheEntryAdded: async (
+                email,
+                { updateCachedData, cacheDataLoaded, cacheEntryRemoved }
+            ) => {
+                // create websocket
+                const socket = io(BASE_URL, {
+                    reconnectionDelay: 1000,
+                    reconnection: true,
+                    reconnectionAttempts: 10,
+                    transports: ["websocket"],
+                    agent: false,
+                    upgrade: false,
+                    rejectUnauthorized: false,
+                });
+                try {
+                    await cacheDataLoaded;
+                    socket.on("conversation", data => {
+                        // console.log(data);
+                        updateCachedData(draft => {
+                            const conversation = draft.find(
+                                c => c.id == data?.data?.id
+                            );
+                            if (conversation?.id) {
+                                conversation.message = data?.data?.message;
+                                conversation.timestamp = data?.data?.timestamp;
+                            } else {
+                                if (data?.data?.participants.includes(email)) {
+                                    draft.push(data?.data);
+                                }
+                            }
+                        });
+                    });
+                } catch (err: any) {}
+                await cacheEntryRemoved;
+                socket.close();
+            },
         }),
         getConversion: builder.query<
             TConversation[],
@@ -39,32 +77,31 @@ const conversionsApi = apiSlice.injectEndpoints({
                 { queryFulfilled, dispatch }
             ) => {
                 // todo optimistic update here
-
-                try {
-                    const { data: conversation } = await queryFulfilled;
-                    if (conversation?.id) {
-                        const { users } = conversation;
-                        const senderUser = users.find(
-                            user => user.email === sender
-                        );
-                        const receiverUser = users.find(
-                            user => user.email !== sender
-                        );
-                        if (senderUser && receiverUser) {
-                            dispatch(
-                                messagesApi.endpoints.addMessage.initiate({
-                                    conversationId: conversation.id,
-                                    sender: senderUser,
-                                    receiver: receiverUser,
-                                    message: conversation.message,
-                                    timestamp: conversation.timestamp,
-                                })
-                            );
-                        }
-                    }
-                } catch (error) {
-                    // pathResult1.undo();
-                }
+                // try {
+                //     const { data: conversation } = await queryFulfilled;
+                //     if (conversation?.id) {
+                //         const { users } = conversation;
+                //         const senderUser = users.find(
+                //             user => user.email === sender
+                //         );
+                //         const receiverUser = users.find(
+                //             user => user.email !== sender
+                //         );
+                //         if (senderUser && receiverUser) {
+                //             dispatch(
+                //                 messagesApi.endpoints.addMessage.initiate({
+                //                     conversationId: conversation.id,
+                //                     sender: senderUser,
+                //                     receiver: receiverUser,
+                //                     message: conversation.message,
+                //                     timestamp: conversation.timestamp,
+                //                 })
+                //             );
+                //         }
+                //     }
+                // } catch (error) {
+                //     // pathResult1.undo();
+                // }
             },
         }),
         editConversion: builder.mutation<
@@ -132,15 +169,15 @@ const conversionsApi = apiSlice.injectEndpoints({
                                 })
                             ).unwrap();
                             // update messages cache pessimistically start
-                            dispatch(
-                                apiSlice.util.updateQueryData(
-                                    "getMessages" as never,
-                                    response.conversationId as never,
-                                    (draft: any) => {
-                                        draft.push(response);
-                                    }
-                                )
-                            );
+                            // dispatch(
+                            //     apiSlice.util.updateQueryData(
+                            //         "getMessages" as never,
+                            //         response.conversationId as never,
+                            //         (draft: any) => {
+                            //             draft.push(response);
+                            //         }
+                            //     )
+                            // );
                             // update messages cache pessimistically end
                         }
                     }
