@@ -11,12 +11,20 @@ import { io } from "socket.io-client";
 
 const conversionsApi = apiSlice.injectEndpoints({
     endpoints: builder => ({
-        getConversions: builder.query<TConversation[], string>({
+        getConversions: builder.query<
+            { data: TConversation[]; totalCount: number },
+            string
+        >({
             query: email =>
                 `/conversations` +
                 `?participants_like=${email}` +
                 `&_sort=timestamp&_order=desc` +
                 `&_page=1&_limit=${CONVERSIONS_PER_PAGE}`,
+            transformResponse: ((apiResponse: any, meta: any) => {
+                const totalCount = meta?.response?.headers.get("X-Total-Count");
+
+                return { data: apiResponse, totalCount };
+            }) as any,
             onCacheEntryAdded: async (
                 email,
                 { updateCachedData, cacheDataLoaded, cacheEntryRemoved }
@@ -36,7 +44,7 @@ const conversionsApi = apiSlice.injectEndpoints({
                     socket.on("conversation", data => {
                         // console.log(data);
                         updateCachedData(draft => {
-                            const conversation = draft.find(
+                            const conversation = draft.data.find(
                                 c => c.id == data?.data?.id
                             );
                             if (conversation?.id) {
@@ -44,7 +52,7 @@ const conversionsApi = apiSlice.injectEndpoints({
                                 conversation.timestamp = data?.data?.timestamp;
                             } else {
                                 if (data?.data?.participants.includes(email)) {
-                                    draft.push(data?.data);
+                                    draft.data.push(data?.data);
                                 }
                             }
                         });
@@ -52,6 +60,35 @@ const conversionsApi = apiSlice.injectEndpoints({
                 } catch (err: any) {}
                 await cacheEntryRemoved;
                 socket.close();
+            },
+        }),
+        getMoreConversions: builder.query<
+            TConversation[],
+            { email: string; page: number }
+        >({
+            query: ({ email, page }) =>
+                `/conversations` +
+                `?participants_like=${email}` +
+                `&_sort=timestamp&_order=desc` +
+                `&_page=${page}&_limit=${CONVERSIONS_PER_PAGE}`,
+            onQueryStarted: async (
+                { email, page },
+                { queryFulfilled, dispatch }
+            ) => {
+                const { data: conversations } = await queryFulfilled;
+                if (conversations?.length > 0) {
+                    // update conversions pessimistically start
+                    dispatch(
+                        apiSlice.util.updateQueryData(
+                            "getConversions" as never,
+                            email as never,
+                            (draft: any) => {
+                                draft.data = [...draft.data, ...conversations];
+                            }
+                        )
+                    );
+                    // update conversions pessimistically end
+                }
             },
         }),
         getConversion: builder.query<
@@ -123,7 +160,7 @@ const conversionsApi = apiSlice.injectEndpoints({
                         "getConversions" as never,
                         sender as never,
                         (draft: any) => {
-                            const conversation = draft?.find(
+                            const conversation = draft?.data?.find(
                                 (c: any) => c.id == id
                             );
                             conversation.message = body.message;
@@ -195,6 +232,7 @@ export const {
     useGetConversionQuery,
     useAddConversionMutation,
     useEditConversionMutation,
+    useGetMoreConversionsQuery,
 } = conversionsApi;
 
 export default conversionsApi;
