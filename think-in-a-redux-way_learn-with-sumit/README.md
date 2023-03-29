@@ -87,7 +87,7 @@ LWS think in a redux way paid course
 
 -   Data `Fetching` & `Caching` tool
 -   What problems does it solve
-    -   Traking `loading`, `error` and `success` state
+    -   Tracking `loading`, `error` and `success` state
     -   Avoid `duplicate requests` for same data
     -   `Optimistic` updates to make the UI feels faster
     -   Managing `cache lifetimes` as the user interacts with the UI
