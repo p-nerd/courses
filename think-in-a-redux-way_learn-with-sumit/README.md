@@ -2,11 +2,6 @@
 
 LWS think in a redux way paid course
 
-## Padding Todo
-
--   [ ] HOC Components
--   [ ] React Hooks
-
 ## Links
 
 -   https://github.com/Learn-with-Sumit/think-in-a-redux-way
@@ -36,6 +31,9 @@ LWS think in a redux way paid course
 -   A8: Manage Bookstore RTK Query
     -   https://github.com/Learn-with-Sumit/batch-2---assignment-8---bookstore-with-rtk-query-p-nerd
     -   https://p-nerd-lws-manage-bookstore-rtk-query.netlify.app
+-   A9 - Task Manager with RTK Query
+    -   https://github.com/Learn-with-Sumit/batch-2---assignment-9---task-manager-with-rtk-query-p-nerd
+    -   https://p-nerd-lws-task-manager.netlify.app
 
 # Notes
 
