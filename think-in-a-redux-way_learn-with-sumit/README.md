@@ -31,9 +31,13 @@ LWS think in a redux way paid course
 -   A8: Manage Bookstore RTK Query
     -   https://github.com/Learn-with-Sumit/batch-2---assignment-8---bookstore-with-rtk-query-p-nerd
     -   https://p-nerd-lws-manage-bookstore-rtk-query.netlify.app
--   A9 - Task Manager with RTK Query
+-   A9: Task Manager with RTK Query
     -   https://github.com/Learn-with-Sumit/batch-2---assignment-9---task-manager-with-rtk-query-p-nerd
     -   https://p-nerd-lws-task-manager.netlify.app
+-   A10: Final - EdTech Platform
+    -   https://github.com/Learn-with-Sumit/batch-2---final-exam---edtech-platform-p-nerd
+    -   https://github.com/p-nerd/edtech_platform
+    -   https://p-nerd-learning-portal.netlify.app
 
 # Notes
 
