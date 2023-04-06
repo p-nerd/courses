@@ -2,23 +2,27 @@
 
 namespace App\controllers;
 
-use App\core\Application;
+use App\core\Request;
+use App\core\Controller;
 
-class SiteController
+class SiteController extends Controller
 {
     function get_home()
     {
         $params = [
             "name" => "The home page"
         ];
-        return Application::$app->router->render_view("home", $params);
+        return $this->render("home", $params);
     }
     public function get_contact()
     {
-        return Application::$app->router->render_view("contact");
+        return $this->render("contact");
     }
-    public function post_contact()
+    public function post_contact(Request $request)
     {
+        $body = $request->get_body();
+        print_r($body);
+
         return "Handling submission";
     }
 }

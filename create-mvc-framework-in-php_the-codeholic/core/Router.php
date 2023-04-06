@@ -37,10 +37,10 @@ class Router
         }
 
         if (is_array($callback) && count($callback) === 2) {
-            return call_user_func([new $callback[0](), $callback[1]]);
+            $callback[0] = new $callback[0]();
         }
 
-        return call_user_func($callback);
+        return call_user_func($callback, $this->request);
     }
     function render_view(string $view, array $params = [])
     {
