@@ -4,6 +4,7 @@
 *.lib
 *.exe
 *.out
+mysql_data
 
 logs
 *.log

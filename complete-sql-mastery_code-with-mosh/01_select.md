@@ -1,6 +1,6 @@
-# Retrieving Data From a Single Table
+# 02. Retrieving Data From a Single Table
 
-## select statement
+# select statement
 
 ```sql
 SELECT *
@@ -9,16 +9,16 @@ FROM customers
 ORDER BY first_name
 ```
 
-## select clause
+# select clause
 
-### select all column
+## select all column
 
 ```sql
 SELECT *
 FROM customers;
 ```
 
-### select specific column
+## select specific column
 
 ```sql
 SELECT
@@ -28,7 +28,7 @@ SELECT
 FROM customers;
 ```
 
-### arithmetic operation on select clause
+## arithmetic operation on select clause
 
 ```sql
 SELECT
@@ -43,7 +43,7 @@ SELECT
 FROM customers;
 ```
 
-### alias of column name
+## alias of column name
 
 ```sql
 SELECT
@@ -54,14 +54,14 @@ SELECT
 FROM customers;
 ```
 
-### getting distinct field
+## getting distinct field
 
 ```sql
 SELECT DISTINCT state
 FROM customers;
 ```
 
-### Exercise Return all the products with name, price, and new price (price \* 1.1)
+## Exercise Return all the products with name, price, and new price (price \* 1.1)
 
 ```sql
 SELECT
@@ -71,7 +71,7 @@ SELECT
 FROM products
 ```
 
-## where clause
+# where clause
 
 ```sql
 SELECT *
@@ -79,7 +79,7 @@ FROM customers
 WHERE points > 3000
 ```
 
-### comparison operator in sql
+## comparison operator in sql
 
 ```sql
 >  -- grater then
@@ -91,7 +91,7 @@ WHERE points > 3000
 <> -- not equal
 ```
 
-### example with comparison operator in where clause
+## example with comparison operator in where clause
 
 ```sql
 SELECT *
@@ -109,7 +109,7 @@ WHERE state = 'va';
 
 above two sql state are equal;
 
-### comparing date type in mysql
+## comparing date type in mysql
 
 ```sql
 SELECT *
@@ -117,7 +117,7 @@ FROM customers
 WHERE birth_date > '1990-01-01'; -- year-month-date
 ```
 
-### exercise - get the orders placed in this year
+## exercise - get the orders placed in this year
 
 ```sql
 SELECT *
@@ -125,7 +125,7 @@ FROM orders
 WHERE order_date >= '2017-01-01';
 ```
 
-### logical and, or, not operator
+## logical and, or, not operator
 
 ```sql
 SELECT *
@@ -166,10 +166,16 @@ WHERE (birth_date <= '1990-01-01' AND points <= 1000);
 
 above two sql state are equal;
 
-### exercise - from the order_items table, get the items for order #6 where the total price is greater then 30
+## exercise - from the order_items table, get the items for order #6 where the total price is greater then 30
 
 ```sql
 SELECT *
 FROM order_items
 WHERE order_id = 6 AND unit_price * quantity >= 30
+```
+
+## IN Operator
+
+```
+
 ```
