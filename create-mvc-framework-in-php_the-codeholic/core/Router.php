@@ -23,7 +23,7 @@ class Router
     function resolve()
     {
         $path   = $this->request->get_path();
-        $method = $this->request->get_method();
+        $method = $this->request->method->get_method();
 
         $callback = $this->routes[$method][$path] ?? false;
 
@@ -46,7 +46,14 @@ class Router
     {
         $view_content = $this->get_view_content($view, $params);
         $page         = $this->render_content($view_content);
-        return $page;
+        $html         = $this->render_html($page);
+        return $html;
+    }
+    private function render_html(string $page)
+    {
+        $base_content = $this->get_base_content();
+        $html         = str_replace("{{base}}", $page, $base_content);
+        return $html;
     }
     private function render_content(string $content)
     {
@@ -54,19 +61,28 @@ class Router
         $page           = str_replace("{{content}}", $content, $layout_content);
         return $page;
     }
+    protected function get_base_content()
+    {
+        $app = Application::$app;
+        ob_start();
+        require_once Application::$app->path->layouts() . "/_base.php";
+        return ob_get_clean();
+    }
     protected function get_layout_content()
     {
+        $app = Application::$app;
         ob_start();
-        require_once Application::$ROOT_DIR . "/views/layouts/main.php";
+        require_once Application::$app->path->layouts() . "/main.php";
         return ob_get_clean();
     }
     protected function get_view_content(string $view, $params)
     {
+        $app = Application::$app;
         foreach ($params as $key => $value) {
             $$key = $value;
         }
         ob_start();
-        require_once Application::$ROOT_DIR . "/views/$view.php";
+        require_once Application::$app->path->views() . "/$view.php";
         return ob_get_clean();
     }
 }

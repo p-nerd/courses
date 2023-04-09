@@ -4,6 +4,11 @@ namespace App\core;
 
 class Request
 {
+    public Method $method;
+    function __construct()
+    {
+        $this->method = new Method();
+    }
     function get_path()
     {
         $full_path              = $_SERVER["REQUEST_URI"] ?? "/";
@@ -13,13 +18,9 @@ class Request
         }
         return substr($full_path, 0, $question_mark_position);
     }
-    function get_method()
-    {
-        return strtolower($_SERVER["REQUEST_METHOD"]);
-    }
     function get_body()
     {
-        $method = $this->get_method();
+        $method = $this->method->get_method();
         $body   = [];
 
         if ($method === "get") {

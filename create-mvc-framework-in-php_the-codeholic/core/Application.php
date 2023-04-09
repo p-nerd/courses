@@ -5,10 +5,11 @@ namespace App\core;
 class Application
 {
     public static string $ROOT_DIR;
+    public static Application $app;
     public Router $router;
     public Request $request;
     public Response $response;
-    public static Application $app;
+    public Path $path;
     function __construct(string $root_dir)
     {
         self::$ROOT_DIR = $root_dir;
@@ -16,6 +17,7 @@ class Application
         $this->request  = new Request();
         $this->response = new Response();
         $this->router   = new Router($this->request, $this->response);
+        $this->path     = new Path($root_dir);
     }
     function run()
     {

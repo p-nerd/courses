@@ -14,11 +14,11 @@ class SiteController extends Controller
         ];
         return $this->render("home", $params);
     }
-    public function get_contact()
+    function get_contact()
     {
         return $this->render("contact");
     }
-    public function post_contact(Request $request)
+    function post_contact(Request $request)
     {
         $body = $request->get_body();
         print_r($body);
