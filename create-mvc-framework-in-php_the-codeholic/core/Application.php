@@ -10,6 +10,9 @@ class Application
     public Request $request;
     public Response $response;
     public Path $path;
+
+    public Controller $controller;
+
     function __construct(string $root_dir)
     {
         self::$ROOT_DIR = $root_dir;

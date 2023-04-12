@@ -16,8 +16,8 @@
         </label>
         <label class="input-group input-group-vertical">
             <span>Confirm Password: </span>
-            <input name="confirm_password" type="confirm_password" placeholder="******" class="input input-bordered" />
+            <input name="confirm_password" type="password" placeholder="******" class="input input-bordered" />
         </label>
-        <button class="btn btn-primary" type="submit">Register</button>
+        <button class="btn btn-primary text-white" type="submit">Register</button>
     </div>
 </form>
