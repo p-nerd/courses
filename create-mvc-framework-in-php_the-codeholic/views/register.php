@@ -8,7 +8,7 @@
         </label>
         <label class="input-group input-group-vertical">
             <span>Email: </span>
-            <input name="email" type="email" placeholder="info@site.com" class="input input-bordered" />
+            <input name="email" type="text" placeholder="info@site.com" class="input input-bordered" />
         </label>
         <label class="input-group input-group-vertical">
             <span>Password: </span>

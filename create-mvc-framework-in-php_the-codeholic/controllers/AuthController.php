@@ -19,6 +19,7 @@ class AuthController extends Controller
             if ($register_modal->validate() && $register_modal->save()) {
                 return "Success";
             }
+            print_r($register_modal->errors);
             return $this->render("register", ["model" => $register_modal]);
         }
         if ($request->method->is_get()) {
