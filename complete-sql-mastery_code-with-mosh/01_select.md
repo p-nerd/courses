@@ -281,8 +281,133 @@ FROM customers
 WHERE last_name REGEXP '[a-h]e';
 ```
 
-`^` - beginning
-`$` - end
-`|` - logical or
-`[abcd]e` - match characters with e
-`[a-f]e` - match range of characters
+-   `^` - beginning
+-   `$` - end
+-   `|` - logical or
+-   `[abcd]e` - match characters with e
+-   `[a-f]e` - match range of characters
+
+Exercise: Get the customers whose
+
+First names are ELKA or AMBUR
+
+```sql
+SELECT *
+FROM `customers`
+WHERE first_name REGEXP 'ELKA|AMBUR';
+```
+
+Last names end with EY or ON
+
+```sql
+SELECT *
+FROM `customers`
+WHERE last_name REGEXP 'EY$|ON$';
+```
+
+Last names start with MY or contains SE
+
+```sql
+SELECT *
+FROM `customers`
+WHERE last_name REGEXP '^MY|SE';
+```
+
+Last names contains B followed by R or U
+
+```sql
+SELECT *
+FROM `customers`
+WHERE last_name REGEXP 'b[ru]';
+```
+
+## NULL Values
+
+```sql
+SELECT *
+FROM `customers`
+WHERE phone IS NULL;
+```
+
+```sql
+SELECT *
+FROM `customers`
+WHERE phone IS NOT NULL;
+```
+
+Exercise: Get the orders that are not shipped
+
+```sql
+SELECT *
+FROM `orders`
+WHERE shipper_id IS NULL;
+```
+
+# order by clause
+
+```sql
+SELECT *
+FROM customers
+ORDER BY first_name;
+```
+
+```sql
+SELECT *
+FROM customers
+ORDER BY first_name DESC;
+```
+
+```sql
+SELECT *
+FROM customers
+ORDER BY state, first_name;
+```
+
+```sql
+SELECT *
+FROM customers
+ORDER BY state DESC, first_name;
+```
+
+Exercise:
+
+```sql
+SELECT order_id, product_id, quantity, unit_price
+FROM `order_items`
+WHERE order_id = 2
+ORDER BY quantity * unit_price DESC;
+```
+
+```sql
+SELECT order_id, product_id, quantity, unit_price, quantity * unit_price AS total_price
+FROM `order_items`
+WHERE order_id = 2
+ORDER BY total_price DESC;
+```
+
+# limit clause
+
+```sql
+SELECT *
+FROM `customers`
+LIMIT 3;
+```
+
+```sql
+-- page 1: 1 - 3
+-- page 2: 4 - 6
+-- page 3: 7 - 9
+
+SELECT *
+FROM customers
+LIMIT 6, 3
+```
+
+Exercise: Get the top three loyal customers
+
+```sql
+SELECT *
+FROM `customers`
+ORDER BY points DESC
+LIMIT 3;
+```
