@@ -1,17 +1,16 @@
 <?php
 
-require "Database.php";
-$config = require "config.php";
+use Core\Database;
+use Core\Validator;
 
-require "Validator.php";
+$config = require base_path("config.php");
+
+$errors = [];
 
 $db = new Database($config["database"]);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $body = $_POST["body"];
-
-    $errors = [];
-
 
     if (!Validator::string($body, 1, 1000)) {
         $errors["body"] = "body no more than 1,000 characters is required!";
@@ -25,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-$banner = "Create Note";
-
-require "views/notes/create.view.php";
+view("notes/create.view.php", [
+    "banner" => "Create Note",
+    "errors" => $errors
+]);

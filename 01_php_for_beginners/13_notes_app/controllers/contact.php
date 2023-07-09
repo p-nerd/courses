@@ -1,5 +1,5 @@
 <?php
 
-$banner = "Contact";
-
-require "views/contact.view.php";
+view("contact.view.php", [
+    "banner" => "Contact"
+]);
