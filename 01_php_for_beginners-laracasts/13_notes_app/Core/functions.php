@@ -37,3 +37,8 @@ function view(string $viewFileRelativePath, $attributes = [])
     extract($attributes);
     require base_path("views/" . $viewFileRelativePath);
 }
+
+function redirect(string $uri)
+{
+    header("location: {$uri}");
+}
