@@ -11,6 +11,7 @@ $currentUserId = 1;
 $id = $_POST["id"];
 $body = $_POST["body"];
 
+/** @noinspection SqlResolve */
 $note = $db->query("select * from notes where id = :id;", [":id" => $id])->findOrFail();
 
 authorize($note["user_id"] === $currentUserId);
@@ -34,6 +35,7 @@ if (!empty($errors)) {
     return;
 }
 
+/** @noinspection SqlResolve */
 $db->query(
     "
         UPDATE notes

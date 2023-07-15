@@ -23,6 +23,7 @@ if (!empty($errors)) {
     return;
 }
 
+/** @noinspection SqlResolve */
 $db->query("INSERT INTO notes(body, user_id) VALUES (:body, :userId);", [
     "body" => $body,
     "userId" => 1,

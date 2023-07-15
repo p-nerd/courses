@@ -1,3 +1,8 @@
+<?php
+
+use Core\Session;
+
+?>
 <nav class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
@@ -14,7 +19,7 @@
                             aria-current="page">Home</a>
                         <a href="/about"
                             class="<?= isUrl("/about") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white" ?> rounded-md px-3 py-2 text-sm font-medium">About</a>
-                        <?php if ($_SESSION["user"] ?? false): ?>
+                        <?php if (Session::has("user")): ?>
                             <a href="/notes"
                                 class="<?= isUrl("/notes") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white" ?> rounded-md px-3 py-2 text-sm font-medium">Notes</a>
                         <?php endif ?>
@@ -25,7 +30,7 @@
             </div>
             <div class="hidden md:block">
                 <div class="ml-4 flex items-center md:ml-6">
-                    <?php if ($_SESSION['user'] ?? false): ?>
+                    <?php if (Session::has("user")): ?>
                         <button type="button"
                             class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                             <span class="sr-only">View notifications</span>

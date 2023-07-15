@@ -11,7 +11,10 @@ class Middleware
         "auth" => Authenticated::class
     ];
 
-    public static function resolve(string $key)
+    /**
+     * @throws Exception
+     */
+    public static function resolve(string $key): void
     {
         if (!$key) {
             return;

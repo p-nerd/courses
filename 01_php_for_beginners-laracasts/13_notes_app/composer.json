@@ -1,0 +1,28 @@
+{
+    "name": "shihab/13_notes_app",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Shihab Mahamud",
+            "email": "shihab4t@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/",
+            "Middleware\\": "Middleware/"
+        }
+    },
+    "scripts": {
+        "test" : "./vendor/bin/pest"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.8"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

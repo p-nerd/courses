@@ -1,6 +1,0 @@
-<?php
-
-logout();
-
-redirect("/");
-exit();

@@ -3,11 +3,12 @@
 namespace Core;
 
 use PDO;
+use PDOStatement;
 
 class Database
 {
-    public $pdo;
-    public $statement;
+    public PDO $pdo;
+    public PDOStatement $statement;
     public function __construct($credentials, $username = "root", $password = "")
     {
         $dsn       = "mysql:" . http_build_query($credentials, "", ";");
@@ -15,7 +16,7 @@ class Database
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ]);
     }
-    public function query($sql, $params = [])
+    public function query($sql, $params = []): static
     {
         $this->statement = $this->pdo->prepare($sql);
         $this->statement->execute($params);
@@ -33,7 +34,7 @@ class Database
         }
         return $item;
     }
-    public function finds()
+    public function finds(): false|array
     {
         return $this->statement->fetchAll();
     }
