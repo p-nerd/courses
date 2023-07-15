@@ -2,50 +2,43 @@
 
 namespace Core;
 
+use Middleware\Middleware;
+
 class Router
 {
     protected $routes = [];
-
-    protected function add(string $method, string $path, string $controller)
-    {
-        $this->routes[$path][$method] = $controller;
-    }
-
     public function get(string $path, string $controller)
     {
-        $this->add('GET', $path, $controller);
+        return $this->add('GET', $path, $controller);
     }
 
     public function post(string $path, string $controller)
     {
-        $this->add('POST', $path, $controller);
+        return $this->add('POST', $path, $controller);
     }
 
     public function delete(string $path, string $controller)
     {
-        $this->add('DELETE', $path, $controller);
+        return $this->add('DELETE', $path, $controller);
     }
 
     public function put(string $path, string $controller)
     {
-        $this->add('PUT', $path, $controller);
+        return $this->add('PUT', $path, $controller);
     }
 
     public function patch(string $path, string $controller)
     {
-        $this->add('PATCH', $path, $controller);
+        return $this->add('PATCH', $path, $controller);
     }
 
-    protected function executeController(string $controller)
+    public function only(string $key)
     {
-        require base_path($controller);
-    }
+        $last = array_key_last($this->routes);
 
-    protected function abort()
-    {
-        abort(Response::NOT_FOUND);
+        $this->routes[$last][array_key_last($this->routes[$last])]["middleware"] = $key;
+        return $this;
     }
-
     public function run(string $path, string $method)
     {
         $method = strtoupper($method);
@@ -57,10 +50,34 @@ class Router
         }
 
         if (array_key_exists($method, $result)) {
-            $controller = $result[$method];
-            $this->executeController($controller);
+            $route = $result[$method];
+            $this->executeMiddleware($route["middleware"]);
+            $this->executeController($route["controller"]);
         } else {
             $this->abort();
         }
+    }
+    protected function add(string $method, string $path, string $controller)
+    {
+        $this->routes[$path][$method] = [
+            "controller" => $controller,
+            "middleware" => null,
+        ];
+        return $this;
+    }
+    protected function executeController(string $controller)
+    {
+        require base_path($controller);
+    }
+    protected function executeMiddleware(string|null $middleware)
+    {
+        if (!$middleware) {
+            return;
+        }
+        Middleware::resolve($middleware);
+    }
+    protected function abort()
+    {
+        abort(Response::NOT_FOUND);
     }
 }

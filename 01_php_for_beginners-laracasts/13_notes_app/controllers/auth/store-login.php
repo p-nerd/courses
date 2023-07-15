@@ -21,8 +21,8 @@ if (!Validator::string($password, 7, 255)) {
 }
 
 if (!empty($errors)) {
-    view("auth/create.view.php", [
-        "banner" => "Register new user",
+    view("auth/create-login.view.php", [
+        "banner" => "Login with a Account Again",
         "errors" => $errors,
         "email" => $email,
         "password" => $password
@@ -32,31 +32,23 @@ if (!empty($errors)) {
 
 $db = App::resolve(Database::class);
 
-
 // check if the user already exits
 
 $user = $db
     ->query("SELECT * FROM users WHERE email = :email", [":email" => $email,])
     ->find();
 
-if ($user) {
-    redirect("/");
-    exit();
+if (!$user || !password_verify($password, $user["password"])) {
+    view("auth/create-login.view.php", [
+        "banner" => "Login with a Account Again",
+        "errors" => [
+            "password" => "No matching account found for that email address and password."
+        ],
+        "email" => $email,
+        "password" => $password
+    ]);
 }
 
-
-// store the user in db
-
-$db->query(
-    "INSERT INTO users(email, password) VALUES(:email, :password);",
-    [
-        "email" => $email,
-        "password" => password_hash($password, PASSWORD_BCRYPT)
-    ]
-);
-
-// store the user in session that so it is in logged in
 login($user);
-
 redirect("/");
 exit();
