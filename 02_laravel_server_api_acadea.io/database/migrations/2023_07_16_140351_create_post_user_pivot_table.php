@@ -14,16 +14,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('post_user_pivot', function (Blueprint $table) {
-            $table->foreignIdFor(User::class, "user_id")
-                ->primary()
-                ->index()
-                ->references("id")
-                ->cascadeOnDelete();
-            $table->foreignIdFor(Post::class, "post_id")
-                ->primary()
-                ->index()
-                ->references("id")
-                ->cascadeOnDelete();
+            $table->foreignId('user_id')->index();
+            $table->foreign('user_id')->on('users')->references('id')->cascadeOnDelete();
+            $table->foreignId('post_id')->index();
+            $table->foreign('post_id')->on('posts')->references('id')->cascadeOnDelete();
+            $table->primary(['post_id', 'user_id']);
         });
     }
 

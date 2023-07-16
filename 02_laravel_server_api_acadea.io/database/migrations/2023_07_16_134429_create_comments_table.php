@@ -15,16 +15,13 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string("title");
-            $table->json("body")
-                ->nullable();
-            $table->foreignIdFor(User::class, "user_id")
-                ->references("id")
-                ->cascadeOnDelete();
-            $table->foreignIdFor(Post::class, "post_id")
-                ->references("id")
-                ->cascadeOnDelete();
+            $table->json('body')->nullable();
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->on('users')->references('id')->cascadeOnDelete();
+            $table->foreignId('post_id');
+            $table->foreign('post_id')->on('posts')->references('id')->cascadeOnDelete();
             $table->timestamps();
+
         });
     }
 
