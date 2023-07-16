@@ -13,18 +13,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comments', function (Blueprint $table) {
-            $table->id();
-            $table->string("title");
-            $table->json("body")
-                ->nullable();
+        Schema::create('post_user_pivot', function (Blueprint $table) {
             $table->foreignIdFor(User::class, "user_id")
+                ->primary()
+                ->index()
                 ->references("id")
                 ->cascadeOnDelete();
             $table->foreignIdFor(Post::class, "post_id")
+                ->primary()
+                ->index()
                 ->references("id")
                 ->cascadeOnDelete();
-            $table->timestamps();
         });
     }
 
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('post_user_pivot');
     }
 };
