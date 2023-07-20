@@ -12,7 +12,7 @@ class UserController extends Controller
      */
     public function index(): JsonResponse
     {
-        $users = User::query();
+        $users = User::query()->get();
         return new JsonResponse($users);
     }
 

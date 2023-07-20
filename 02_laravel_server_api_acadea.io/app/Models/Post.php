@@ -8,14 +8,24 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * @property mixed $title
+ * @property string $title
+ * @property mixed $body
  */
 class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "title",
+        "body"
+    ];
+
     protected $casts = [
         "body" => "array"
+    ];
+
+    protected $appends = [
+        "title_upper_case"
     ];
 
     // Accessor

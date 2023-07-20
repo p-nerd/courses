@@ -4,47 +4,48 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use App\Http\Resources\PostResource;
 use App\Models\Post;
+use App\Repositories\PostRepository;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(Request $request): AnonymousResourceCollection
     {
-        //
+        $pageSize = $request->page_size ?? 20;
+        $posts = Post::query()->paginate($pageSize);
+        return PostResource::collection($posts);
+    }
+
+    public function store(StorePostRequest $request): PostResource
+    {
+        $post = PostRepository::create($request->title, $request->body, $request->user_ids);
+        return new PostResource($post);
+    }
+
+    public function show(Post $post): PostResource
+    {
+        return new PostResource($post);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * @throws \Exception
      */
-    public function store(StorePostRequest $request)
+    public function update(UpdatePostRequest $request, Post $post): PostResource
     {
-        //
+        $updatedPost = PostRepository::update($post, $request->title, $request->body, $request->user_ids);
+        return new PostResource($updatedPost);
     }
 
     /**
-     * Display the specified resource.
+     * @throws \Exception
      */
-    public function show(Post $post)
+    public function destroy(Post $post): JsonResponse
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdatePostRequest $request, Post $post)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Post $post)
-    {
-        //
+        PostRepository::delete($post);
+        return $this->happy([], 204);
     }
 }

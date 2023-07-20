@@ -4,6 +4,10 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @property mixed $body
+ * @property mixed $post_id
+ */
 class StoreCommentRequest extends FormRequest
 {
     /**

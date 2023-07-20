@@ -15,7 +15,7 @@ class PostSeeder extends Seeder
     public function run(): void
     {
         $this->withTruncate("posts", function () {
-            $posts = Post::factory(5)
+            $posts = Post::factory(200)
 //                ->has(Comment::factory(3), "comments")
                 ->create();
             $posts->each(function (Post $post) {

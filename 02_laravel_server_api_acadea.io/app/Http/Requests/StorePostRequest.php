@@ -4,14 +4,16 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @property string $title
+ * @property mixed $body
+ * @property mixed $user_ids
+ */
 class StorePostRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +24,8 @@ class StorePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "title" => "string|required",
+            "body" => "string"
         ];
     }
 }

@@ -29,3 +29,38 @@
     -   update - update a specific resource
     -   destroy - delete a specific resource
 -   The resource route helper methods enables us to easily define API routes.
+
+### Takeaway x4: Route Group
+
+-   Route group can help us to effectively organize our API routes
+-   We can either use the array syntax or the method syntax to define a route group.
+-   We can add URL prefix, route name prefix namespace and middleware to a route group
+-   The where() method is useful to add matching constraint to URL parameters.
+
+### Takeaway x5: Automatically Load Files Recursively
+
+-   Iterator is an object that allows us to iterate through a series of items.
+-   The directory iterator can help use to automatically load our routes in a directory
+
+### Essential Eloquent 101
+
+-   Laravel's ORM - Eloquent provides an easy API for us to work with database.
+-   We use the query method to start database query, get() to retrieve records, find() to find by id, create() to insert record, update() to update and delete() to delete record.
+-   Laravel protects the model fields form mass assignment by default. To enable mass assignment, we will define the $fillable property in the model.
+-   $hidden wil hide model fields when we convert the model into an array, and $append will add extra fields to the array.
+
+### Database Transactions
+
+-   Database Transaction groups multiple database operations together and only applies the operations when all of them passed. It will rollback any changes if one of the operations failed.
+-   We use the transaction() method in the DB facade to trigger a transaction.
+
+### Robust API Response
+
+-   Resource class helps us to manage our API JSON response on one place
+-   It makes our API response to be more consistent and maintainable.
+-   We can use the php artisan make:resource command toe generate the resource boilerplate.
+
+### Paginated API Response
+
+-   Pagination is the notion of displaying our query results by page, otherwise we would have to send everything to the client.
+-   We call the paginate() method on our query to create a paginator. We can then pass the paginator to our resource collection for a paginated JSON response.
