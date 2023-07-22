@@ -1,3 +1,3 @@
-# laracasts_learn_laravel_path
+# php_backend_journey
 
-This repository Demos my personal learning journey and stores the code I've written while exploring and mastering the Laravel framework.
+Unleashing the Laravel Alchemist: A repository of PHP backend sorcery, where my learning journey turns code into gold.
