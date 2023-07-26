@@ -1,0 +1,3 @@
+dev:
+	php artisan serve
+

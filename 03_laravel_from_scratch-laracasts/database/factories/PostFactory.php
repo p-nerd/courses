@@ -29,12 +29,12 @@ class PostFactory extends Factory
         return [
             "title" => $title,
             "excerpt" => fake()->sentence(50, false),
-            "body" => fake()->sentence(400),
+            "body" => fake()->paragraph,
             "published_at" => fake()->date("2020-01-01", now()),
             "slug" => $slug,
-            "thumbnail" => "https://source.unsplash.com/random/1100x860?sig=${sig}",
-            "user_id" => fake()->randomNumber(1, 10),
-            "category_id" => fake()->randomNumber(1, 3)
+            "thumbnail" => "https://source.unsplash.com/random/1100x860?sig=$sig",
+            "user_id" => fake()->numberBetween(1, 10),
+            "category_id" => fake()->numberBetween(1, 3)
         ];
     }
 }

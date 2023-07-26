@@ -13,8 +13,6 @@ class StringHelper
 
     public static function toCapitalized(string $string): string
     {
-        $x = ucwords($string);
-        echo $x;
-        return $x;
+        return ucwords($string);
     }
 }

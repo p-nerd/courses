@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -12,15 +11,9 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index()
     {
-        $posts = Post::all();
-        $categories = Category::all();
-
-        return view("posts.index", [
-            "posts" => $posts,
-            "categories" => $categories
-        ]);
+        return "Hello Posts";
     }
 
     /**
@@ -44,10 +37,7 @@ class PostController extends Controller
      */
     public function show(Post $post): View
     {
-        $user = $post->author;
-
-//        $post = Post::where('slug', $slug)->first();
-        return view('posts.show', ["post" => $post, "author" => $user]);
+        return view('posts.show', ["post" => $post]);
     }
 
     /**
