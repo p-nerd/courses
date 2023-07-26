@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->truncate(User::class, 10);
-        $this->truncate(Category::class, 3);
-        $this->truncate(Post::class, 10);
+        $this->truncate(Category::class, 30);
+        $this->truncate(Post::class, 130);
     }
 }

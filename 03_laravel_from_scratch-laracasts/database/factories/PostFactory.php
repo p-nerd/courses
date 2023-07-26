@@ -20,21 +20,18 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
-        $title = fake()->sentence(8, false);
-        $slug = StringHelper::toSlug($title);
-
         $sig = self::$sigCounter;
         self::$sigCounter++;
 
         return [
-            "title" => $title,
-            "excerpt" => fake()->sentence(50, false),
-            "body" => fake()->paragraph,
+            "title" => fake()->sentence(8, false),
+            "excerpt" => '<p>' . implode("</p><p>", fake()->paragraphs(2)) . '</p>',
+            "body" => '<p>' . implode("</p><p>", fake()->paragraphs(6)) . '</p>',
             "published_at" => fake()->date("2020-01-01", now()),
-            "slug" => $slug,
+            "slug" => fake()->unique()->slug(),
             "thumbnail" => "https://source.unsplash.com/random/1100x860?sig=$sig",
             "user_id" => fake()->numberBetween(1, 10),
-            "category_id" => fake()->numberBetween(1, 3)
+            "category_id" => fake()->numberBetween(1, 30)
         ];
     }
 }

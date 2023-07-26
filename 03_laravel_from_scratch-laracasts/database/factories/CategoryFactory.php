@@ -18,12 +18,9 @@ class CategoryFactory extends Factory
      */
     public function definition(): array
     {
-        $name = StringHelper::toCapitalized(fake()->word());
-        $slug = StringHelper::toSlug($name);
-
         return [
-            "name" => $name,
-            "slug" => $slug,
+            "name" => StringHelper::toCapitalized(fake()->word()),
+            "slug" => fake()->unique()->slug()
         ];
     }
 }
