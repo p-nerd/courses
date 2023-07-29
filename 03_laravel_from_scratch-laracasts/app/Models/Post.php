@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property mixed $author
+ * @method filter(string[] $array)
  */
 class Post extends Model
 {
@@ -31,5 +32,16 @@ class Post extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, "category_id");
+    }
+
+    /** @noinspection PhpUnused */
+    public function scopeFilter($query, array $filters): void
+    {
+        if ($filters["search"] ?? false) {
+            $search = $filters["search"];
+            $query
+                ->where("title", "like", "%$search%")
+                ->orWhere("body", "like", "%$search%");
+        }
     }
 }

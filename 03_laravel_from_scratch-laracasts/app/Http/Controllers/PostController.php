@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -13,7 +14,22 @@ class PostController extends Controller
      */
     public function index()
     {
-        return "Hello Posts";
+        $search = request("search") ?? "";
+        $category = request("category") ?? "";
+        return view('home', [
+            "posts" => Post::latest()->filter(["search" => $search])->with("category", "author")->get(),
+            "categories" => Category::all(),
+            "search" => $search
+        ]);
+    }
+
+    public function indexByCategory(Category $category)
+    {
+        return view('home', [
+            "posts" => $category->posts,
+            "currentCategory" => $category,
+            "categories" => Category::all(),
+        ]);
     }
 
     /**
