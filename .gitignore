@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .cph
 .vscode
 *.o
@@ -51,3 +52,6 @@ public/uploads/avatars
 
 *tmp*
 html
+.DS_Store
+vendor
+.idea
