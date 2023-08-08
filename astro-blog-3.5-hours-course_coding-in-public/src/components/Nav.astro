@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon";
+import nav, { TNav } from "./../config/nav";
+import Link from "./Link.astro";
+---
+
+<nav aria-label="Primary">
+  <div class="navbar">
+    <a href="/" aria-label="Go home" class="logomark">
+      <Icon name="logomark" width="60 " />
+    </a>
+    <ul>
+      {
+        nav.map((item: TNav) => (
+          <Link
+            text={item.name}
+            href={item.path}
+            style="secondary"
+            isFilled={false}
+            data-navlink
+          />
+        ))
+      }
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const navLinks = document.querySelectorAll("[data-navlink]");
+
+  navLinks.forEach((link) => {
+    if (link.getAttribute("href") === window.location.pathname) {
+      link.setAttribute("aria-current", "page");
+    }
+  });
+</script>

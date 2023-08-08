@@ -1,0 +1,28 @@
+---
+import MainLayout from "./MainLayout.astro";
+import { formatDate } from "./../utils/url";
+
+const { frontmatter } = Astro.props as any;
+
+const { title, image, description, category, author, date } = frontmatter;
+---
+
+<MainLayout {title} {description}>
+  <header>
+    <div class="container">
+      <small
+        ><a href={`/categories/${category}`} class="badge">{category}</a></small
+      >
+      <h1 class="h2">{title}</h1>
+      <p>By <a href={`/authors/${author}`}>{author}</a> . {formatDate(date)}</p>
+    </div>
+    <img src={image.src} alt={image.alt} />
+  </header>
+
+  <div class="post-content">
+    <div class="content">
+      <slot />
+    </div>
+    <div class="sidebar"></div>
+  </div>
+</MainLayout>
