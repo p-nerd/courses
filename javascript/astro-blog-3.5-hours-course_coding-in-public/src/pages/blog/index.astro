@@ -1,15 +1,17 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+import {filterPosts} from "../../utils/filters";
+
+const posts = filterPosts(await Astro.glob("./*.md"));
 ---
 
 <MainLayout title="My Blog">
-  <h1>Hi from blog</h1>
-  <ul>
-    <li><a href="./blog/post-1/">Post 1</a></li>
-    <li><a href="./blog/post-2/">Post 2</a></li>
-    <li><a href="./blog/post-3/">Post 3</a></li>
-    <li><a href="./blog/post-4/">Post 4</a></li>
-    <li><a href="./blog/post-5/">Post 5</a></li>
-    <li><a href="./blog/post-6/">Post 6</a></li>
-  </ul>
+    <section class="container" aria-label="New Blog Posts">
+        <h1 class="h1">New Blog Posts</h1>
+        <div class="post-container">
+            {posts.map(post =>
+                    <PostCard frontmatter={post.frontmatter} url={post.url} tag="h2"/>)}
+        </div>
+    </section>
 </MainLayout>

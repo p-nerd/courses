@@ -4,24 +4,24 @@ import Link from "../components/Link.astro";
 ---
 
 <MainLayout title="Page not found">
-  <div
-    class="container"
-    style={{
-      display: "grid",
-      placeItems: "center",
-      textAlign: "center",
-      gap: "var(--space-sm)",
-    }}
-  >
-    <div>
-      <h1 class="h1">Welp 404, this is awkward!</h1>
-      <p>We seem to have misplaced something</p>
+    <div
+            class="container"
+            style={{
+                display: "grid",
+                placeItems: "center",
+                textAlign: "center",
+                gap: "var(--space-sm)",
+            }}
+    >
+        <div>
+            <h1 class="h1">Welp 404, this is awkward!</h1>
+            <p>We seem to have misplaced something</p>
+        </div>
+        <Link
+                text="Go Home"
+                href="/"
+                style={"secondary"}
+                icon={{name: "tabler:home", side: "right"}}
+        />
     </div>
-    <Link
-      text="Go Home"
-      href="/"
-      style="secondary"
-      icon={{ name: "tabler:home", side: "right" }}
-    />
-  </div>
 </MainLayout>
