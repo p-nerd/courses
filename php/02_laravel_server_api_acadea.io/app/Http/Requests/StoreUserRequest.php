@@ -4,16 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-/**
- * @property string $title
- * @property mixed $body
- * @property mixed $user_ids
- */
-class UpdatePostRequest extends FormRequest
+class StoreUserRequest extends FormRequest
 {
+    /**
+     * Determine if the user is authorized to make this request.
+     */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,8 +22,9 @@ class UpdatePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "title" => "string",
-            "body" => "string"
+            "name" => ["string"],
+            "email" => ["string"],
+            "password" => ["string"],
         ];
     }
 }

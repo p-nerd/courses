@@ -9,7 +9,6 @@ class Geolocation
         private readonly SateLite $sateLite
     )
     {
-
     }
 
     public function search(string $name): array

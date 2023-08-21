@@ -6,13 +6,13 @@ use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class JsonException extends Exception
+class GeneralJsonException extends Exception
 {
     protected $code = 422;
 
-    public function report()
+    public function report(): void
     {
-
+//        dump("ABC");
     }
 
     public function render(Request $request): JsonResponse

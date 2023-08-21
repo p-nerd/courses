@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view(' ');
+    return view("welcome");
 });
+
+if (App::environment("local")) {
+    Route::get("/playground", function () {
+        \App\Repositories\UserRepository::create([
+            "name" => fake()->name(),
+            "email" => fake()->safeEmail(),
+            "password" => "12345"
+        ]);
+
+        return "none";
+    });
+}
