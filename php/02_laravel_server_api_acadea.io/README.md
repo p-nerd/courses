@@ -197,4 +197,47 @@
 - Fortify provides us handy email verification feature to confirm the email address.
 - We can use the verify middleware to protect our app's routes.
 - We will need to implement the "MustVerifyEmail" interface to our user model for email verification to work.
- 
+
+### Fortify: Two-factor Authentication
+
+- The User model needs to use the TwoFactorAuthenticatable trait in order for 2FA work properly.
+- The confirmPassword configuration will force the user to confirm their password when setting up 2FA.
+- Laravel will issue new set of recovery codes to the user if they log in by recovery codes.
+
+### Fortify: Custom Mail Verification Email
+
+- Laravel Fortify relies on the built-in VerifyEmail class provided by Laravel to send out verification email.
+- We call VerifyEmail::toMailUsing() to define our own logic to send out the verification notification.
+- We can encode information into Laravel's signed route for Validation in the future.
+
+### Custom Authentication Logic
+
+- We use Fortify::authenticateUsing() to override default login logic.
+- Fortify::authenticateThrough() allows us to customize the pipeline.
+- Fortify::confirmPasswordUsing() provides a way to customize the password confirmation logic.
+
+### Laravel Sanctum: all you need to know
+
+- Sanctum offers cookie-based authentication and token-based authentication.
+- Token is simple to set up and use but can be dangerous if it is stolen.
+- Cookie is header to set up, but it will protect our app from CSRF and XSS attacks.
+- Cookie based authentication is sensitive to domain names, be sure to configure Sanctum before use.
+
+### Testing Authentication
+
+- Laravel provides us a convenient actingAs() method to login as any given user.
+- setUp() is a handy special function that runs before every test function.
+- tearDown() is the opposite of setUp(). It's run after every test function.
+- actingAs() method also take second argument where we can specify which auth guard that we want to use.
+
+### How to Translate in Laravel?! Multilingual Apps
+
+- Internationalisation or i18n is the notion of providing translation to different locale.
+- We can use the __() or Lang::get() to retrieve translation from the language files.
+- Laravel put all the translation files in the lang directory.
+- We can choose to write our translation files in either php or json file format.
+- trans_choice() is a helper function for us to handle pluralisation.
+
+### Share private link that expires.
+
+

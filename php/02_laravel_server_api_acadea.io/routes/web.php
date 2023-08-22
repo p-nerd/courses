@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view("welcome");
 });
 
 if (App::environment("local")) {
+
     Route::get("/playground", function () {
         \App\Repositories\UserRepository::create([
             "name" => fake()->name(),
@@ -28,3 +30,23 @@ if (App::environment("local")) {
         return "none";
     });
 }
+
+//Lang::setLocale("bn");
+//App::setLocale("bn");
+//
+//dd(Lang::get("auth.failed"));
+//dd(__("auth.failed"));
+//dd(__("auth.throttle", ["seconds" => 100]));
+//dd(App::currentLocale());
+//dd(App::isLocal("bn"));
+//dd(trans_choice("auth.pants", 1));
+//dd(trans_choice("auth.pants", 2));
+
+//dump(trans_choice("auth.apples", -5));
+//dump(trans_choice("auth.apples", 0));
+//dump(trans_choice("auth.apples", 1));
+//dump(trans_choice("auth.apples", 6, ["baskets" => 2]));
+
+//dump(__("auth.welcome ", ["name" => "shihab"]));
+
+//dd();
