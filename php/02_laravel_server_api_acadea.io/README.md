@@ -240,4 +240,63 @@
 
 ### Share private link that expires.
 
+- We can use signed routes to protect our routes unwanted modification.
+- We use URL::temporarySignedRoute() to create a link with expiration, white URL::signedRoute() to create a permanent
+  protect link
+- Laravel uses salted sha256 to hash the route as a measure to prevent modification.
 
+### Notification: all you need to know!
+
+- Laravel provides us a variety of drivers to send out notification to our users, including mail, database, broadcast,
+  slack and vonage.
+- There many more community maintain drivers, e.g. telegram, discord etc.
+- php artisan make:notification will generate the boilerplate to create new notification class.
+- We can use Notification::send() or $notifiable->notify() to send out notifications.
+
+### It is better than HTTP? Websockets
+
+- Websockets  (WS) is a communication protocol to transmit data between computers, where it is commonly used in realtime
+  apps.
+- In contrast to HTTP, WS persists and maintains its connections with the server, so the subsequent data transmission
+  will be lighting fast.
+- There are two common WS app patterns. PubSub and RPC.
+- PubSub involves 1 server that broadcasts messages to multiple clients. Commonly seen in financial apps where there is
+  a need to stream realtime price data.
+- RPC is very similar to HTTP, where the client will send a request and expect a reply from server. RPC can be used in
+  messaging apps.
+
+### Websockets and Broadcasting Config
+
+- Pusher,Ably,Laravel Websockets, Soketi and Laravel Echo Server are websockets servers that are supported by Laravel.
+- Laravel Websockets is a wonderful open-source drop in replacement for Pusher.
+- Laravel uses the PubSub websockets pattern to publish real-time app Events.
+- We need to set up a queue driver for Laravel to broadcast websocket events.
+- The BroadcastServiceProvider should be enabled in the app config.
+- Laravel Websockets exposed a debugging dashboard for our websockets connections
+
+### Broadcasting & Channels
+
+- If a client want to subscribe to a websocket channel in Laravel, the client will perform a "HTTP Handshake", ie to
+  authenticate the user before establishing a persisted websocket connection
+- Event class will need to implement the ShouldBroadcast interface before Laravel can broadcast them to the websocket
+- We need to configure the host and port of the pusher driver in broadcasting.php config file to get Laravel to use our
+  self-hosted Laravel Websocket server
+- By default, Laravel will use the Event FQCN as the event name. We can customize this by defining broadcastAs().
+- broadcastWith() is a way for us to attach data in event payload
+
+### Echo & Realtime Chat App
+
+- Laravel Echo is a official client js library for us to subscribe and receive websockets events from the server.
+- Laravel Mix is wonderful wrapper around Webpack that provide a painless API for us to configure webpack.
+- Echo.channel() allow us to subscribe to a websocket channel.
+- Echo.subscribed() lets us define a callback that will be triggered when we have successfully subscribed to a
+  channel.
+- We use Echo.listen() to listen websockets events.
+- We should use a "." prefix when we want to listen to custom event in Echo.
+
+### Private & Presence Channels BroadCast
+
+### P2P Websockets? Is it possible?
+
+### Sending Data without HTTP? Websocket RPC
+ 

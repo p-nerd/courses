@@ -18,16 +18,33 @@ Route::get('/', function () {
     return view("welcome");
 });
 
+Route::get('/shared/posts/{post}', function (\Illuminate\Http\Request $request, \App\Models\Post $post) {
+
+    return "Specially made just for you 💕 ;) Post id: {$post->id}";
+
+})->name('shared.post')->middleware('signed');
+
 if (App::environment("local")) {
+    Route::get("shared/video/{video}", function (\Illuminate\Http\Request $request, $video) {
+//        if (!$request->hasValidSignature()) {
+//            abort(401);
+//        }
+
+        return "Hello $video";
+    })->name("share-video")->middleware("signed");
 
     Route::get("/playground", function () {
-        \App\Repositories\UserRepository::create([
-            "name" => fake()->name(),
-            "email" => fake()->safeEmail(),
-            "password" => "12345"
-        ]);
+//        \App\Repositories\UserRepository::create([
+//            "name" => fake()->name(),
+//            "email" => fake()->safeEmail(),
+//            "password" => "12345"
+//        ]);
 
-        return "none";
+        event(new \App\Events\PlaygroundEvent());
+
+
+        return "";
+//        return URL::temporarySignedRoute("share-video", now()->addSeconds(30), ["video" => 123]);
     });
 }
 

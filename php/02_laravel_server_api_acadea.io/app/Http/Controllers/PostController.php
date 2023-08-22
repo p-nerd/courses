@@ -7,11 +7,15 @@ use App\Exceptions\GeneralJsonException;
 use App\Http\Requests\UpdatePostRequest;
 use App\Http\Resources\PostResource;
 use App\Models\Post;
+use App\Models\User;
+use App\Notifications\PostSharedNotification;
 use App\Repositories\PostRepository;
 use App\Rules\IntegerArray;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
 use Throwable;
 
@@ -83,5 +87,18 @@ class PostController extends Controller
     {
         PostRepository::delete($post);
         return $this->happy([], 204);
+    }
+
+    public function share(Request $request, Post $post)
+    {
+        $url = URL::temporarySignedRoute("shared.post", now()->addDays(30), [
+            "post" => $post->id,
+        ]);
+
+        $users = User::query()->whereIn("id", $request->user_ids)->get();
+
+        Notification::send($users, new PostSharedNotification($post, $url));
+
+        return $this->happy(["url" => $url], 204);
     }
 }
