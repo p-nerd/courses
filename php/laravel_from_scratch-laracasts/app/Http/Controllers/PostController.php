@@ -12,23 +12,18 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
         $search = request("search") ?? "";
         $category = request("category") ?? "";
         return view('home', [
-            "posts" => Post::latest()->filter(["search" => $search])->with("category", "author")->get(),
+            "posts" => Post::latest()
+                ->filter(["search" => $search, "category" => $category])
+                ->with("category", "author")
+                ->get(),
             "categories" => Category::all(),
+            "currentCategory" => Category::where("slug", $category)->first(),
             "search" => $search
-        ]);
-    }
-
-    public function indexByCategory(Category $category)
-    {
-        return view('home', [
-            "posts" => $category->posts,
-            "currentCategory" => $category,
-            "categories" => Category::all(),
         ]);
     }
 

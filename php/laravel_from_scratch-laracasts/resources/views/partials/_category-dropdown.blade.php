@@ -11,14 +11,14 @@
         <div>
             <x-dropdown-item
                 href="/"
-                :active="request()->routeIs('home')"
+                :active="!$currentCategory"
             >
                 All
             </x-dropdown-item>
             @foreach ($categories as $category)
                 <x-dropdown-item
-                    href="/categories/{{ $category->slug }}"
-                    :active='request()->is("categories/{$category->slug}")'
+                    href="/?category={{ $category->slug }}"
+                    :active='$currentCategory?->slug === $category->slug'
                 >
                     {{ ucwords($category->name) }}
                 </x-dropdown-item>
