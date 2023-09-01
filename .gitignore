@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .cph
 .vscode
 *.o
@@ -55,3 +54,7 @@ html
 .DS_Store
 vendor
 .idea
+
+# PHP
+_ide_helper.php
+.phpstorm.meta.php
