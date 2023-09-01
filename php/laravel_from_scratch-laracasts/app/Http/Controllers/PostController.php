@@ -9,20 +9,16 @@ use Illuminate\View\View;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index(): View
     {
         $search = request("search") ?? "";
         $category = request("category") ?? "";
-        return view('home', [
+
+        return view('posts.index', [
             "posts" => Post::latest()
                 ->filter(["search" => $search, "category" => $category])
                 ->with("category", "author")
                 ->get(),
-            "categories" => Category::all(),
-            "currentCategory" => Category::where("slug", $category)->first(),
             "search" => $search
         ]);
     }
