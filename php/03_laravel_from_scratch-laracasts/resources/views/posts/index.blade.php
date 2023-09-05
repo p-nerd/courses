@@ -6,7 +6,7 @@
 
         <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-4">
             <!--  Category -->
-            <x-category-dropdown />
+            <x-category-dropdown/>
 
             <!-- Other Filters -->
             <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
@@ -21,15 +21,17 @@
                     </select>
                 </label>
 
-                <x-icon name="down-arrow" class="absolute pointer-events-none" style="right: 12px;" />
+                <x-icon name="down-arrow" class="absolute pointer-events-none" style="right: 12px;"/>
             </div>
 
             <!-- Search -->
-            <x-search :value="$search" />
+            <x-search :value="request('search')"/>
         </div>
     </header>
 
     <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
-        <x-posts-grid :posts="$posts" />
+        <x-posts-grid :posts="$posts"/>
     </main>
+
+    {{ $posts->links() }}
 </x-base-layout>

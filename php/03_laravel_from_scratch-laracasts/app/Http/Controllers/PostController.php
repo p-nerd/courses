@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -11,15 +10,11 @@ class PostController extends Controller
 {
     public function index(): View
     {
-        $search = request("search") ?? "";
-        $category = request("category") ?? "";
-
         return view('posts.index', [
-            "posts" => Post::latest()
-                ->filter(["search" => $search, "category" => $category])
-                ->with("category", "author")
-                ->get(),
-            "search" => $search
+            'posts' => Post::latest()
+                ->filter(request(['search', 'category', 'author']))
+                ->paginate(6)
+                ->withQueryString(),
         ]);
     }
 
