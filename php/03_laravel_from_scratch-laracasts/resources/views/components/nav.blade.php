@@ -12,18 +12,19 @@
             <form action="/logout" method="POST">
                 @csrf
 
-               <button type="submit" class="text-xs font-bold uppercase">Logout</a>
+                <button type="submit" class="text-xs font-bold uppercase">Logout</a>
 
             </form>
         @else
 
-          <a href="/register" class="text-xs font-bold uppercase">Register</a>
-          <a href="/login" class="text-xs font-bold uppercase">Login</a>
+            <a href="/register" class="text-xs font-bold uppercase">Register</a>
+            <a href="/login" class="text-xs font-bold uppercase">Login</a>
 
         @endauth
 
 
-        <a href="#" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+        <a href="#newsletter"
+           class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
             Subscribe for Updates
         </a>
     </div>

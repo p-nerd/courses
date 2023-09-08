@@ -21,7 +21,7 @@ return new class extends Migration {
             $table->boolean("is_draft")->default(true);
             $table->string("slug")->unique();
             $table->string("thumbnail")->nullable();
-            $table->foreignIdFor(User::class, "user_id");
+            $table->foreignIdFor(User::class, "user_id")->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Category::class, "category_id");
             $table->timestamps();
         });

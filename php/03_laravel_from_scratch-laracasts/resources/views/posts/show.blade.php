@@ -49,8 +49,20 @@
                 </div>
             </div>
 
-            <section>
+            <section class="col-span-8 col-start-5 mt-10 space-y-6">
+                @auth
+                    <x-add-post-comment :post_slug="$post->slug"/>
+                @else
+                    <p class="font-semibold">
+                        <a href="/register" class="underline">Register</a>
+                        or
+                        <a href="/login" class="underline">Login</a> to
+                        leave a comment</p>
+                @endauth
 
+                @foreach($post->comments as $comment)
+                    <x-post-comment :comment="$comment"/>
+                @endforeach
             </section>
         </article>
     </main>
