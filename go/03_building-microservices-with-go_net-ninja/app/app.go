@@ -4,17 +4,20 @@ import (
 	"context"
 	"fmt"
 	"net/http"
+
+	"github.com/redis/go-redis/v9"
 )
 
 type App struct {
 	router http.Handler
+	redis  *redis.Client
 }
 
 func New() *App {
-	app := &App{
+	return &App{
 		router: loadRoutes(),
+		redis:  redis.NewClient(&redis.Options{}),
 	}
-	return app
 }
 
 func (a *App) Start(ctx context.Context) error {
@@ -23,7 +26,14 @@ func (a *App) Start(ctx context.Context) error {
 		Handler: a.router,
 	}
 
-	err := server.ListenAndServe()
+	err := a.redis.Ping(ctx).Err()
+	if err != nil {
+		return fmt.Errorf("failed to connect with redis: %w", err)
+	}
+
+	fmt.Println("Staring server...")
+
+	err = server.ListenAndServe()
 	if err != nil {
 		return fmt.Errorf("failed to start server: %w", err)
 	}

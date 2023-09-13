@@ -12,6 +12,6 @@ func main() {
 
 	err := app.Start(context.TODO())
 	if err != nil {
-		fmt.Println("failed to start app", err)
+		fmt.Println("failed to start app:", err)
 	}
 }
