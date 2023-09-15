@@ -1,4 +1,4 @@
-package app
+package base
 
 import (
 	"context"
@@ -10,35 +10,42 @@ import (
 )
 
 type App struct {
-	router http.Handler
-	redis  *redis.Client
+	Router http.Handler
+	Redis  *redis.Client
+	Conf   Conf
 }
 
-func New() *App {
-	return &App{
-		router: loadRoutes(),
-		redis:  redis.NewClient(&redis.Options{}),
+func New(config Conf) *App {
+	app := &App{
+		Redis: redis.NewClient(&redis.Options{
+			Addr: config.RedisAddress,
+		}),
 	}
+	app.Conf = config
+
+	app.loadRoutes()
+
+	return app
 }
 
 func (a *App) Start(ctx context.Context) error {
 	server := &http.Server{
-		Addr:    ":3000",
-		Handler: a.router,
+		Addr:    fmt.Sprintf(":%v", a.Conf.ServerPort),
+		Handler: a.Router,
 	}
 
-	err := a.redis.Ping(ctx).Err()
+	err := a.Redis.Ping(ctx).Err()
 	if err != nil {
 		return fmt.Errorf("failed to connect with redis: %w", err)
 	}
 
 	defer func() {
-		if err := a.redis.Close(); err != nil {
+		if err := a.Redis.Close(); err != nil {
 			fmt.Println("failed to close redis: ", err)
 		}
 	}()
 
-	fmt.Println("Staring server...")
+	fmt.Println("Staring server... ON port:", a.Conf.ServerPort)
 
 	ch := make(chan error, 1)
 

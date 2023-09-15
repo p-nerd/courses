@@ -5,11 +5,9 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-
+	
 	"github.com/google/uuid"
 	"github.com/redis/go-redis/v9"
-
-	"github.com/p-nerd/courses/go/03_building-microservices-with-go_net-ninja/model"
 )
 
 type RedisRepo struct {
@@ -17,7 +15,7 @@ type RedisRepo struct {
 }
 
 type ListResult struct {
-	Orders []model.Order
+	Orders []Order
 	Cursor uint64
 }
 
@@ -42,7 +40,7 @@ func (r *RedisRepo) List(ctx context.Context, page ListAllPage) (ListResult, err
 
 	if len(keys) == 0 {
 		return ListResult{
-			Orders: []model.Order{},
+			Orders: []Order{},
 		}, nil
 	}
 
@@ -51,11 +49,11 @@ func (r *RedisRepo) List(ctx context.Context, page ListAllPage) (ListResult, err
 		return ListResult{}, fmt.Errorf("failed to get orders: %w", err)
 	}
 
-	orders := make([]model.Order, len(xs))
+	orders := make([]Order, len(xs))
 
 	for i, x := range xs {
 		x := x.(string)
-		var order model.Order
+		var order Order
 
 		err := json.Unmarshal([]byte(x), &order)
 		if err != nil {
@@ -71,26 +69,26 @@ func (r *RedisRepo) List(ctx context.Context, page ListAllPage) (ListResult, err
 	}, nil
 }
 
-func (r *RedisRepo) Find(ctx context.Context, id uuid.UUID) (model.Order, error) {
+func (r *RedisRepo) Find(ctx context.Context, id uuid.UUID) (Order, error) {
 	key := orderKey(id)
 
 	value, err := r.Client.Get(ctx, key).Result()
 	if errors.Is(err, redis.Nil) {
-		return model.Order{}, ErrNotFound
+		return Order{}, ErrNotFound
 	} else if err != nil {
-		return model.Order{}, fmt.Errorf("failed to get order: %w", err)
+		return Order{}, fmt.Errorf("failed to get order: %w", err)
 	}
 
-	var order model.Order
-	err = json.Unmarshal([]byte(value), &order)
+	var o Order
+	err = json.Unmarshal([]byte(value), &o)
 	if err != nil {
-		return model.Order{}, fmt.Errorf("failed to decode order json: %w", err)
+		return Order{}, fmt.Errorf("failed to decode order json: %w", err)
 	}
 
-	return order, nil
+	return o, nil
 }
 
-func (r *RedisRepo) Insert(ctx context.Context, order model.Order) error {
+func (r *RedisRepo) Insert(ctx context.Context, order Order) error {
 	orderString, err := json.Marshal(order)
 	if err != nil {
 		return fmt.Errorf("failed to encode order: %w", err)
@@ -138,7 +136,7 @@ func (r *RedisRepo) Remove(ctx context.Context, id uuid.UUID) error {
 	return nil
 }
 
-func (r *RedisRepo) Update(ctx context.Context, order model.Order) error {
+func (r *RedisRepo) Update(ctx context.Context, order Order) error {
 	orderString, err := json.Marshal(order)
 	if err != nil {
 		return fmt.Errorf("failed to encode order: %w", err)
