@@ -15,7 +15,6 @@ Route::get("/posts/create", [PostController::class, "create"]);
 
 Route::post("/newsletter", NewsletterController::class);
 
-
 Route::get("/register", [AuthController::class, "create"])->middleware("guest");
 Route::post("/register", [AuthController::class, "store"])->middleware("guest");
 
@@ -24,3 +23,4 @@ Route::post("/logout", [AuthController::class, "logout"])->middleware("auth");
 Route::get("/login", [AuthController::class, "loginForm"])->middleware("guest")->name("login");
 Route::post("/login", [AuthController::class, "login"])->middleware("guest");
 
+Route::get("/admin/posts/create", [PostController::class, "create"]);
