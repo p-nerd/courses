@@ -45,3 +45,30 @@
   - `find /etc -type f -name "f*"` -> finding files that start with f
   - `find /etc -type f -iname "f*"` -> finding files that start with f or F
   - `find / -type f -name "*.py" > list_of_python_files.txt`
+- chaining commands
+  - `mkdir text ; cd text ; ls`
+  - `mkdir text && cd text && ls`
+  - `mkdir text || echo "directory already exits"`
+- enviroment variables
+  - `printenv`
+  - `printenv PATH`
+  - `echo $PATH`
+  - `export DB_USER=shihab`
+- process
+  - `ps` -> list all the processes
+  - `sleep 3 &` -> sleep process for 3 seconds
+  - `kill <process id>`
+- managing users
+  - `adduser <user name>`
+  - `useradd -m <user name>`
+  - `usermod -s /bin/bash shihab2` -> chaning the user default shell
+  - `userdel <user name>`
+  - `cat /etc/passwd`
+  - `cat /etc/shadow`
+- managing groups
+  - `addgroup <group name>`
+  - `groupadd <group name>`
+  - `cat /etc/group`
+  - `usermod -G <group name> <user name>`
+  - `groups <user name>` -> listing all groups of the user
+- file permissions
