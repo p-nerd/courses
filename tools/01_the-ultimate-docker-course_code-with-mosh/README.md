@@ -72,3 +72,19 @@
   - `usermod -G <group name> <user name>`
   - `groups <user name>` -> listing all groups of the user
 - file permissions
+  - `chmod u+x <filename>` -> for user add execute permissions
+  - `chmod u-x <filename>` -> for user remove execute permissions
+
+## Building Images
+
+- Dockerfile instruction
+  - `FROM`
+  - `WORKDIR`
+  - `COPY`
+  - `ADD`
+  - `RUN`
+  - `ENV`
+  - `EXPOSE`
+  - `USER`
+  - `CMD`
+  - `ENTRYPOINT`
