@@ -3,6 +3,7 @@ RUN npm install -g pnpm
 RUN addgroup app && adduser -S -G app app
 USER app
 WORKDIR /app
+RUN makdir data
 COPY package.json pnpm-lock.yaml . 
 RUN pnpm install
 ENV API_URL=https://keep.37nerds.com/

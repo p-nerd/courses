@@ -117,3 +117,10 @@
   - `docker start <container name>` -> start a stopped container
   - `docker container rm <container name>` | `docker rm <container name>` | `docker rm -f <container name>`
   - `docker container prune`
+  - `docker volume` -> volume is storage outside of container (can be local or remote)
+  - `docker volume create <volume name>`
+  - `docker volume inspect <volume name>`
+  - `docker run -v <volume name>:<container path> react-app` -> mount a volume to container path
+  - `docker run -v <host path>:<container path> react-app` -> mount a host path to container path
+  - `docker cp <container name>:<absolute path> <host path>` -> copy container to host mechine
+  - `docker cp <host path> <container name>:<absolute path>` -> copy host to container mechine
