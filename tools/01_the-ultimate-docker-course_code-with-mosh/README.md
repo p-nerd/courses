@@ -49,7 +49,7 @@
   - `mkdir text ; cd text ; ls`
   - `mkdir text && cd text && ls`
   - `mkdir text || echo "directory already exits"`
-- enviroment variables
+- environment variables
   - `printenv`
   - `printenv PATH`
   - `echo $PATH`
@@ -61,7 +61,7 @@
 - managing users
   - `adduser <user name>`
   - `useradd -m <user name>`
-  - `usermod -s /bin/bash shihab2` -> chaning the user default shell
+  - `usermod -s /bin/bash shihab2` -> chaining the user default shell
   - `userdel <user name>`
   - `cat /etc/passwd`
   - `cat /etc/shadow`
@@ -88,3 +88,32 @@
   - `USER`
   - `CMD`
   - `ENTRYPOINT`
+- Commands
+  - `docker build -t <image name>:<tag> .` | `docker image build -t <image name>:<tag> .`
+  - `docker image ls` | `docker images`
+  - `docker history <image name>`
+  - `docker image prune` -> remove all dangling images
+  - `docker container prune` -> remove all stopped containers
+  - `docker image rm <image name | image id>`
+  - `docker image tag react-app:latest react-app:1.2`
+  - `docker push shihab4t/react-app`
+  - `docker image save -o <zip-folder-name.tar> <image name>` -> saving image as zip
+  - `docker image load -i <zip-folder-name.tar>` -> load image from the zip
+
+## Working with Containers
+
+- Commands
+  - `docker ps` | `docker container ls`
+  - `docker run <image name>`
+  - `docker run -d <image name>`
+  - `docker run -d --name <container name> <image name>`
+  - `docker logs <container id>` -> see the container stdout log
+  - `docker logs -f <container id>` -> see the container stdout log and follow it
+  - `docker logs -d 5 <container id>` -> see the container stdout log last 5 lines
+  - `docker logs -t <container id>` -> see the container stdout log with timestamps
+  - `docker run -p <local port>:<container port> <image name>` -> map local system port to container port
+  - `docker exec <container name> <command name>`
+  - `docker stop <container name>` -> stop a container
+  - `docker start <container name>` -> start a stopped container
+  - `docker container rm <container name>` | `docker rm <container name>` | `docker rm -f <container name>`
+  - `docker container prune`
