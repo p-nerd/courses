@@ -124,3 +124,23 @@
   - `docker run -v <host path>:<container path> react-app` -> mount a host path to container path
   - `docker cp <container name>:<absolute path> <host path>` -> copy container to host mechine
   - `docker cp <host path> <container name>:<absolute path>` -> copy host to container mechine
+  - `docker container rm $(docker container ls -aq)` -> remove all containers
+  - `docker image rm $(docker image ls -q)` -> remove all containers
+
+## Running multi-container Apps
+
+- Commands
+  - `docker compose build`
+  - `docker compose build --no-cache`
+  - `docker compose up`
+  - `docker compose up --build`
+  - `docker compose up -d`
+  - `docker compose ps`
+  - `docker compose down`
+  - `docker compose logs`
+  - `docker compose logs -f`
+- Docker networking
+  - Network types
+    - bridge
+    - host
+    - none
