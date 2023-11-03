@@ -144,3 +144,11 @@
     - bridge
     - host
     - none
+
+## Deploy dockerized application
+
+- Cluster Solutions
+  - Docker Swarm
+  - Kubernetes
+- Docker Machine
+  - `docker create --driver digitalocean --digitalocean-access-token <token> vidly`
