@@ -1,0 +1,23 @@
+{
+  "name": "03_solidjs.com-tutorial",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "solid-js": "^1.7.8"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "eslint": "^8.53.0",
+    "eslint-plugin-solid": "^0.13.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-solid": "^2.7.0"
+  }
+}
