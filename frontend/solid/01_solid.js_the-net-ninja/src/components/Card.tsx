@@ -1,13 +1,9 @@
-import { JSXElement } from "solid-js";
+import { JSX } from "solid-js";
 
-const Card = (props: {
-    children: JSXElement;
-    rounded?: boolean;
-    flat?: boolean;
-}) => {
+const Card = (props: { children: JSX.Element; rounded?: boolean; flat?: boolean }) => {
     return (
         <div
-            class="p-4 bg-white text-center"
+            class="bg-white p-4 text-center"
             classList={{
                 "rounded-md": props.rounded,
                 "shadow-md": !props.flat,

@@ -20,9 +20,7 @@ const Product = () => {
                     </div>
 
                     <div class="col-span-3">
-                        <h2 class="text-3xl font-bold mb-7">
-                            {product().title}
-                        </h2>
+                        <h2 class="mb-7 text-3xl font-bold">{product().title}</h2>
                         <p>{product().description}</p>
                         <p class="my-7 text-2xl">Only £{product().price}</p>
                     </div>

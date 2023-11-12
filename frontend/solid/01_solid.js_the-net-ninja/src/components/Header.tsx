@@ -9,15 +9,12 @@ const Header = () => {
     return (
         <>
             <header
-                class="my-4 p-2 text-xl flex items-center gap-4"
+                class="my-4 flex items-center gap-4 p-2 text-xl"
                 classList={{
                     "bg-neutral-900 text-white rounded": isThemeDark(),
                 }}
             >
-                <span
-                    class="material-symbols-outlined cursor-pointer"
-                    onClick={() => setIsThemeDark(!isThemeDark())}
-                >
+                <span class="material-symbols-outlined cursor-pointer" onClick={() => setIsThemeDark(!isThemeDark())}>
                     light_mode
                 </span>
                 <h1>Ninja match</h1>

@@ -12,7 +12,7 @@ const Home = () => {
     const [products] = createResource(fetchProducts);
 
     return (
-        <div class="grid grid-cols-4 gap-10 my-4">
+        <div class="my-4 grid grid-cols-4 gap-10">
             <Show when={products()} fallback={<p>Loading ....</p>}>
                 <For each={products()}>
                     {(product: any) => (

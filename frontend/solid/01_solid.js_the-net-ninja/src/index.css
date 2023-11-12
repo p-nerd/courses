@@ -4,13 +4,12 @@
 
 @layer components {
     .btn {
-        @apply
-        bg-orange-500
-        py-[10px]
-        px-[15px]
-        mx-[10px]
+        @apply mx-[10px]
         inline-block
-        text-white
         rounded-[5px]
+        bg-orange-500
+        px-[15px]
+        py-[10px]
+        text-white;
     }
 }

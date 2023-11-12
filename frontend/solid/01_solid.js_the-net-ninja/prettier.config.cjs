@@ -1,4 +1,6 @@
 module.exports = {
+    printWidth: 120,
     tabWidth: 4,
-    tailwindConfig: './tailwind.config.js',
-}
+    arrowParens: "avoid",
+    plugins: ["prettier-plugin-tailwindcss"],
+};
