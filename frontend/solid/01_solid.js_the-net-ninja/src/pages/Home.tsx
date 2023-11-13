@@ -1,11 +1,12 @@
 import { createResource, For, Show } from "solid-js";
-
-import Card from "../components/Card.tsx";
 import { A } from "@solidjs/router";
+import { api_base_url } from "@/config/mics";
+
+import Card from "@/components/Card";
 
 const fetchProducts = async () => {
-    const response = await fetch("http://localhost:4000/products");
-    return response.json();
+    const response = await fetch(`${api_base_url}/products`);
+    return await response.json();
 };
 
 const Home = () => {

@@ -20,6 +20,8 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    plugins: ["solid"],
-    rules: {},
+    plugins: ["solid", "@typescript-eslint"],
+    rules: {
+        "@typescript-eslint/no-unused-vars": ["error", { varsIgnorePattern: "^_" }],
+    },
 };

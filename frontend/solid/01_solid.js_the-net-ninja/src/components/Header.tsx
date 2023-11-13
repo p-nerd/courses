@@ -1,10 +1,13 @@
 import { A } from "@solidjs/router";
 import { createSignal } from "solid-js";
+import { useCart } from "@/contexts/cart_context";
 
 import bannerImage from "../assets/banner.png";
 
 const Header = () => {
     const [isThemeDark, setIsThemeDark] = createSignal<boolean>(false);
+
+    const { itemsCount } = useCart();
 
     return (
         <>
@@ -19,7 +22,7 @@ const Header = () => {
                 </span>
                 <h1>Ninja match</h1>
                 <A href="/">Home</A>
-                <A href="/cart">Cart</A>
+                <A href="/cart">Cart ({itemsCount()})</A>
             </header>
             <img class="rounded-md" src={bannerImage} alt="" />
         </>
