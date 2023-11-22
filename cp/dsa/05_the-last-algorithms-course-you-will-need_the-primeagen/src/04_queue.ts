@@ -33,6 +33,7 @@ class Queue<T> {
             this._tails = node;
         }
     }
+    // O(1)
 
     public pop(): T | undefined {
         if (!this._head) {
@@ -51,6 +52,7 @@ class Queue<T> {
 
         return tmp?.value;
     }
+    // O(1)
 }
 
 test("queue", function () {
