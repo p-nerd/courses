@@ -51,9 +51,7 @@ const Layout = (p: { children: TChildren }) => {
             <header className="py-6 bg-gray-200 ">
                 <div className="flex justify-between items-center container mx-auto">
                     <div className="flex space-x-6 items-center">
-                        <h1 contentEditable={true} className="font-bold text-lg">
-                            My App
-                        </h1>
+                        <h1 className="font-bold text-lg">My App</h1>
                         <p className="text-sm">Welcome, {page.props.auth.user.name}</p>
                     </div>
                     <Nav />
