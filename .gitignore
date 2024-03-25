@@ -49,7 +49,7 @@ public/uploads/avatars
 
 .pytest_cache
 
-*tmp*
+*tmp
 html
 .DS_Store
 .idea

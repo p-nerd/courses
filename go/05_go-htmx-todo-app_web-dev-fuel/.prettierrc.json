@@ -1,0 +1,14 @@
+{
+    "printWidth": 100,
+    "tabWidth": 4,
+    "arrowParens": "avoid",
+    "plugins": ["prettier-plugin-go-template"],
+    "overrides": [
+        {
+            "files": ["*.tmpl.html"],
+            "options": {
+                "parser": "go-template"
+            }
+        }
+    ]
+}
