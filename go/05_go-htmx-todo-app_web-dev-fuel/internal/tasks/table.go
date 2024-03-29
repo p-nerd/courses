@@ -89,7 +89,7 @@ func (t *Table) Delete(ctx context.Context, id int) error {
 	if err != nil {
 		return err
 	}
-	ids := hof.Map(tasks, func(task Task) int { return task.ID })
+	ids := hof.Map(tasks, func(_ int, task Task, _ []Task) int { return task.ID })
 	return t.OrderPositions(ctx, ids)
 }
 

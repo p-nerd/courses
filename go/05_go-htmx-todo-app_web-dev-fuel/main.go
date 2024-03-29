@@ -1,35 +1,39 @@
 package main
 
 import (
-	"html/template"
 	"log"
 	"net/http"
+	"todo/internal/tasks"
+	"todo/pkg/db"
+	"todo/pkg/tmpl"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 )
 
 func main() {
-	err := OpenDB()
+	err := db.OpenDB()
 	if err != nil {
 		log.Panic(err)
 	}
-	defer CloseDB()
+	defer db.CloseDB()
 
-	err = SetupDB()
+	err = db.SetupDB()
+	if err != nil {
+		log.Panic(err)
+	}
+
+	err = tmpl.ParseTmpls()
 	if err != nil {
 		log.Panic(err)
 	}
 
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		tmpl, err := template.New("").ParseFiles("tmpls/home.tmpl.html")
-		if err != nil {
-			panic(err)
-		}
-		tmpl.ExecuteTemplate(w, "Base", nil)
-	})
+
+	h := tasks.NewHandler(db.DB, tmpl.Tmpl)
+
+	r.Get("/", h.GetTasks)
 
 	r.Handle("/*", http.StripPrefix("/", http.FileServer(http.Dir("./public"))))
 	http.ListenAndServe(":3000", r)

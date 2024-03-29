@@ -6,3 +6,9 @@ type Task struct {
 	Completed bool
 	Position  int
 }
+
+type Data struct {
+	Tasks          []Task
+	TotalCount     int
+	CompletedCount int
+}

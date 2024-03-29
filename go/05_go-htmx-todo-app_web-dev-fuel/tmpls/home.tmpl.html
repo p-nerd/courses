@@ -9,7 +9,18 @@
             <script src="/build/script.js" defer type="text/javascript"></script>
         </head>
         <body>
-            <h1 class="bg-red-500">Hello</h1>
+            <div class="max-w-screen-md mx-auto mt-8">
+                <div class="flex justify-between items-center">
+                    {{ template "TotalCount" dict "TotalCount" .TotalCount }}
+                    {{ template "CompletedCount" dict "CompletedCount" .CompletedCount }}
+                </div>
+                {{ template "Form" }}
+                <div id="items" class="space-y-2.5 mt-4">
+                    {{ range .Items }}
+                        {{ template "Item" }}
+                    {{ end }}
+                </div>
+            </div>
         </body>
     </html>
 {{ end }}
