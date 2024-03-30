@@ -34,6 +34,7 @@ func main() {
 	h := tasks.NewHandler(db.DB, tmpl.Tmpl)
 
 	r.Get("/", h.GetTasks)
+	r.Post("/tasks", h.SaveTask)
 
 	r.Handle("/*", http.StripPrefix("/", http.FileServer(http.Dir("./public"))))
 	http.ListenAndServe(":3000", r)

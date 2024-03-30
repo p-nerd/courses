@@ -61,6 +61,12 @@ func (t *Table) Count() (int, error) {
 	return count, err
 }
 
+func (t *Table) CompletedCount() (int, error) {
+	count := 0
+	err := t.DB.QueryRow("SELECT COUNT(*) FROM tasks WHERE completed = 1").Scan(&count)
+	return count, err
+}
+
 func (t *Table) Create(title string) (Task, error) {
 	position, err := t.Count()
 	if err != nil {
