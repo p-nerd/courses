@@ -6,7 +6,7 @@ require (
 	github.com/Masterminds/sprig/v3 v3.2.3
 	github.com/go-chi/chi/v5 v5.0.12
 	github.com/mattn/go-sqlite3 v1.14.22
-	github.com/p-nerd/hof v1.0.1
+	github.com/p-nerd/hof v1.0.3
 )
 
 require (

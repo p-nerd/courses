@@ -21,8 +21,8 @@ github.com/mitchellh/copystructure v1.0.0 h1:Laisrj+bAB6b/yJwB5Bt3ITZhGJdqmxquMK
 github.com/mitchellh/copystructure v1.0.0/go.mod h1:SNtv71yrdKgLRyLFxmLdkAbkKEFWgYaq1OVrnRcwhnw=
 github.com/mitchellh/reflectwalk v1.0.0 h1:9D+8oIskB4VJBN5SFlmc27fSlIBZaov1Wpk/IfikLNY=
 github.com/mitchellh/reflectwalk v1.0.0/go.mod h1:mSTlrgnPZtwu0c4WaC2kGObEpuNDbx0jmZXqmk4esnw=
-github.com/p-nerd/hof v1.0.1 h1:Urq1kT4etmclBq0D+nYUjEm52oBffyxfn0dmme3Ft0U=
-github.com/p-nerd/hof v1.0.1/go.mod h1:5CbE9/MyZhe4KN7BcFwJMGCkXeS71ERcg6b0b+vLXOg=
+github.com/p-nerd/hof v1.0.3 h1:ajgws7mRd0FI0EL0dKSOY1L+qoUU59tzpkTmUsbjfdg=
+github.com/p-nerd/hof v1.0.3/go.mod h1:5CbE9/MyZhe4KN7BcFwJMGCkXeS71ERcg6b0b+vLXOg=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/shopspring/decimal v1.2.0 h1:abSATXmQEYyShuxI4/vyW3tV1MrKAJzCZ/0zLUXYbsQ=
