@@ -12,4 +12,9 @@ func main() {
 
 	rune := 'a'
 	fmt.Println(rune)
+
+	const hello string = "World"
+	const five int = 5
+
+	fmt.Println(hello, five)
 }
