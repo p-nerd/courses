@@ -1,3 +1,17 @@
-# check_lang
+# The Last Algorithms Course You'll Need (ThePrimeagen)
 
-Checking programming language knowledge via implementing Data Structure and Algorithms
+## List
+
+-   topics & patterns
+    -   [x] complexity
+    -   [x] recursion
+-   data structure
+    -   [x] queue
+    -   [x] stack
+-   algorithms
+    -   [x] linear search
+    -   [x] binary search
+    -   [x] bubble sort
+    -   [x] quick sort
+
+## Leetcode Problems
