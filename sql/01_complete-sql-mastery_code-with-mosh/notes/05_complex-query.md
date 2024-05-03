@@ -88,3 +88,52 @@ WHERE
 		WHERE
 			client_id = 3)
 ```
+
+```sql
+SELECT
+	*
+FROM
+	invoices
+WHERE
+	invoice_total >= ALL (
+		SELECT
+			invoice_total
+		FROM
+			invoices
+		WHERE
+			client_id = 3)
+```
+
+## Any keyword
+
+```sql
+SELECT
+	*
+FROM
+	invoices
+WHERE
+	invoice_total >= ANY (
+		SELECT
+			invoice_total
+		FROM
+			invoices
+		WHERE
+			client_id = 3)
+```
+
+##
+
+```sql
+SELECT
+	*
+FROM
+	employees
+WHERE
+	salary > (
+		SELECT
+			AVG(salary)
+		FROM
+			employees e
+		WHERE
+			office_id = e.office_id)
+```
