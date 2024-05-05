@@ -121,7 +121,7 @@ WHERE
 			client_id = 3)
 ```
 
-##
+## Corelated subqueries
 
 ```sql
 SELECT
@@ -136,4 +136,47 @@ WHERE
 			employees e
 		WHERE
 			office_id = e.office_id)
+```
+
+## Exists operator
+
+```sql
+SELECT
+	*
+FROM
+	clients c
+WHERE
+	EXISTS (
+		SELECT
+			client_id
+		FROM
+			invoices
+		WHERE
+			client_id = c.client_id)
+```
+
+## Subqueries in Select clause
+
+```sql
+SELECT
+	invoice_id,
+	(
+		SELECT
+			AVG(invoice_total)
+		FROM
+			invoices) AS invoice_average,
+	invoice_total - (
+		SELECT
+			invoice_average) AS invoice_difference
+FROM
+	invoices
+```
+
+## Subqueries in From clause
+
+```sql
+SELECT column1, column2 FROM
+(SELECT column_x  as C1, column_y FROM table WHERE PREDICATE_X)
+as table2, table1
+WHERE PREDICATE;
 ```
