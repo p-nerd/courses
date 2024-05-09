@@ -1,0 +1,7 @@
+{
+    "preset": "laravel",
+    "exclude": ["resources/views"],
+    "rules": {
+        "single_quote": false
+    }
+}

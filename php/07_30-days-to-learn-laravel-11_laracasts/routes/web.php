@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobListingController;
+use Illuminate\Support\Facades\Route;
 
-Route::view('/', "home", ['greeting' => 'Hello, Shihab']);
-Route::view('/contact', "contact");
+Route::view('/', 'home', ['greeting' => 'Hello, Shihab']);
+Route::view('/contact', 'contact');
 
 // Route::controller(JobListingController::class)->group(function () {
 //     Route::get('/jobs', "index");
@@ -16,4 +16,4 @@ Route::view('/contact', "contact");
 //     Route::delete('/jobs/{job}',  "destroy");
 // });
 
-Route::resource("/jobs", JobListingController::class);
+Route::resource('/jobs', JobListingController::class);

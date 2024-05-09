@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class JobListing extends Model
@@ -14,7 +14,7 @@ class JobListing extends Model
     protected $fillable = [
         'title',
         'salary',
-        "employer_id"
+        'employer_id',
     ];
 
     public function employer(): BelongsTo

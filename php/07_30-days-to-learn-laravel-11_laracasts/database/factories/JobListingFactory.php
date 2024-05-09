@@ -20,9 +20,9 @@ class JobListingFactory extends Factory
         $employers = Employer::all();
 
         return [
-            "title" => fake()->jobTitle(),
-            "employer_id" => $employers->random()->id,
-            "salary" => "$50,000"
+            'title' => fake()->jobTitle(),
+            'employer_id' => $employers->random()->id,
+            'salary' => '$50,000',
         ];
     }
 }

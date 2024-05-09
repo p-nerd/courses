@@ -18,7 +18,7 @@ class JobListingController extends Controller
             ->paginate(10);
 
         return view('jobs.index', [
-            'jobs' => $jobs
+            'jobs' => $jobs,
         ]);
     }
 
@@ -37,7 +37,7 @@ class JobListingController extends Controller
     {
         $request->validate([
             "title" => ["required", "min:3"],
-            "salary" => ["required"]
+            "salary" => ["required"],
         ]);
 
         JobListing::create([
@@ -45,6 +45,7 @@ class JobListingController extends Controller
             "salary" => request("salary"),
             "employer_id" => 1,
         ]);
+
         return redirect("/jobs");
     }
 
@@ -75,7 +76,7 @@ class JobListingController extends Controller
     {
         $request->validate([
             "title" => ["required", "min:3"],
-            "salary" => ["required"]
+            "salary" => ["required"],
         ]);
 
         $job->update([
@@ -92,6 +93,7 @@ class JobListingController extends Controller
     public function destroy(JobListing $job)
     {
         $job->delete();
+
         return redirect("/jobs");
     }
 }
