@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\JobListingController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,9 @@ Route::view('/contact', 'contact');
 // });
 
 Route::resource('/jobs', JobListingController::class);
+
+Route::get("/register", [AuthController::class, "registerCreate"]);
+Route::post("/register", [AuthController::class, "registerStore"]);
+
+Route::get("/login", [AuthController::class, "loginCreate"]);
+Route::post("/login", [AuthController::class, "loginStore"]);

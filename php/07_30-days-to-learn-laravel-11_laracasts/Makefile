@@ -3,6 +3,5 @@ format:
 	pnpm format
 
 dev:
-	@php artisan serve & \
-	pnpm dev
+	php artisan serve & pnpm dev
 

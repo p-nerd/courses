@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Jobs">
     <x-slot:heading>Jobs ({{ $jobs->total() }})</x-slot:heading>
     <x-slot:links>
         <x-button href="/jobs/create">Create New Job</x-button>

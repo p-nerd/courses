@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Edit Job">
     <x-slot:heading>Edit Job '{{ $job->title }}'</x-slot>
     <form method="POST" action="/jobs/{{ $job->id }}">
         @csrf
