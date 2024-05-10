@@ -5,8 +5,6 @@ export default {
     darkMode: "class",
     content: [
         "./resources/**/*.js",
-        "./resources/**/*.jsx",
-        "./resources/**/*.tsx",
         "./resources/**/*.blade.php",
         "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
     ],

@@ -3,5 +3,7 @@ format:
 	pnpm format
 
 dev:
-	php artisan serve & php artisan queue:work & pnpm dev
+	php artisan serve & pnpm dev
 
+worker:
+	php artisan queue:work
