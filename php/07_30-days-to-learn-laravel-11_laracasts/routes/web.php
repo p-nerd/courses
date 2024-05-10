@@ -24,3 +24,4 @@ Route::post("/register", [AuthController::class, "registerStore"]);
 
 Route::get("/login", [AuthController::class, "loginCreate"]);
 Route::post("/login", [AuthController::class, "loginStore"]);
+Route::post("/logout", [AuthController::class, "logout"]);

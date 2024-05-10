@@ -9,7 +9,8 @@
                             <x-label for="email">Email</x-label>
                             <div class="mt-2">
                                 <x-input required type="text" name="email" id="email"
-                                    autocomplete="email" placeholder="shihab@example.com" />
+                                    autocomplete="email" placeholder="shihab@example.com"
+                                    :value="old('email')" />
                             </div>
                             <x-error name="email" />
                         </div>
