@@ -2,7 +2,8 @@
     "printWidth": 100,
     "tabWidth": 4,
     "arrowParens": "avoid",
-    "plugins": ["prettier-plugin-tailwindcss", "@shufo/prettier-plugin-blade"],
+    "sortTailwindcssClasses": true,
+    "plugins": ["@shufo/prettier-plugin-blade"],
     "overrides": [
         {
             "files": ["*.blade.php"],
