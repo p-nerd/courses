@@ -1,4 +1,4 @@
-export default function Home(props: { version: number }) {
+const Home = (props: { version: number }) => {
     return (
         <>
             <div class="container">
@@ -12,3 +12,5 @@ export default function Home(props: { version: number }) {
         </>
     )
 }
+
+export default Home
