@@ -7,9 +7,9 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class RootController
 {
-    #[Route("/")]
+    #[Route('/')]
     public function index()
     {
-        return new Response("Hello World");
+        return new Response('Hello World');
     }
 }
