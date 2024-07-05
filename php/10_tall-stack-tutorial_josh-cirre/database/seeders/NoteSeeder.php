@@ -3,19 +3,17 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Note;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class NoteSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      */
     public function run(): void
     {
-
-        $this->call([
-            UserSeeder::class,
-            NoteSeeder::class,
-        ]);
+        Note::factory(10)->create();
     }
 }
