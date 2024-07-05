@@ -22,9 +22,9 @@ new class extends Component
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}" wire:navigate>
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                <div class="shrink-0 flex items-center justify-center">
+                    <a href="/" wire:navigate>
+                        <x-application-logo class="block h-8 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
 
@@ -33,12 +33,15 @@ new class extends Component
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('notes')" :active="request()->routeIs('notes')" wire:navigate>
+                        {{ __('Notes') }}
+                    </x-nav-link>
                 </div>
             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
-                <x-dropdown align="right" width="48">
+                <x-dropdown2 align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                             <div x-data="{{ json_encode(['name' => auth()->user()->name]) }}" x-text="name" x-on:profile-updated.window="name = $event.detail.name"></div>
@@ -52,18 +55,18 @@ new class extends Component
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile')" wire:navigate>
+                        <x-dropdown-link2 :href="route('profile')" wire:navigate>
                             {{ __('Profile') }}
-                        </x-dropdown-link>
+                        </x-dropdown-link2>
 
                         <!-- Authentication -->
                         <button wire:click="logout" class="w-full text-start">
-                            <x-dropdown-link>
+                            <x-dropdown-link2>
                                 {{ __('Log Out') }}
-                            </x-dropdown-link>
+                            </x-dropdown-link2>
                         </button>
                     </x-slot>
-                </x-dropdown>
+                </x-dropdown2>
             </div>
 
             <!-- Hamburger -->
@@ -83,6 +86,9 @@ new class extends Component
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('notes')" :active="request()->routeIs('notes')" wire:navigate>
+                {{ __('Notes') }}
             </x-responsive-nav-link>
         </div>
 
