@@ -13,12 +13,12 @@ trait SeederTrait
 
     public function disableForeignKeyCheck(): void
     {
-        DB::statement("SET FOREIGN_KEY_CHECKS=0");
+        // DB::statement("SET FOREIGN_KEY_CHECKS=0");
     }
 
     public function enableForeignKeyCheck(): void
     {
-        DB::statement("SET FOREIGN_KEY_CHECKS=1");
+        // DB::statement("SET FOREIGN_KEY_CHECKS=1");
     }
 
     public function truncateTable(string $tableName): void
@@ -36,6 +36,6 @@ trait SeederTrait
 
     public function truncate($model, int $count): void
     {
-        $this->withTruncate($model::table(), fn() => $model::factory($count)->create());
+        $this->withTruncate($model::table(), fn () => $model::factory($count)->create());
     }
 }
