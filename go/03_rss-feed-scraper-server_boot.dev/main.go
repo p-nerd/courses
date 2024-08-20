@@ -7,6 +7,8 @@ import (
 	"os"
 	"rssagg/internal/db"
 
+	_ "github.com/mattn/go-sqlite3"
+
 	"github.com/joho/godotenv"
 )
 
@@ -15,7 +17,7 @@ func getEnv(key string) string {
 	if value == "" {
 		log.Fatalf("%s is not found in the environment", key)
 	}
-	log.Printf("%s: %s", key, value)
+	log.Printf("env %s: %s", key, value)
 	return value
 }
 

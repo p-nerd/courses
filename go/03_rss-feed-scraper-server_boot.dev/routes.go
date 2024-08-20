@@ -1,12 +1,23 @@
 package main
 
 import (
+	"rssagg/api/v1/users"
 	"rssagg/internal/db"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/cors"
 )
+
+func v1Routes(db *db.Queries) *chi.Mux {
+	r := chi.NewRouter()
+
+	usersHandler := users.Handler{DB: db}
+
+	r.Post("/users", usersHandler.Save)
+
+	return r
+}
 
 func routes(db *db.Queries) *chi.Mux {
 	r := chi.NewRouter()
@@ -20,15 +31,12 @@ func routes(db *db.Queries) *chi.Mux {
 		MaxAge:           300,
 	}))
 
-	v1r := chi.NewRouter()
+	h := Handler{db}
 
-	handler := Handler{db}
+	r.Mount("/v1", v1Routes(db))
 
-	v1r.Get("/health", handler.Health)
-	v1r.Post("/users", handler.CreateUser)
-
-	r.Mount("/v1", v1r)
-	r.NotFound(handler.Health)
+	r.Get("/health", h.Health)
+	r.NotFound(h.Health)
 
 	return r
 }
