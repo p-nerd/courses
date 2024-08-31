@@ -1,1 +1,0 @@
-## [Outline](https://github.com/ggelashvili/learnphptherightway-outline)
