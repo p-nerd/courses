@@ -1,11 +1,21 @@
 const std = @import("std");
 
-pub fn main() !void {
-    const a = [5]u8{ 'h', 'e', 'l', 'l', 'o' };
-    const b = [_]u8{ 'w', 'o', 'r', 'l', 'd' };
+const print = std.debug.print;
 
-    std.debug.print("a: {s}\n", .{a});
-    std.debug.print("b: {s}\n", .{b});
+test "fixed-size array" {
+    const numbers = [5]i32{ 1, 2, 3, 4, 5 };
 
-    std.debug.print("len: {s}\n", .{b.len});
+    print("{any}\n\n", .{numbers});
+}
+
+test "array with inferred size" {
+    const inferred = [_]i32{ 1, 2, 3 };
+
+    print("{any}\n\n", .{inferred});
+}
+
+test "multi-dimensional array" {
+    const matrix = [2][3]i32{ [_]i32{ 1, 2, 3 }, [_]i32{ 4, 5, 6 } };
+
+    print("{any}\n\n", .{matrix});
 }
