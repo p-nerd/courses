@@ -6,4 +6,6 @@ pub fn main() !void {
 
     std.debug.print("a: {s}\n", .{a});
     std.debug.print("b: {s}\n", .{b});
+
+    std.debug.print("len: {s}\n", .{b.len});
 }
