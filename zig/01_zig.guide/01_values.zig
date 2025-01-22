@@ -1,8 +1,12 @@
-const constant: i32 = 5;
-var variable: u32 = 5000;
+const std = @import("std");
 
-const inferred_constant = @as(i32, 5);
-var inferred_variable = @as(u32, 5000);
+const expect = std.testing.expect;
+const print = std.debug.print;
 
-const a: i32 = undefined;
-var b: u32 = undefined;
+test "constants (immutable, known at compile-time)" {
+    const PI = 3.14159;
+    const MESSAGE = "Hello";
+    const ARRAY = [_]i32{ 1, 2, 3 };
+
+    print("{any}\n{s}\n{any}\n", .{ PI, MESSAGE, ARRAY });
+}
