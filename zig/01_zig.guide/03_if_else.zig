@@ -23,3 +23,11 @@ test "if-else with else if" {
         print("{d} is positive\n", .{number});
     }
 }
+
+test "if as an expression" {
+    const number = 42;
+
+    const result = if (number % 2 == 0) "even" else "odd";
+
+    print("{d} is {s}\n", .{ number, result });
+}
