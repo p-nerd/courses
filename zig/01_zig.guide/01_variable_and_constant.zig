@@ -1,6 +1,4 @@
-const std = @import("std");
-
-const print = std.debug.print;
+const print = @import("std").debug.print;
 
 test "constants (immutable, known at compile-time)" {
     const PI = 3.14159;
